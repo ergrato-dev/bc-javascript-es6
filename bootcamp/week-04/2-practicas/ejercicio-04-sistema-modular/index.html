@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Gestión de Tareas</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #1e1e1e;
+      color: #dcdcdc;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      color: #F0DB4F;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #F0DB4F;
+      padding-bottom: 10px;
+    }
+    
+    .task-form {
+      background: #2d2d2d;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #9CDCFE;
+    }
+    
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #3e3e3e;
+      border-radius: 4px;
+      background: #1e1e1e;
+      color: #dcdcdc;
+      font-family: inherit;
+    }
+    
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    
+    button {
+      background: #F0DB4F;
+      color: #1e1e1e;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    
+    button:hover {
+      background: #d4c043;
+    }
+    
+    .tasks-list {
+      list-style: none;
+    }
+    
+    .task-item {
+      background: #2d2d2d;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      border-left: 4px solid #61DAFB;
+    }
+    
+    .task-item.completed {
+      opacity: 0.6;
+      border-left-color: #4EC9B0;
+    }
+    
+    .task-item.high {
+      border-left-color: #F48771;
+    }
+    
+    .task-item.medium {
+      border-left-color: #F0DB4F;
+    }
+    
+    .task-item.low {
+      border-left-color: #9CDCFE;
+    }
+    
+    .task-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+    
+    .task-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #F0DB4F;
+    }
+    
+    .task-title.completed {
+      text-decoration: line-through;
+      color: #4EC9B0;
+    }
+    
+    .task-actions {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .btn-small {
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+    
+    .task-meta {
+      display: flex;
+      gap: 15px;
+      font-size: 14px;
+      color: #9CDCFE;
+      margin-top: 10px;
+    }
+    
+    .priority-badge {
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    
+    .priority-high {
+      background: #F48771;
+      color: #1e1e1e;
+    }
+    
+    .priority-medium {
+      background: #F0DB4F;
+      color: #1e1e1e;
+    }
+    
+    .priority-low {
+      background: #9CDCFE;
+      color: #1e1e1e;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🗂️ Sistema de Gestión de Tareas</h1>
+    
+    <div class="task-form">
+      <h2 style="margin-bottom: 20px; color: #61DAFB;">Nueva Tarea</h2>
+      <form id="taskForm">
+        <div class="form-group">
+          <label for="title">Título *</label>
+          <input type="text" id="title" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="description">Descripción</label>
+          <textarea id="description"></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="dueDate">Fecha de vencimiento</label>
+          <input type="date" id="dueDate">
+        </div>
+        
+        <div class="form-group">
+          <label for="priority">Prioridad</label>
+          <select id="priority">
+            <option value="low">Baja</option>
+            <option value="medium" selected>Media</option>
+            <option value="high">Alta</option>
+          </select>
+        </div>
+        
+        <button type="submit">Crear Tarea</button>
+      </form>
+    </div>
+    
+    <div>
+      <h2 style="margin-bottom: 20px; color: #61DAFB;">Mis Tareas</h2>
+      <ul id="tasksList" class="tasks-list">
+        <!-- Las tareas se renderizarán aquí -->
+      </ul>
+    </div>
+  </div>
+  
+  <script type="module" src="app.js"></script>
+</body>
+</html>
