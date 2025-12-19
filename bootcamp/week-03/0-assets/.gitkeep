@@ -1,0 +1,61 @@
+# 🎨 Assets - Week 03
+
+Esta carpeta contiene recursos visuales para la semana 03 (Clases y OOP).
+
+## 📋 Lista de Assets Requeridos
+
+Los siguientes diagramas SVG deben ser creados:
+
+1. **01-clases-basicas.svg**
+   - Diagrama de clase básica
+   - Constructor, propiedades, métodos
+   - Instanciación con `new`
+
+2. **02-herencia.svg**
+   - Diagrama de jerarquía de clases
+   - Clase padre → Clase hija
+   - `extends` y `super`
+
+3. **03-getters-setters.svg**
+   - Representación visual de getters/setters
+   - Validación en setters
+   - Propiedades computadas
+
+4. **04-metodos-estaticos.svg**
+   - Diferencia entre métodos de instancia y estáticos
+   - Factory patterns
+   - `static` keyword
+
+5. **05-private-fields.svg**
+   - Encapsulación con `#`
+   - API pública vs privada
+   - Campos y métodos privados
+
+---
+
+## 🎨 Especificaciones de Diseño
+
+- **Formato**: SVG (vectorial)
+- **Tema**: Dark mode
+- **Paleta**: Amarillo JavaScript (#F0DB4F) + complementarios
+- **Tipografía**: Sans-serif (Inter, Roboto, System UI)
+- **Tamaño**: Ancho máximo 800px
+
+---
+
+## 💡 Herramientas Sugeridas
+
+- [Excalidraw](https://excalidraw.com/) - Diagramas rápidos
+- [draw.io](https://app.diagrams.net/) - Diagramas profesionales
+- [Figma](https://www.figma.com/) - Diseño avanzado
+- [Inkscape](https://inkscape.org/) - Editor SVG gratuito
+
+---
+
+## 📝 Nota
+
+Los archivos SVG serán agregados posteriormente. Este `.gitkeep` mantiene la carpeta en el repositorio.
+
+---
+
+[← Volver a Week 03](../README.md)
