@@ -1,0 +1,162 @@
+<svg width="900" height="650" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="900" height="650" fill="#1e1e1e"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" font-family="sans-serif" font-size="24" fill="#F0DB4F" text-anchor="middle" font-weight="bold">
+    Dynamic Imports (Lazy Loading)
+  </text>
+  
+  <!-- Initial Load -->
+  <g>
+    <text x="50" y="85" font-family="sans-serif" font-size="16" fill="#9CDCFE" font-weight="bold">
+      Carga Inicial (Estática)
+    </text>
+    <rect x="50" y="95" width="350" height="140" fill="#2d2d2d" stroke="#4EC9B0" stroke-width="2" rx="4"/>
+    
+    <g font-family="monospace" font-size="13">
+      <text x="70" y="125" fill="#6A9955">// app.js - Se carga inmediatamente</text>
+      <text x="70" y="150" fill="#C586C0">import</text>
+      <text x="125" y="150" fill="#DCDCDC">{</text>
+      <text x="140" y="150" fill="#9CDCFE">coreFunction</text>
+      <text x="230" y="150" fill="#DCDCDC">}</text>
+      <text x="90" y="175" fill="#C586C0">from</text>
+      <text x="130" y="175" fill="#CE9178">'./core.js'</text>
+      <text x="220" y="175" fill="#DCDCDC">;</text>
+      
+      <text x="70" y="205" fill="#9CDCFE">coreFunction</text>
+      <text x="165" y="205" fill="#DCDCDC">();</text>
+      <text x="210" y="205" fill="#6A9955">// Disponible</text>
+    </g>
+  </g>
+  
+  <!-- Dynamic Load -->
+  <g>
+    <text x="500" y="85" font-family="sans-serif" font-size="16" fill="#9CDCFE" font-weight="bold">
+      Carga Dinámica (Bajo demanda)
+    </text>
+    <rect x="500" y="95" width="350" height="180" fill="#2d2d2d" stroke="#F48771" stroke-width="2" rx="4"/>
+    
+    <g font-family="monospace" font-size="13">
+      <text x="520" y="125" fill="#6A9955">// Se carga solo cuando se necesita</text>
+      <text x="520" y="150" fill="#DCDCDC">button.addEventListener(</text>
+      <text x="540" y="175" fill="#CE9178">'click'</text>
+      <text x="575" y="175" fill="#DCDCDC">,</text>
+      <text x="585" y="175" fill="#569CD6">async</text>
+      <text x="625" y="175" fill="#DCDCDC">() =&gt; {</text>
+      
+      <text x="560" y="200" fill="#569CD6">const</text>
+      <text x="605" y="200" fill="#DCDCDC">module =</text>
+      <text x="680" y="200" fill="#569CD6">await</text>
+      <text x="580" y="225" fill="#C586C0">import</text>
+      <text x="630" y="225" fill="#DCDCDC">(</text>
+      <text x="640" y="225" fill="#CE9178">'./heavy.js'</text>
+      <text x="735" y="225" fill="#DCDCDC">);</text>
+      
+      <text x="560" y="250" fill="#DCDCDC">module.render();</text>
+      <text x="540" y="270" fill="#DCDCDC">});</text>
+    </g>
+  </g>
+  
+  <!-- Timeline -->
+  <g>
+    <text x="450" y="320" font-family="sans-serif" font-size="16" fill="#F0DB4F" text-anchor="middle" font-weight="bold">
+      Línea de Tiempo de Carga
+    </text>
+    
+    <!-- Timeline line -->
+    <line x1="100" y1="370" x2="800" y2="370" stroke="#666" stroke-width="2"/>
+    
+    <!-- Time markers -->
+    <g font-family="sans-serif" font-size="12" fill="#9CDCFE">
+      <line x1="100" y1="360" x2="100" y2="380" stroke="#666" stroke-width="2"/>
+      <text x="100" y="395" text-anchor="middle">t0</text>
+      <text x="100" y="410" text-anchor="middle" font-size="10" fill="#666">(inicio)</text>
+      
+      <line x1="300" y1="360" x2="300" y2="380" stroke="#666" stroke-width="2"/>
+      <text x="300" y="395" text-anchor="middle">t1</text>
+      <text x="300" y="410" text-anchor="middle" font-size="10" fill="#666">(app lista)</text>
+      
+      <line x1="600" y1="360" x2="600" y2="380" stroke="#666" stroke-width="2"/>
+      <text x="600" y="395" text-anchor="middle">t2</text>
+      <text x="600" y="410" text-anchor="middle" font-size="10" fill="#666">(click)</text>
+      
+      <line x1="800" y1="360" x2="800" y2="380" stroke="#666" stroke-width="2"/>
+      <text x="800" y="395" text-anchor="middle">t3</text>
+      <text x="800" y="410" text-anchor="middle" font-size="10" fill="#666">(módulo cargado)</text>
+    </g>
+    
+    <!-- Static load bar -->
+    <rect x="100" y="340" width="200" height="20" fill="#4EC9B0" rx="2"/>
+    <text x="200" y="355" font-family="sans-serif" font-size="11" fill="#1e1e1e" text-anchor="middle" font-weight="bold">
+      core.js (estático)
+    </text>
+    
+    <!-- Dynamic load bar -->
+    <rect x="600" y="340" width="200" height="20" fill="#F48771" rx="2"/>
+    <text x="700" y="355" font-family="sans-serif" font-size="11" fill="#1e1e1e" text-anchor="middle" font-weight="bold">
+      heavy.js (dinámico)
+    </text>
+  </g>
+  
+  <!-- Benefits -->
+  <g>
+    <text x="450" y="460" font-family="sans-serif" font-size="16" fill="#F0DB4F" text-anchor="middle" font-weight="bold">
+      Beneficios del Dynamic Import
+    </text>
+    
+    <!-- Benefit boxes -->
+    <g>
+      <!-- Faster initial load -->
+      <rect x="50" y="480" width="250" height="140" fill="#2d2d2d" stroke="#61DAFB" stroke-width="2" rx="4"/>
+      <text x="175" y="510" font-family="sans-serif" font-size="14" fill="#61DAFB" text-anchor="middle" font-weight="bold">
+        ⚡ Carga Inicial Rápida
+      </text>
+      <text x="70" y="540" font-family="sans-serif" font-size="12" fill="#DCDCDC">
+        • Bundle inicial más pequeño
+      </text>
+      <text x="70" y="565" font-family="sans-serif" font-size="12" fill="#DCDCDC">
+        • Primera carga más rápida
+      </text>
+      <text x="70" y="590" font-family="sans-serif" font-size="12" fill="#DCDCDC">
+        • Mejor Time to Interactive
+      </text>
+      
+      <!-- Conditional loading -->
+      <rect x="325" y="480" width="250" height="140" fill="#2d2d2d" stroke="#4EC9B0" stroke-width="2" rx="4"/>
+      <text x="450" y="510" font-family="sans-serif" font-size="14" fill="#4EC9B0" text-anchor="middle" font-weight="bold">
+        🎯 Carga Condicional
+      </text>
+      <text x="345" y="540" font-family="sans-serif" font-size="12" fill="#DCDCDC">
+        • Cargar solo si se necesita
+      </text>
+      <text x="345" y="565" font-family="sans-serif" font-size="12" fill="#DCDCDC">
+        • Basado en interacción
+      </text>
+      <text x="345" y="590" font-family="sans-serif" font-size="12" fill="#DCDCDC">
+        • Por feature flags
+      </text>
+      
+      <!-- Code splitting -->
+      <rect x="600" y="480" width="250" height="140" fill="#2d2d2d" stroke="#F48771" stroke-width="2" rx="4"/>
+      <text x="725" y="510" font-family="sans-serif" font-size="14" fill="#F48771" text-anchor="middle" font-weight="bold">
+        📦 Code Splitting
+      </text>
+      <text x="620" y="540" font-family="sans-serif" font-size="12" fill="#DCDCDC">
+        • Chunks independientes
+      </text>
+      <text x="620" y="565" font-family="sans-serif" font-size="12" fill="#DCDCDC">
+        • Cacheo más efectivo
+      </text>
+      <text x="620" y="590" font-family="sans-serif" font-size="12" fill="#DCDCDC">
+        • Actualización selectiva
+      </text>
+    </g>
+  </g>
+  
+  <!-- Example use case -->
+  <rect x="50" y="635" width="800" height="1" fill="#666"/>
+  <text x="450" y="658" font-family="sans-serif" font-size="11" fill="#666" text-anchor="middle" font-style="italic">
+    Casos de uso: Modales, Charts, Editor WYSIWYG, Features premium, Rutas en SPA
+  </text>
+</svg>

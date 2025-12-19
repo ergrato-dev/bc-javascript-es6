@@ -578,11 +578,12 @@ let config = {
   secondary: 'red'
 };
 
-({ primary: config.secondary, secondary: config.primary } =
+// Swap usando destructuring
+({ primary: config.secondary, secondary: config.primary } = 
   { primary: config.primary, secondary: config.secondary });
 
-console.log(config); // { primary: 'blue', secondary: 'red' }
-// (se intercambiaron los valores)
+console.log(config); // { primary: 'red', secondary: 'blue' }
+// Se intercambiaron los valores
 ```
 
 ### 5. Opciones con Defaults
@@ -605,7 +606,7 @@ class HTTPClient {
 const client = new HTTPClient({
   baseURL: 'https://api.example.com'
 });
-// timeout: 5000, headers: {}, retries: 3 (defaults)
+// timeout: 5000, headers: {}, retries: 3 (usando defaults)
 ```
 
 ---

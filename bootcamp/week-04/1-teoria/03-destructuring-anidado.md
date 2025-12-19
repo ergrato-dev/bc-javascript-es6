@@ -367,15 +367,17 @@ const widget = createWidget({
 });
 
 console.log(widget);
-// {
-//   title: 'My Widget',
-//   width: 500,
-//   height: 200,       // default
-//   color: 'red',
-//   fontSize: 14,      // default
-//   borderWidth: 2,
-//   borderColor: 'gray' // default
-// }
+/*
+{
+  title: 'My Widget',
+  width: 500,
+  height: 200,       // default
+  color: 'red',
+  fontSize: 14,      // default
+  borderWidth: 2,
+  borderColor: 'gray' // default
+}
+*/
 ```
 
 ### Procesamiento de Datos de API
@@ -466,7 +468,7 @@ const response = {
 };
 
 console.log(processGraphQLResponse(response));
-// { id: 1, name: 'Ana', avatar: 'avatar.jpg', postTitles: ['Post 1', 'Post 2'] }
+// Resultado: { id: 1, name: 'Ana', avatar: 'avatar.jpg', postTitles: ['Post 1', 'Post 2'] }
 ```
 
 ### 2. Configuración de Frameworks
