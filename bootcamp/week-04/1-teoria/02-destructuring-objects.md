@@ -773,7 +773,7 @@ const introduce = ({ name, age, city }) => {
    ```javascript
    // ✅ Bueno - claro qué espera la función
    const createUser = ({ name, email, role }) => { };
-   
+
    // ❌ Malo - menos claro
    const createUser = (options) => {
      const name = options.name;
@@ -791,7 +791,7 @@ const introduce = ({ name, age, city }) => {
    ```javascript
    // ❌ Difícil de leer
    const { a: { b: { c: { d } } } } = obj;
-   
+
    // ✅ Mejor - paso a paso si es necesario
    const { a } = obj;
    const { b } = a;

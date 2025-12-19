@@ -92,7 +92,7 @@ class Logger {
   log(message) {
     console.log(`[LOG]: ${message}`);
   }
-  
+
   error(message) {
     console.error(`[ERROR]: ${message}`);
   }
@@ -123,7 +123,7 @@ class APIClient {
   constructor(baseURL = BASE_URL) {
     this.baseURL = baseURL;
   }
-  
+
   async fetch(endpoint) {
     const response = await fetch(`${this.baseURL}/${endpoint}`);
     return response.json();
@@ -389,12 +389,12 @@ class APIService {
   constructor(baseURL) {
     this.baseURL = baseURL;
   }
-  
+
   async get(endpoint) {
     const response = await fetch(`${this.baseURL}/${endpoint}`);
     return response.json();
   }
-  
+
   async post(endpoint, data) {
     const response = await fetch(`${this.baseURL}/${endpoint}`, {
       method: 'POST',
@@ -433,7 +433,7 @@ export default class User {
     this.name = name;
     this.email = email;
   }
-  
+
   get initials() {
     return this.name.split(' ').map(n => n[0]).join('');
   }
@@ -446,7 +446,7 @@ export default class Product {
     this.name = name;
     this.price = price;
   }
-  
+
   get formattedPrice() {
     return `€${this.price.toFixed(2)}`;
   }

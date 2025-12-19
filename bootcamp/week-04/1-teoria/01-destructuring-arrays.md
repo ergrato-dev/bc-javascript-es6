@@ -563,7 +563,7 @@ console.log(getRandomInRange([1, 10]));
    ```javascript
    // ✅ Bueno
    const [x, y] = coordinates;
-   
+
    // ⚠️ Solo si necesitas reasignar
    let [a, b] = values;
    ```
@@ -572,7 +572,7 @@ console.log(getRandomInRange([1, 10]));
    ```javascript
    // ✅ Bueno
    const [latitude, longitude] = coordinates;
-   
+
    // ❌ Malo
    const [x, y] = coordinates;
    ```
@@ -587,7 +587,7 @@ console.log(getRandomInRange([1, 10]));
    ```javascript
    // ❌ Difícil de leer
    const [, , , , fifth] = array;
-   
+
    // ✅ Mejor
    const fifth = array[4];
    ```

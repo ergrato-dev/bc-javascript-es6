@@ -231,24 +231,24 @@ button.addEventListener('click', async () => {
 
 ## ⏱️ Distribución del Tiempo (8 horas)
 
-| Actividad | Duración | Acumulado |
-|-----------|----------|-----------|
-| **Teoría** | | |
-| - Destructuring arrays | 30 min | 0.5h |
-| - Destructuring objetos | 30 min | 1h |
-| - Destructuring anidado | 30 min | 1.5h |
-| - Módulos ES6 | 45 min | 2.25h |
-| - Dynamic imports | 15 min | 2.5h |
-| **Prácticas** | | |
-| - Ejercicio 1 | 30 min | 3h |
-| - Ejercicio 2 | 45 min | 3.75h |
-| - Ejercicio 3 | 45 min | 4.5h |
-| - Ejercicio 4 | 1h | 5.5h |
-| **Proyecto** | | |
-| - Setup y estructura | 30 min | 6h |
-| - Implementación | 1.5h | 7.5h |
-| **Recursos** | | |
-| - Revisión y consolidación | 30 min | 8h |
+| Actividad                  | Duración | Acumulado |
+| -------------------------- | -------- | --------- |
+| **Teoría**                 |          |           |
+| - Destructuring arrays     | 30 min   | 0.5h      |
+| - Destructuring objetos    | 30 min   | 1h        |
+| - Destructuring anidado    | 30 min   | 1.5h      |
+| - Módulos ES6              | 45 min   | 2.25h     |
+| - Dynamic imports          | 15 min   | 2.5h      |
+| **Prácticas**              |          |           |
+| - Ejercicio 1              | 30 min   | 3h        |
+| - Ejercicio 2              | 45 min   | 3.75h     |
+| - Ejercicio 3              | 45 min   | 4.5h      |
+| - Ejercicio 4              | 1h       | 5.5h      |
+| **Proyecto**               |          |           |
+| - Setup y estructura       | 30 min   | 6h        |
+| - Implementación           | 1.5h     | 7.5h      |
+| **Recursos**               |          |           |
+| - Revisión y consolidación | 30 min   | 8h        |
 
 ## 📌 Entregables
 

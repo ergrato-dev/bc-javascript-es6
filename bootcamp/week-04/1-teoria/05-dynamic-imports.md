@@ -80,11 +80,11 @@ export default class DataProcessor {
 button.addEventListener('click', async () => {
   // Solo se carga cuando el usuario hace clic
   const module = await import('./heavyModule.js');
-  
+
   // Acceder a exports
   const result = module.processLargeData([1, 2, 3, 4, 5]);
   console.log(result); // [2, 4, 6, 8, 10]
-  
+
   // Acceder al default export
   const processor = new module.default();
   processor.process([10, 20, 30]);
@@ -136,7 +136,7 @@ loadUserFeatures(user);
 ```javascript
 const loadConfig = async () => {
   const env = process.env.NODE_ENV;
-  
+
   if (env === 'development') {
     const devConfig = await import('./config.dev.js');
     return devConfig.default;
@@ -173,7 +173,7 @@ const router = {
       contact.render();
     }
   },
-  
+
   navigate(path) {
     const handler = this.routes[path];
     if (handler) {
@@ -194,12 +194,12 @@ const features = {
     const editor = await import('./features/editor.js');
     return editor.initialize();
   },
-  
+
   async loadChat() {
     const chat = await import('./features/chat.js');
     return chat.connect();
   },
-  
+
   async loadAnalytics() {
     const analytics = await import('./features/analytics.js');
     return analytics.track();
@@ -282,10 +282,10 @@ const observer = new IntersectionObserver(async entries => {
     if (entry.isIntersecting) {
       const section = entry.target;
       const modulePath = section.dataset.module;
-      
+
       const module = await import(`./${modulePath}.js`);
       module.render(section);
-      
+
       observer.unobserve(section);
     }
   }
@@ -342,7 +342,7 @@ const loadModuleOnce = async modulePath => {
   if (moduleCache.has(modulePath)) {
     return moduleCache.get(modulePath);
   }
-  
+
   const module = await import(modulePath);
   moduleCache.set(modulePath, module);
   return module;
@@ -361,7 +361,7 @@ const math2 = await loadModuleOnce('./math.js');
 const loadWithIndicator = async modulePath => {
   // Mostrar spinner
   showLoadingSpinner();
-  
+
   try {
     const module = await import(modulePath);
     return module;
@@ -391,12 +391,12 @@ const hideLoadingSpinner = () => {
 ```javascript
 const showUserProfile = async userId => {
   showLoadingSpinner();
-  
+
   try {
     // Cargar módulo de perfil solo cuando se necesita
     const profileModule = await import('./components/UserProfile.js');
     const user = await fetchUser(userId);
-    
+
     profileModule.renderProfile(user);
   } catch (error) {
     console.error('Failed to load profile:', error);
@@ -419,7 +419,7 @@ const loadLanguage = async language => {
   if (translations[language]) {
     return translations[language];
   }
-  
+
   const module = await import(`./i18n/${language}.js`);
   translations[language] = module.default;
   return module.default;
@@ -446,13 +446,13 @@ const initializeApp = async () => {
   // Características base siempre cargadas
   const core = await import('./core.js');
   core.initialize();
-  
+
   // Características opcionales
   if (features.enableBetaFeatures) {
     const beta = await import('./features/beta.js');
     beta.enable();
   }
-  
+
   if (features.enableAnalytics) {
     const analytics = await import('./features/analytics.js');
     analytics.initialize();
@@ -467,10 +467,10 @@ initializeApp();
 ```javascript
 const loadExperimentVariant = async () => {
   const variant = Math.random() < 0.5 ? 'A' : 'B';
-  
+
   const module = await import(`./experiments/variant${variant}.js`);
   module.render();
-  
+
   // Registrar qué variante vio el usuario
   console.log(`User saw variant ${variant}`);
 };
@@ -511,7 +511,7 @@ const loadLanguage = async language => {
     'es': () => import('./i18n/es.js'),
     'fr': () => import('./i18n/fr.js')
   };
-  
+
   return await languages[language]();
 };
 ```
