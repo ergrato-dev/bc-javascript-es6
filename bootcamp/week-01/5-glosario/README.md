@@ -563,7 +563,7 @@ const global = 'global';  // Global scope
 
 function funcion() {
   const local = 'local';  // Function scope
-  
+
   if (true) {
     const bloque = 'bloque'; // Block scope
   }

@@ -25,7 +25,7 @@ Videos recomendados para complementar el aprendizaje de ES6+ de esta semana.
 ### En Inglés
 
 #### **ES6 Tutorial for Beginners**
-- **[ES6 Tutorial - Traversy Media](https://www.youtube.com/watch?v=WZQc7RUAg18)** 
+- **[ES6 Tutorial - Traversy Media](https://www.youtube.com/watch?v=WZQc7RUAg18)**
   - ⏱️ Duración: ~90 minutos
   - 📊 Nivel: Principiante-Intermedio
   - ✅ Curso completo de ES6+
