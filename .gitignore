@@ -196,9 +196,7 @@ temp/
 # Soluciones de proyectos y prácticas (NO publicar en GitHub)
 # Los estudiantes deben completar los ejercicios por sí mismos
 **/solution/
-**/solucion/
 **/*-solution.js
-**/*-solucion.js
 
 # Soluciones de estudiantes (cada estudiante debe tener su propio repo)
 # Descomentar si este es el repo plantilla:
