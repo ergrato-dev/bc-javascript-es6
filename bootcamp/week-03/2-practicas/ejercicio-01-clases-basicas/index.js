@@ -7,13 +7,9 @@
 class Person {
   // TODO: Implementa el constructor que reciba firstName, lastName y age
   // Valida que age esté entre 0 y 150
-  
   // TODO: Implementa getFullName() que retorne "firstName lastName"
-  
   // TODO: Implementa greet() que retorne "Hola, soy [fullName]"
-  
   // TODO: Implementa haveBirthday() que incremente age en 1
-  
   // TODO: Implementa isAdult() que retorne true si age >= 18
 }
 
@@ -24,20 +20,15 @@ class Person {
 class Product {
   // TODO: Implementa el constructor que reciba name, price y stock
   // Valida que price >= 0 y stock >= 0
-  
   // TODO: Implementa sell(quantity)
   // - Valida que quantity no exceda el stock
   // - Reduce el stock
-  
   // TODO: Implementa restock(quantity)
   // - Aumenta el stock
-  
   // TODO: Implementa getTotalValue()
   // - Retorna price * stock
-  
   // TODO: Implementa isAvailable()
   // - Retorna true si stock > 0
-  
   // TODO: Implementa applyDiscount(percentage)
   // - Valida que percentage esté entre 0 y 100
   // - Reduce el precio

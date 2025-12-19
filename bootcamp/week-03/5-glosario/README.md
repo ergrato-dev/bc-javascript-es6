@@ -12,7 +12,7 @@ Ocultar detalles complejos de implementación y exponer solo lo necesario. En Ja
 ```javascript
 class Database {
   #connection; // Detalle oculto
-  
+
   connect() { /* API pública */ }
 }
 ```
@@ -65,7 +65,7 @@ Principio de OOP que agrupa datos y métodos, restringiendo acceso directo a alg
 ```javascript
 class BankAccount {
   #balance; // Campo privado
-  
+
   getBalance() {
     return this.#balance;
   }
@@ -305,7 +305,7 @@ class Dog extends Animal {
   constructor(name) {
     super(name); // Llama constructor del padre
   }
-  
+
   speak() {
     return super.speak() + ' Woof!';
   }
@@ -359,7 +359,7 @@ class Shape {
       throw new Error('Cannot instantiate abstract class');
     }
   }
-  
+
   getArea() {
     throw new Error('Must implement getArea()');
   }
@@ -374,7 +374,7 @@ class QueryBuilder {
   static select(...fields) {
     return new QueryBuilder();
   }
-  
+
   from(table) {
     // ...
     return this; // Permite encadenamiento
@@ -413,7 +413,7 @@ Patrón que asegura que una clase tenga solo una instancia.
 ```javascript
 class Database {
   static #instance = null;
-  
+
   static getInstance() {
     if (!Database.#instance) {
       Database.#instance = new Database();

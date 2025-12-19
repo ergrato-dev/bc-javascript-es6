@@ -116,7 +116,7 @@ console.log(person.getInfo()); // ✅ Funciona
 class Example {
   // Campos públicos
   publicField = 'Public';
-  
+
   // Campos privados
   #privateField = 'Private';
 
@@ -297,7 +297,7 @@ class Calculator {
   clearOldHistory(days = 30) {
     const cutoff = new Date();
     cutoff.setDate(cutoff.getDate() - days);
-    
+
     this.#history = this.#history.filter(
       entry => entry.timestamp > cutoff
     );
@@ -446,7 +446,7 @@ class DataService {
 
   // Métodos privados
   #isCacheValid() {
-    return this.#cache !== null && 
+    return this.#cache !== null &&
            this.#cacheExpiry > Date.now();
   }
 

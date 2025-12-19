@@ -25,7 +25,7 @@ Esta carpeta contiene enlaces y recursos a libros electrónicos gratuitos sobre 
 - **Enlace**: https://exploringjs.com/impatient-js/
 - **Nivel**: Intermedio
 - **Descripción**: Guía concisa de JavaScript moderno
-- **Capítulos relevantes**: 
+- **Capítulos relevantes**:
   - Part III: Objects and Classes
   - Chapter 29: Prototype chains and classes
 

@@ -6,10 +6,8 @@
 
 class Vehicle {
   // TODO: Implementa el constructor con brand, model, year
-  
   // TODO: Implementa getInfo()
   // Retorna: "Toyota Corolla (2020)"
-  
   // TODO: Implementa getAge()
   // Calcula años desde fabricación hasta ahora
 }
@@ -22,11 +20,9 @@ class Car extends Vehicle {
   // TODO: Implementa el constructor
   // - Llama a super() con brand, model, year
   // - Agrega doors y fuelType
-  
   // TODO: Sobrescribe getInfo()
   // - Llama a super.getInfo()
   // - Agrega información de puertas y combustible
-  
   // TODO: Implementa isElectric()
   // Retorna true si fuelType === 'electric'
 }
@@ -39,11 +35,9 @@ class Motorcycle extends Vehicle {
   // TODO: Implementa el constructor
   // - Llama a super()
   // - Agrega hasStorageBox y engineSize
-  
   // TODO: Sobrescribe getInfo()
   // - Llama a super.getInfo()
   // - Agrega información del motor
-  
   // TODO: Implementa isLargeBike()
   // Retorna true si engineSize > 500
 }
@@ -57,11 +51,9 @@ class ElectricCar extends Car {
   // - Llama a super() con parámetros de Car
   // - Asegura que fuelType sea 'electric'
   // - Agrega batteryCapacity y range
-  
   // TODO: Sobrescribe getInfo()
   // - Llama a super.getInfo()
   // - Agrega información de batería y autonomía
-  
   // TODO: Implementa getEfficiency()
   // Calcula: range / batteryCapacity
 }

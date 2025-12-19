@@ -501,7 +501,7 @@ class Example {
   increment() {
     // ❌ Error: acceder a propiedad estática sin this.constructor
     // count++; // ReferenceError
-    
+
     // ✅ Correcto
     Example.count++;
     // o
