@@ -7,8 +7,8 @@ Recursos web, documentación oficial y artículos seleccionados para profundizar
 ## 📖 Documentación Oficial
 
 ### **1. MDN Web Docs (Mozilla Developer Network)**
-**Idioma**: Español e Inglés  
-**Nivel**: Todos  
+**Idioma**: Español e Inglés
+**Nivel**: Todos
 
 #### Spread Operator
 - 📄 [Sintaxis Spread](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
@@ -44,8 +44,8 @@ Recursos web, documentación oficial y artículos seleccionados para profundizar
 ---
 
 ### **2. JavaScript.info**
-**Idioma**: Español  
-**Nivel**: Principiante-Intermedio  
+**Idioma**: Español
+**Nivel**: Principiante-Intermedio
 **Enlace Base**: [https://es.javascript.info/](https://es.javascript.info/)
 
 #### Recursos Específicos:
@@ -68,8 +68,8 @@ Recursos web, documentación oficial y artículos seleccionados para profundizar
 ---
 
 ### **3. ECMAScript Specification (Especificación Oficial)**
-**Idioma**: Inglés  
-**Nivel**: Avanzado  
+**Idioma**: Inglés
+**Nivel**: Avanzado
 **Enlace**: [https://tc39.es/ecma262/](https://tc39.es/ecma262/)
 
 **Uso**: Para desarrolladores que quieren entender la especificación técnica completa.
@@ -89,8 +89,8 @@ Recursos web, documentación oficial y artículos seleccionados para profundizar
 ### Spread Operator
 
 #### **4. Spread Operator in JavaScript - Ejemplos Prácticos**
-**Sitio**: DigitalOcean  
-**Idioma**: Inglés  
+**Sitio**: DigitalOcean
+**Idioma**: Inglés
 **Enlace**: [https://www.digitalocean.com/community/tutorials/](https://www.digitalocean.com/community/tutorials/)
 (Buscar: "javascript spread operator")
 
@@ -102,8 +102,8 @@ Recursos web, documentación oficial y artículos seleccionados para profundizar
 ---
 
 #### **5. Understanding the Spread Operator**
-**Sitio**: FreeCodeCamp  
-**Idioma**: Inglés  
+**Sitio**: FreeCodeCamp
+**Idioma**: Inglés
 **Enlace**: [https://www.freecodecamp.org/news/](https://www.freecodecamp.org/news/)
 (Buscar: "spread operator javascript")
 
@@ -117,8 +117,8 @@ Recursos web, documentación oficial y artículos seleccionados para profundizar
 ### Array Methods
 
 #### **6. Functional Programming with JavaScript Arrays**
-**Sitio**: CSS-Tricks  
-**Idioma**: Inglés  
+**Sitio**: CSS-Tricks
+**Idioma**: Inglés
 **Enlace**: [https://css-tricks.com/](https://css-tricks.com/)
 (Buscar: "javascript array methods")
 
@@ -130,8 +130,8 @@ Recursos web, documentación oficial y artículos seleccionados para profundizar
 ---
 
 #### **7. JavaScript Array Methods Explained**
-**Sitio**: Dev.to  
-**Idioma**: Inglés  
+**Sitio**: Dev.to
+**Idioma**: Inglés
 **Enlace**: [https://dev.to/](https://dev.to/)
 (Buscar: "javascript array methods")
 
@@ -145,8 +145,8 @@ Recursos web, documentación oficial y artículos seleccionados para profundizar
 ### Programación Funcional
 
 #### **8. Introduction to Functional Programming in JavaScript**
-**Sitio**: Medium  
-**Idioma**: Inglés  
+**Sitio**: Medium
+**Idioma**: Inglés
 **Enlace**: Buscar en Medium: "functional programming javascript"
 
 **Contenido**:
@@ -159,8 +159,8 @@ Recursos web, documentación oficial y artículos seleccionados para profundizar
 ### Object Enhancements
 
 #### **9. Object Literals in ES6**
-**Sitio**: 2ality (Dr. Axel Rauschmayer)  
-**Idioma**: Inglés  
+**Sitio**: 2ality (Dr. Axel Rauschmayer)
+**Idioma**: Inglés
 **Enlace**: [https://2ality.com/](https://2ality.com/)
 (Buscar: "object literals es6")
 
@@ -174,7 +174,7 @@ Recursos web, documentación oficial y artículos seleccionados para profundizar
 ## 🛠️ Herramientas Interactivas
 
 ### **10. RunJS - REPL Interactivo**
-**Enlace**: [https://runjs.app/](https://runjs.app/)  
+**Enlace**: [https://runjs.app/](https://runjs.app/)
 **Tipo**: Aplicación de escritorio
 
 **Uso**: Probar código JavaScript rápidamente sin configuración.
@@ -182,7 +182,7 @@ Recursos web, documentación oficial y artículos seleccionados para profundizar
 ---
 
 ### **11. CodePen**
-**Enlace**: [https://codepen.io/](https://codepen.io/)  
+**Enlace**: [https://codepen.io/](https://codepen.io/)
 **Tipo**: Editor online
 
 **Uso**: Crear y compartir ejemplos de código interactivos.
@@ -190,7 +190,7 @@ Recursos web, documentación oficial y artículos seleccionados para profundizar
 ---
 
 ### **12. JSFiddle**
-**Enlace**: [https://jsfiddle.net/](https://jsfiddle.net/)  
+**Enlace**: [https://jsfiddle.net/](https://jsfiddle.net/)
 **Tipo**: Editor online
 
 **Uso**: Experimentar con código JavaScript en el navegador.
@@ -198,7 +198,7 @@ Recursos web, documentación oficial y artículos seleccionados para profundizar
 ---
 
 ### **13. Array Explorer**
-**Enlace**: [https://arrayexplorer.netlify.app/](https://arrayexplorer.netlify.app/)  
+**Enlace**: [https://arrayexplorer.netlify.app/](https://arrayexplorer.netlify.app/)
 **Tipo**: Herramienta interactiva
 
 **Uso**: Descubrir qué método de array usar según la necesidad.
@@ -208,7 +208,7 @@ Recursos web, documentación oficial y artículos seleccionados para profundizar
 ---
 
 ### **14. Object Explorer**
-**Enlace**: [https://objectexplorer.netlify.app/](https://objectexplorer.netlify.app/)  
+**Enlace**: [https://objectexplorer.netlify.app/](https://objectexplorer.netlify.app/)
 **Tipo**: Herramienta interactiva
 
 **Uso**: Explorar métodos de Object de forma visual.
@@ -220,7 +220,7 @@ Recursos web, documentación oficial y artículos seleccionados para profundizar
 ## 📊 Recursos Visuales
 
 ### **15. JavaScript Array Methods Cheat Sheet**
-**Sitio**: Varios (buscar en Google Images)  
+**Sitio**: Varios (buscar en Google Images)
 **Tipo**: Infografía
 
 **Uso**: Tener una referencia visual rápida de todos los métodos.
@@ -228,7 +228,7 @@ Recursos web, documentación oficial y artículos seleccionados para profundizar
 ---
 
 ### **16. ES6 Features Cheat Sheet**
-**Sitio**: GitHub Gists  
+**Sitio**: GitHub Gists
 **Tipo**: Documento de referencia
 
 **Uso**: Resumen de todas las características de ES6+.
@@ -238,8 +238,8 @@ Recursos web, documentación oficial y artículos seleccionados para profundizar
 ## 🎮 Práctica Interactiva
 
 ### **17. JavaScript30**
-**Autor**: Wes Bos  
-**Enlace**: [https://javascript30.com/](https://javascript30.com/)  
+**Autor**: Wes Bos
+**Enlace**: [https://javascript30.com/](https://javascript30.com/)
 **Tipo**: Curso de proyectos (gratuito)
 
 **Proyectos Relevantes**:
@@ -249,7 +249,7 @@ Recursos web, documentación oficial y artículos seleccionados para profundizar
 ---
 
 ### **18. Exercism - JavaScript Track**
-**Enlace**: [https://exercism.org/tracks/javascript](https://exercism.org/tracks/javascript)  
+**Enlace**: [https://exercism.org/tracks/javascript](https://exercism.org/tracks/javascript)
 **Tipo**: Ejercicios prácticos
 
 **Ejercicios Relevantes**:
@@ -260,7 +260,7 @@ Recursos web, documentación oficial y artículos seleccionados para profundizar
 ---
 
 ### **19. LeetCode - JavaScript Problems**
-**Enlace**: [https://leetcode.com/](https://leetcode.com/)  
+**Enlace**: [https://leetcode.com/](https://leetcode.com/)
 **Tipo**: Problemas algorítmicos
 
 **Filtro**: Problemas fáciles que usan array methods
@@ -270,7 +270,7 @@ Recursos web, documentación oficial y artículos seleccionados para profundizar
 ## 📚 Blogs y Comunidades
 
 ### **20. Dev.to - JavaScript Tag**
-**Enlace**: [https://dev.to/t/javascript](https://dev.to/t/javascript)  
+**Enlace**: [https://dev.to/t/javascript](https://dev.to/t/javascript)
 **Tipo**: Comunidad de desarrolladores
 
 **Uso**: Artículos recientes sobre JavaScript moderno.
@@ -278,7 +278,7 @@ Recursos web, documentación oficial y artículos seleccionados para profundizar
 ---
 
 ### **21. JavaScript Weekly Newsletter**
-**Enlace**: [https://javascriptweekly.com/](https://javascriptweekly.com/)  
+**Enlace**: [https://javascriptweekly.com/](https://javascriptweekly.com/)
 **Tipo**: Newsletter semanal
 
 **Uso**: Mantenerse actualizado con las últimas novedades.
@@ -286,7 +286,7 @@ Recursos web, documentación oficial y artículos seleccionados para profundizar
 ---
 
 ### **22. Reddit - r/javascript**
-**Enlace**: [https://www.reddit.com/r/javascript/](https://www.reddit.com/r/javascript/)  
+**Enlace**: [https://www.reddit.com/r/javascript/](https://www.reddit.com/r/javascript/)
 **Tipo**: Comunidad
 
 **Uso**: Discusiones, dudas y recursos compartidos.

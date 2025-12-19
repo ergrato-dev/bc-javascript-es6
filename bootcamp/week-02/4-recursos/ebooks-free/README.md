@@ -6,10 +6,10 @@ Libros electrónicos gratuitos y legales para profundizar en JavaScript moderno.
 
 ## 📘 JavaScript Moderno y ES6+
 
-### 1. **Eloquent JavaScript (3rd Edition)** 
-**Autor**: Marijn Haverbeke  
-**Idioma**: Inglés (también disponible en español)  
-**Nivel**: Intermedio  
+### 1. **Eloquent JavaScript (3rd Edition)**
+**Autor**: Marijn Haverbeke
+**Idioma**: Inglés (también disponible en español)
+**Nivel**: Intermedio
 
 **Capítulos Recomendados**:
 - Chapter 4: Data Structures - Arrays and Objects
@@ -23,9 +23,9 @@ Libros electrónicos gratuitos y legales para profundizar en JavaScript moderno.
 ---
 
 ### 2. **JavaScript for Impatient Programmers (ES2022)**
-**Autor**: Dr. Axel Rauschmayer  
-**Idioma**: Inglés  
-**Nivel**: Intermedio-Avanzado  
+**Autor**: Dr. Axel Rauschmayer
+**Idioma**: Inglés
+**Nivel**: Intermedio-Avanzado
 
 **Capítulos Recomendados**:
 - Chapter 11: Parameter handling
@@ -40,9 +40,9 @@ Libros electrónicos gratuitos y legales para profundizar en JavaScript moderno.
 ---
 
 ### 3. **You Don't Know JS: ES6 & Beyond**
-**Autor**: Kyle Simpson  
-**Idioma**: Inglés  
-**Nivel**: Intermedio-Avanzado  
+**Autor**: Kyle Simpson
+**Idioma**: Inglés
+**Nivel**: Intermedio-Avanzado
 
 **Capítulos Recomendados**:
 - Chapter 2: Syntax (spread/rest, default parameters)
@@ -55,9 +55,9 @@ Libros electrónicos gratuitos y legales para profundizar en JavaScript moderno.
 ---
 
 ### 4. **JavaScript: The Definitive Guide (7th Edition) - Capítulos Selectos**
-**Autor**: David Flanagan  
-**Idioma**: Inglés  
-**Nivel**: Todos los niveles  
+**Autor**: David Flanagan
+**Idioma**: Inglés
+**Nivel**: Todos los niveles
 
 **Nota**: Algunos capítulos están disponibles gratuitamente en línea.
 
@@ -73,9 +73,9 @@ Libros electrónicos gratuitos y legales para profundizar en JavaScript moderno.
 ## 📗 Programación Funcional
 
 ### 5. **Functional-Light JavaScript**
-**Autor**: Kyle Simpson  
-**Idioma**: Inglés  
-**Nivel**: Intermedio  
+**Autor**: Kyle Simpson
+**Idioma**: Inglés
+**Nivel**: Intermedio
 
 **Capítulos Recomendados**:
 - Chapter 3: Managing Function Inputs (rest, spread)
@@ -90,8 +90,8 @@ Libros electrónicos gratuitos y legales para profundizar en JavaScript moderno.
 ## 📙 Recursos en Español
 
 ### 6. **El Tutorial de JavaScript Moderno**
-**Idioma**: Español  
-**Nivel**: Principiante-Intermedio  
+**Idioma**: Español
+**Nivel**: Principiante-Intermedio
 
 **Secciones Recomendadas**:
 - Funciones avanzadas (parámetros rest/spread)
@@ -105,8 +105,8 @@ Libros electrónicos gratuitos y legales para profundizar en JavaScript moderno.
 ---
 
 ### 7. **Introducción a JavaScript (MDN en Español)**
-**Idioma**: Español  
-**Nivel**: Todos los niveles  
+**Idioma**: Español
+**Nivel**: Todos los niveles
 
 **Enlace**: [https://developer.mozilla.org/es/docs/Web/JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)
 

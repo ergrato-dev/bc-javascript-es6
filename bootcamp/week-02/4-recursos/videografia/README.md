@@ -9,9 +9,9 @@ Videos, tutoriales y cursos seleccionados para complementar el aprendizaje de la
 ### 📺 Spread Operator & Rest Parameters
 
 #### **1. Spread Operator y Rest Parameters - JavaScript ES6**
-**Canal**: midudev  
-**Duración**: ~15 min  
-**Nivel**: Principiante-Intermedio  
+**Canal**: midudev
+**Duración**: ~15 min
+**Nivel**: Principiante-Intermedio
 
 **Contenido**:
 - Diferencias entre spread y rest
@@ -25,9 +25,9 @@ Videos, tutoriales y cursos seleccionados para complementar el aprendizaje de la
 ---
 
 #### **2. Rest Parameters y Spread Operator Explicados**
-**Canal**: Fazt Code  
-**Duración**: ~12 min  
-**Nivel**: Principiante  
+**Canal**: Fazt Code
+**Duración**: ~12 min
+**Nivel**: Principiante
 
 **Contenido**:
 - Sintaxis básica
@@ -43,9 +43,9 @@ Videos, tutoriales y cursos seleccionados para complementar el aprendizaje de la
 ### 📺 Array Methods (map, filter, reduce)
 
 #### **3. Map, Filter y Reduce en JavaScript**
-**Canal**: midulive  
-**Duración**: ~25 min  
-**Nivel**: Intermedio  
+**Canal**: midulive
+**Duración**: ~25 min
+**Nivel**: Intermedio
 
 **Contenido**:
 - Explicación detallada de cada método
@@ -60,9 +60,9 @@ Videos, tutoriales y cursos seleccionados para complementar el aprendizaje de la
 ---
 
 #### **4. Programación Funcional con Arrays en JavaScript**
-**Canal**: Carlos Azaustre  
-**Duración**: ~20 min  
-**Nivel**: Intermedio  
+**Canal**: Carlos Azaustre
+**Duración**: ~20 min
+**Nivel**: Intermedio
 
 **Contenido**:
 - map, filter, reduce en detalle
@@ -78,9 +78,9 @@ Videos, tutoriales y cursos seleccionados para complementar el aprendizaje de la
 ### 📺 Object Enhancements
 
 #### **5. Objetos en JavaScript ES6+ (Property Shorthand, Computed Properties)**
-**Canal**: Gentleman Programming  
-**Duración**: ~18 min  
-**Nivel**: Intermedio  
+**Canal**: Gentleman Programming
+**Duración**: ~18 min
+**Nivel**: Intermedio
 
 **Contenido**:
 - Property shorthand
@@ -99,9 +99,9 @@ Videos, tutoriales y cursos seleccionados para complementar el aprendizaje de la
 ### 📺 Spread & Rest Comprehensive
 
 #### **6. JavaScript ES6 Arrow Functions, Spread & Rest**
-**Canal**: Traversy Media  
-**Duración**: ~30 min  
-**Nivel**: Principiante-Intermedio  
+**Canal**: Traversy Media
+**Duración**: ~30 min
+**Nivel**: Principiante-Intermedio
 
 **Contenido**:
 - Spread operator en profundidad
@@ -118,9 +118,9 @@ Videos, tutoriales y cursos seleccionados para complementar el aprendizaje de la
 ### 📺 Array Methods Deep Dive
 
 #### **7. JavaScript Array Methods - Complete Guide**
-**Canal**: Web Dev Simplified  
-**Duración**: ~40 min  
-**Nivel**: Todos los niveles  
+**Canal**: Web Dev Simplified
+**Duración**: ~40 min
+**Nivel**: Todos los niveles
 
 **Contenido**:
 - Todos los array methods modernos
@@ -135,9 +135,9 @@ Videos, tutoriales y cursos seleccionados para complementar el aprendizaje de la
 ---
 
 #### **8. Functional Programming in JavaScript - map, filter, reduce**
-**Canal**: Fun Fun Function (MPJ)  
-**Duración**: ~15 min cada video (serie)  
-**Nivel**: Intermedio  
+**Canal**: Fun Fun Function (MPJ)
+**Duración**: ~15 min cada video (serie)
+**Nivel**: Intermedio
 
 **Contenido** (Serie de 3 videos):
 - Map in depth
@@ -153,9 +153,9 @@ Videos, tutoriales y cursos seleccionados para complementar el aprendizaje de la
 ### 📺 Object Features
 
 #### **9. JavaScript Object Shortcuts - ES6+**
-**Canal**: Fireship  
-**Duración**: ~10 min  
-**Nivel**: Intermedio  
+**Canal**: Fireship
+**Duración**: ~10 min
+**Nivel**: Intermedio
 
 **Contenido**:
 - Object shorthand syntax
@@ -172,10 +172,10 @@ Videos, tutoriales y cursos seleccionados para complementar el aprendizaje de la
 ## 🎓 Cursos Completos (Gratuitos)
 
 ### **10. JavaScript ES6+ - The Complete Course (FreeCodeCamp)**
-**Plataforma**: YouTube - FreeCodeCamp  
-**Duración**: ~7 horas  
-**Idioma**: Inglés  
-**Nivel**: Principiante-Intermedio  
+**Plataforma**: YouTube - FreeCodeCamp
+**Duración**: ~7 horas
+**Idioma**: Inglés
+**Nivel**: Principiante-Intermedio
 
 **Secciones Relevantes**:
 - Spread operator (hora 2:30)
@@ -190,9 +190,9 @@ Videos, tutoriales y cursos seleccionados para complementar el aprendizaje de la
 ---
 
 ### **11. Modern JavaScript desde Cero (Udemy Gratuito)**
-**Plataforma**: Udemy  
-**Idioma**: Español  
-**Nivel**: Principiante  
+**Plataforma**: Udemy
+**Idioma**: Español
+**Nivel**: Principiante
 
 **Nota**: Buscar cursos gratuitos de JavaScript ES6+ en Udemy
 
