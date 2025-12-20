@@ -25,9 +25,11 @@
     <text x="20" y="70" fill="#c9d1d9" font-family="'Inter','Segoe UI',sans-serif" font-size="16">Limita cuantificadores ambiguos y usa secuencias específicas.</text>
     <text x="20" y="100" fill="#8b949e" font-family="'Cascadia Code','Fira Code',monospace" font-size="14">// Malo: /^(a+)+$/</text>
     <text x="20" y="125" fill="#8b949e" font-family="'Cascadia Code','Fira Code',monospace" font-size="14">// Mejor: /^a{1,6}$/ o /^a+$/</text>
-    <rect x="520" y="25" width="230" height="120" fill="#0d1117" rx="8" stroke="#30363d"/>
-    <text x="540" y="60" fill="#F0DB4F" font-family="'Inter','Segoe UI',sans-serif" font-size="16" font-weight="700">Tip</text>
-    <text x="540" y="85" fill="#c9d1d9" font-family="'Inter','Segoe UI',sans-serif" font-size="14">Prefiere patrones específicos: `\d{2}` sobre `\d+`.</text>
-    <text x="540" y="110" fill="#c9d1d9" font-family="'Inter','Segoe UI',sans-serif" font-size="14">Divide problemas en pasos: normaliza, valida, luego extrae.</text>
+    <rect x="520" y="25" width="240" height="150" fill="#0d1117" rx="8" stroke="#30363d"/>
+    <text x="540" y="55" fill="#F0DB4F" font-family="'Inter','Segoe UI',sans-serif" font-size="16" font-weight="700">Tip</text>
+    <text x="540" y="80" fill="#c9d1d9" font-family="'Inter','Segoe UI',sans-serif" font-size="14">Prefiere patrones específicos:</text>
+    <text x="540" y="100" fill="#c9d1d9" font-family="'Inter','Segoe UI',sans-serif" font-size="14">`\d{2}` en vez de `\d+`.</text>
+    <text x="540" y="125" fill="#c9d1d9" font-family="'Inter','Segoe UI',sans-serif" font-size="14">Divide en pasos: normaliza,</text>
+    <text x="540" y="145" fill="#c9d1d9" font-family="'Inter','Segoe UI',sans-serif" font-size="14">valida, luego extrae.</text>
   </g>
 </svg>
