@@ -110,30 +110,30 @@
   </g>
 
   <!-- Multi-criterio example -->
-  <rect x="50" y="330" width="800" height="180" fill="#2d3748" stroke="#f0db4f" stroke-width="2" rx="5"/>
+  <rect x="30" y="330" width="840" height="180" fill="#2d3748" stroke="#f0db4f" stroke-width="2" rx="5"/>
 
   <text x="450" y="355" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f0db4f" text-anchor="middle">
     Ordenamiento Multi-Criterio (Objetos)
   </text>
 
   <!-- Code block -->
-  <rect x="70" y="375" width="760" height="95" fill="#1a202c" stroke="#4299e1" stroke-width="1" rx="3"/>
-  <text x="85" y="395" font-family="Courier, monospace" font-size="10" fill="#4299e1">
+  <rect x="50" y="375" width="800" height="95" fill="#1a202c" stroke="#4299e1" stroke-width="1" rx="3"/>
+  <text x="60" y="395" font-family="Courier, monospace" font-size="8" fill="#4299e1">
     users.sort((a, b) => {
   </text>
-  <text x="85" y="412" font-family="Courier, monospace" font-size="10" fill="#4299e1">
+  <text x="60" y="410" font-family="Courier, monospace" font-size="8" fill="#4299e1">
       // Primero por edad (ascendente)
   </text>
-  <text x="85" y="429" font-family="Courier, monospace" font-size="10" fill="#4299e1">
+  <text x="60" y="425" font-family="Courier, monospace" font-size="8" fill="#4299e1">
       if (a.age !== b.age) return a.age - b.age;
   </text>
-  <text x="85" y="446" font-family="Courier, monospace" font-size="10" fill="#4299e1">
+  <text x="60" y="440" font-family="Courier, monospace" font-size="8" fill="#4299e1">
       // Si edad igual, por nombre (alfabético)
   </text>
-  <text x="85" y="463" font-family="Courier, monospace" font-size="10" fill="#4299e1">
+  <text x="60" y="455" font-family="Courier, monospace" font-size="8" fill="#4299e1">
       return a.name.localeCompare(b.name);
   </text>
-  <text x="85" y="480" font-family="Courier, monospace" font-size="10" fill="#4299e1">
+  <text x="60" y="470" font-family="Courier, monospace" font-size="8" fill="#4299e1">
     });
   </text>
 

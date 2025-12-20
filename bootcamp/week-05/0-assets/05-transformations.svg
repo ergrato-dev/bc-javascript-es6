@@ -24,13 +24,13 @@
       users.reduce((groups, user) => {
     </text>
     <text x="75" y="156" font-family="Courier, monospace" font-size="9" fill="#4299e1">
-      &nbsp;&nbsp;const cat = user.role;
+        const cat = user.role;
     </text>
     <text x="75" y="169" font-family="Courier, monospace" font-size="9" fill="#4299e1">
-      &nbsp;&nbsp;groups[cat] = [...(groups[cat] || []), user];
+        groups[cat] = [...(groups[cat] || []), user];
     </text>
     <text x="75" y="182" font-family="Courier, monospace" font-size="9" fill="#4299e1">
-      &nbsp;&nbsp;return groups;
+        return groups;
     </text>
 
     <text x="70" y="205" font-family="system-ui, sans-serif" font-size="9" fill="#e2e8f0" font-style="italic">
@@ -55,13 +55,13 @@
       data.reduce((stats, item) => ({
     </text>
     <text x="495" y="156" font-family="Courier, monospace" font-size="9" fill="#4299e1">
-      &nbsp;&nbsp;total: stats.total + item.price,
+        total: stats.total + item.price,
     </text>
     <text x="495" y="169" font-family="Courier, monospace" font-size="9" fill="#4299e1">
-      &nbsp;&nbsp;count: stats.count + 1,
+        count: stats.count + 1,
     </text>
     <text x="495" y="182" font-family="Courier, monospace" font-size="9" fill="#4299e1">
-      &nbsp;&nbsp;avg: stats.total / (stats.count + 1)
+        avg: stats.total / (stats.count + 1)
     </text>
 
     <text x="490" y="205" font-family="system-ui, sans-serif" font-size="9" fill="#e2e8f0" font-style="italic">
@@ -86,13 +86,13 @@
       const normalized = {
     </text>
     <text x="75" y="346" font-family="Courier, monospace" font-size="9" fill="#4299e1">
-      &nbsp;&nbsp;users: data.users.reduce(...),
+        users: data.users.reduce(...),
     </text>
     <text x="75" y="359" font-family="Courier, monospace" font-size="9" fill="#4299e1">
-      &nbsp;&nbsp;posts: data.posts.reduce(...),
+        posts: data.posts.reduce(...),
     </text>
     <text x="75" y="372" font-family="Courier, monospace" font-size="9" fill="#4299e1">
-      &nbsp;&nbsp;comments: data.comments.reduce(...)
+        comments: data.comments.reduce(...)
     </text>
 
     <text x="70" y="395" font-family="system-ui, sans-serif" font-size="9" fill="#e2e8f0" font-style="italic">
@@ -123,7 +123,7 @@
       const pivot = data.reduce((acc, row) => {
     </text>
     <text x="495" y="372" font-family="Courier, monospace" font-size="9" fill="#4299e1">
-      &nbsp;&nbsp;acc[row.month] = row.sales;
+        acc[row.month] = row.sales;
     </text>
 
     <text x="490" y="395" font-family="system-ui, sans-serif" font-size="9" fill="#e2e8f0" font-style="italic">
@@ -143,12 +143,12 @@
     const result = data
   </text>
   <text x="85" y="525" font-family="Courier, monospace" font-size="10" fill="#4299e1">
-    &nbsp;&nbsp;.filter(item => item.active)
+      .filter(item => item.active)
   </text>
   <text x="85" y="540" font-family="Courier, monospace" font-size="10" fill="#4299e1">
-    &nbsp;&nbsp;.map(item => ({...item, total: item.qty * item.price}))
+      .map(item => ({...item, total: item.qty * item.price}))
   </text>
   <text x="85" y="555" font-family="Courier, monospace" font-size="10" fill="#4299e1">
-    &nbsp;&nbsp;.reduce((stats, item) => ({...stats, sum: stats.sum + item.total}), {sum: 0});
+      .reduce((stats, item) => ({...stats, sum: stats.sum + item.total}), {sum: 0});
   </text>
 </svg>
