@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+  <defs>
+    <style>
+      .bg { fill: #1e1e1e; }
+      .title { fill: #f0db4f; font-family: system-ui, sans-serif; font-size: 22px; font-weight: 600; }
+      .subtitle { fill: #4ec9b0; font-family: system-ui, sans-serif; font-size: 16px; font-weight: 500; }
+      .label { fill: #e0e0e0; font-family: system-ui, sans-serif; font-size: 12px; }
+      .code { fill: #9cdcfe; font-family: monospace; font-size: 11px; }
+      .comment { fill: #6a9955; font-family: monospace; font-size: 11px; }
+      .source-box { fill: #2d2d2d; stroke: #c586c0; stroke-width: 2; }
+      .array-box { fill: #2d2d2d; stroke: #4ec9b0; stroke-width: 2; }
+      .arrow { stroke: #f0db4f; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .item { fill: #ce9178; font-family: monospace; font-size: 12px; }
+      .method { fill: #dcdcaa; font-family: monospace; font-size: 11px; font-weight: 600; }
+      .divider { stroke: #404040; stroke-width: 1; stroke-dasharray: 5,5; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f0db4f"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="900" height="520"/>
+
+  <text class="title" x="240" y="35" text-anchor="middle">Array.from()</text>
+  <text class="label" x="240" y="52" text-anchor="middle">Crear Arrays desde Iterables</text>
+
+  <text class="subtitle" x="30" y="85">1. Desde String</text>
+  <rect class="source-box" x="30" y="95" width="90" height="36" rx="8"/>
+  <text class="item" x="50" y="118">'Hello'</text>
+  <text class="method" x="135" y="105">Array.from()</text>
+  <path class="arrow" d="M130 113 L230 113"/>
+  <rect class="array-box" x="240" y="95" width="190" height="36" rx="8"/>
+  <text class="item" x="260" y="118">['H','e','l','l','o']</text>
+
+  <line class="divider" x1="30" y1="150" x2="450" y2="150"/>
+  <text class="subtitle" x="30" y="180">2. Desde NodeList (DOM)</text>
+  <rect class="source-box" x="30" y="190" width="175" height="36" rx="8"/>
+  <text class="code" x="40" y="213">document.querySelectorAll()</text>
+  <text class="method" x="220" y="200">Array.from()</text>
+  <path class="arrow" d="M215 208 L310 208"/>
+  <rect class="array-box" x="320" y="190" width="120" height="36" rx="8"/>
+  <text class="item" x="335" y="213">[div, div, ...]</text>
+
+  <line class="divider" x1="30" y1="245" x2="450" y2="245"/>
+  <text class="subtitle" x="30" y="275">3. Desde Set (sin duplicados)</text>
+  <rect class="source-box" x="30" y="285" width="165" height="36" rx="8"/>
+  <text class="code" x="40" y="308">new Set([1,2,2,3,3])</text>
+  <text class="method" x="210" y="295">Array.from()</text>
+  <path class="arrow" d="M205 303 L310 303"/>
+  <rect class="array-box" x="320" y="285" width="90" height="36" rx="8"/>
+  <text class="item" x="340" y="308">[1,2,3]</text>
+
+  <line class="divider" x1="30" y1="340" x2="450" y2="340"/>
+  <text class="subtitle" x="30" y="370">4. Con funcion de mapeo</text>
+  <rect class="source-box" x="30" y="380" width="85" height="36" rx="8"/>
+  <text class="code" x="40" y="403">{length: 5}</text>
+  <text class="method" x="130" y="390">Array.from(obj, (_, i) =&gt; i+1)</text>
+  <path class="arrow" d="M125 398 L320 398"/>
+  <rect class="array-box" x="330" y="380" width="115" height="36" rx="8"/>
+  <text class="item" x="350" y="403">[1,2,3,4,5]</text>
+
+  <text class="comment" x="30" y="450">// Array.from() convierte cualquier iterable en un array real</text>
+  <text class="comment" x="30" y="468">// Soporta: strings, Sets, Maps, NodeLists, arguments, etc.</text>
+
+  <line class="divider" x1="480" y1="55" x2="480" y2="500"/>
+
+  <text class="title" x="690" y="35" text-anchor="middle">Array.of()</text>
+  <text class="label" x="690" y="52" text-anchor="middle">Crea array con elementos dados</text>
+
+  <text class="subtitle" x="500" y="90">Problema con new Array():</text>
+  <rect class="source-box" x="500" y="100" width="115" height="32" rx="8"/>
+  <text class="code" x="515" y="121">new Array(5)</text>
+  <text class="item" x="625" y="121">=</text>
+  <rect class="array-box" x="650" y="100" width="110" height="32" rx="8"/>
+  <text class="code" x="665" y="121">[empty x 5]</text>
+  <text class="comment" x="500" y="155">// Crea 5 huecos vacios, no [5]</text>
+
+  <text class="subtitle" x="500" y="195">Solucion con Array.of():</text>
+  <rect class="source-box" x="500" y="205" width="105" height="32" rx="8"/>
+  <text class="code" x="515" y="226">Array.of(5)</text>
+  <text class="item" x="615" y="226">=</text>
+  <rect class="array-box" x="650" y="205" width="55" height="32" rx="8"/>
+  <text class="item" x="665" y="226">[5]</text>
+  <text class="comment" x="500" y="260">// Crea array con el elemento 5</text>
+
+  <line class="divider" x1="500" y1="285" x2="870" y2="285"/>
+  <text class="subtitle" x="500" y="315">Multiples elementos:</text>
+  <rect class="source-box" x="500" y="325" width="150" height="32" rx="8"/>
+  <text class="code" x="515" y="346">Array.of(1, 2, 3)</text>
+  <text class="item" x="660" y="346">=</text>
+  <rect class="array-box" x="690" y="325" width="90" height="32" rx="8"/>
+  <text class="item" x="705" y="346">[1, 2, 3]</text>
+
+  <rect class="source-box" x="500" y="375" width="195" height="32" rx="8"/>
+  <text class="code" x="510" y="396">Array.of('a', 1, true)</text>
+  <text class="item" x="705" y="396">=</text>
+  <rect class="array-box" x="730" y="375" width="130" height="32" rx="8"/>
+  <text class="item" x="745" y="396">['a', 1, true]</text>
+
+  <text class="comment" x="500" y="450">// Array.of() siempre crea array con los</text>
+  <text class="comment" x="500" y="468">// elementos dados, sin comportamiento especial</text>
+</svg>

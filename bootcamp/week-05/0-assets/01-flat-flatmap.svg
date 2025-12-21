@@ -29,14 +29,14 @@
   <rect class="array-box" x="40" y="95" width="300" height="120"/>
 
   <!-- Nested boxes -->
-  <rect class="nested-box" x="55" y="115" width="80" height="35"/>
-  <text class="item" x="75" y="138">'a', 'b'</text>
+  <rect class="nested-box" x="55" y="115" width="85" height="35"/>
+  <text class="item" x="62" y="138">'a', 'b'</text>
 
-  <rect class="nested-box" x="150" y="115" width="80" height="35"/>
-  <text class="item" x="170" y="138">'c', 'd'</text>
+  <rect class="nested-box" x="150" y="115" width="85" height="35"/>
+  <text class="item" x="157" y="138">'c', 'd'</text>
 
   <rect class="nested-box" x="245" y="115" width="80" height="35"/>
-  <text class="item" x="275" y="138">'e'</text>
+  <text class="item" x="263" y="138">'e'</text>
 
   <text class="code" x="55" y="185">[['a','b'], ['c','d'], ['e']]</text>
 
