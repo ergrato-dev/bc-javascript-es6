@@ -9,7 +9,7 @@
  * @param {Array} products
  * @returns {string} - JSON string
  */
-export const toJSON = (products) => {
+export const toJSON = products => {
   // TODO: Convert products to formatted JSON string
   return JSON.stringify(products, null, 2);
 };
@@ -20,7 +20,7 @@ export const toJSON = (products) => {
  * @param {Array} products
  * @returns {string} - CSV string
  */
-export const toCSV = (products) => {
+export const toCSV = products => {
   // TODO: Convert products to CSV format
   // - Header row: name,category,price,quantity,total
   // - Data rows for each product
@@ -57,7 +57,7 @@ export const downloadFile = (content, filename, type = 'application/json') => {
  * Export and download as JSON
  * @param {Array} products
  */
-export const exportJSON = (products) => {
+export const exportJSON = products => {
   const content = toJSON(products);
   const filename = `inventory_${Date.now()}.json`;
   downloadFile(content, filename, 'application/json');
@@ -67,7 +67,7 @@ export const exportJSON = (products) => {
  * Export and download as CSV
  * @param {Array} products
  */
-export const exportCSV = (products) => {
+export const exportCSV = products => {
   const content = toCSV(products);
   const filename = `inventory_${Date.now()}.csv`;
   downloadFile(content, filename, 'text/csv');
@@ -79,7 +79,7 @@ export default {
   toCSV,
   exportJSON,
   exportCSV,
-  downloadFile
+  downloadFile,
 };
 
 // Log when module is loaded (for demonstrating lazy loading)

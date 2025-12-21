@@ -13,7 +13,7 @@
  * @param {Array} products - Array of products
  * @returns {Object} - Statistics object
  */
-export const generateStats = (products) => {
+export const generateStats = products => {
   // TODO: Calculate and return statistics object
   // - totalProducts: number of products
   // - totalValue: sum of all (price * quantity)
@@ -32,7 +32,7 @@ export const generateStats = (products) => {
     outOfStockProducts: 0,
     categoryCounts: {},
     avgPrice: 0,
-    avgQuantity: 0
+    avgQuantity: 0,
   };
 };
 
@@ -41,7 +41,7 @@ export const generateStats = (products) => {
  * @param {Array} products
  * @returns {Array}
  */
-export const getLowStockProducts = (products) => {
+export const getLowStockProducts = products => {
   // TODO: Filter and return products with low stock
   // - Use STOCK_THRESHOLDS.low
 };
@@ -52,7 +52,7 @@ export const getLowStockProducts = (products) => {
  * @param {Array} products
  * @returns {Object} - { categoryId: [products] }
  */
-export const groupByCategory = (products) => {
+export const groupByCategory = products => {
   // TODO: Group products by category using reduce
 };
 
@@ -72,7 +72,7 @@ export const getTopByValue = (products, limit = 5) => {
  * @param {Array} products
  * @returns {Array} - [{ category, count, totalValue, percentage }]
  */
-export const getCategoryBreakdown = (products) => {
+export const getCategoryBreakdown = products => {
   // TODO: Calculate stats per category
 };
 
@@ -82,7 +82,7 @@ export default {
   getLowStockProducts,
   groupByCategory,
   getTopByValue,
-  getCategoryBreakdown
+  getCategoryBreakdown,
 };
 
 // Log when module is loaded (for demonstrating lazy loading)

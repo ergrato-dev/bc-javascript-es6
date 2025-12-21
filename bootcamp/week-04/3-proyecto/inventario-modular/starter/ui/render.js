@@ -37,7 +37,7 @@ export const createProductRow = ({ id, name, category, price, quantity }) => {
  * Render category options in select elements
  * @param {Array<HTMLSelectElement>} selects - Select elements to populate
  */
-export const renderCategoryOptions = (selects) => {
+export const renderCategoryOptions = selects => {
   // TODO: Populate select elements with category options
   // - Use CATEGORIES from config
   // - Create option elements
@@ -47,7 +47,7 @@ export const renderCategoryOptions = (selects) => {
  * Update product count badge
  * @param {number} count
  */
-export const updateProductCount = (count) => {
+export const updateProductCount = count => {
   // TODO: Update the product count badge
   const badge = document.getElementById('product-count');
   if (badge) {

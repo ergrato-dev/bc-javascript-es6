@@ -13,7 +13,7 @@ export const formatPrice = (price, currency = 'USD') => {
   // TODO: Use Intl.NumberFormat for currency formatting
   return new Intl.NumberFormat('es-ES', {
     style: 'currency',
-    currency
+    currency,
   }).format(price);
 };
 
@@ -22,11 +22,11 @@ export const formatPrice = (price, currency = 'USD') => {
  * @param {Date|string} date
  * @returns {string}
  */
-export const formatDate = (date) => {
+export const formatDate = date => {
   // TODO: Use Intl.DateTimeFormat
   return new Intl.DateTimeFormat('es-ES', {
     dateStyle: 'short',
-    timeStyle: 'short'
+    timeStyle: 'short',
   }).format(new Date(date));
 };
 
@@ -37,7 +37,10 @@ export const formatDate = (date) => {
  * @param {Object} options - { lowThreshold, criticalThreshold }
  * @returns {Object} - { text, className }
  */
-export const formatStock = (quantity, { lowThreshold = 10, criticalThreshold = 5 } = {}) => {
+export const formatStock = (
+  quantity,
+  { lowThreshold = 10, criticalThreshold = 5 } = {}
+) => {
   // TODO: Return object with formatted text and CSS class
   // - 'stock-out' if quantity === 0
   // - 'stock-low' if quantity <= lowThreshold

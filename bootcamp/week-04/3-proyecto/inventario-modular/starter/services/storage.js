@@ -34,7 +34,7 @@ export const load = (key, defaultValue = null) => {
  * Remove data from localStorage
  * @param {string} key - Storage key
  */
-export const remove = (key) => {
+export const remove = key => {
   // TODO: Implement remove from localStorage
 };
 
@@ -50,5 +50,5 @@ export default {
   save,
   load,
   remove,
-  clear
+  clear,
 };

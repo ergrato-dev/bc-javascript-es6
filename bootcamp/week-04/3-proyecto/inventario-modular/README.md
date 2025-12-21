@@ -22,7 +22,7 @@ Sistema completo para gestionar productos con:
 inventario-modular/
 ├── index.html
 ├── styles.css
-├── starter/
+├── starter/                    # 👈 Plantilla para estudiantes
 │   ├── main.js                 # Punto de entrada
 │   ├── config.js               # Configuración
 │   ├── models/
@@ -44,7 +44,10 @@ inventario-modular/
 │       ├── index.js
 │       ├── formatters.js       # Formateo de datos
 │       └── validators.js       # Validaciones
+└── solution/                   # 👈 Solución completa (misma estructura)
 ```
+
+> 💡 **Nota**: Para ver la solución funcionando, cambia en `index.html` la línea del script de `./starter/main.js` a `./solution/main.js`
 
 ---
 

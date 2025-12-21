@@ -1,157 +1,242 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inventario Modular | Week 04</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="app">
-    <!-- Header -->
-    <header class="header">
-      <h1>📦 Inventario Modular</h1>
-      <p>Sistema de gestión con ES6 Modules</p>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Inventario Modular | Week 04</title>
+    <link
+      rel="stylesheet"
+      href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <h1>📦 Inventario Modular</h1>
+        <p>Sistema de gestión con ES6 Modules</p>
+      </header>
 
-    <!-- Main Content -->
-    <main class="main">
-      <!-- Add Product Form -->
-      <section class="card">
-        <h2>➕ Agregar Producto</h2>
-        <form id="product-form">
-          <div class="form-row">
+      <!-- Main Content -->
+      <main class="main">
+        <!-- Add Product Form -->
+        <section class="card">
+          <h2>➕ Agregar Producto</h2>
+          <form id="product-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Nombre</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Nombre del producto" />
+              </div>
+              <div class="form-group">
+                <label for="category">Categoría</label>
+                <select
+                  id="category"
+                  name="category"
+                  required>
+                  <option value="">Seleccionar...</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="price">Precio ($)</label>
+                <input
+                  type="number"
+                  id="price"
+                  name="price"
+                  min="0"
+                  step="0.01"
+                  required
+                  placeholder="0.00" />
+              </div>
+              <div class="form-group">
+                <label for="quantity">Cantidad</label>
+                <input
+                  type="number"
+                  id="quantity"
+                  name="quantity"
+                  min="0"
+                  required
+                  placeholder="0" />
+              </div>
+            </div>
+            <div class="form-actions">
+              <button
+                type="submit"
+                class="btn btn-primary">
+                Agregar Producto
+              </button>
+              <button
+                type="reset"
+                class="btn btn-secondary">
+                Limpiar
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Filters -->
+        <section class="card">
+          <h2>🔍 Filtros</h2>
+          <div class="filters">
             <div class="form-group">
-              <label for="name">Nombre</label>
-              <input type="text" id="name" name="name" required placeholder="Nombre del producto">
+              <input
+                type="text"
+                id="search"
+                placeholder="Buscar producto..." />
             </div>
             <div class="form-group">
-              <label for="category">Categoría</label>
-              <select id="category" name="category" required>
-                <option value="">Seleccionar...</option>
+              <select id="filter-category">
+                <option value="">Todas las categorías</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <select id="filter-stock">
+                <option value="">Todo el stock</option>
+                <option value="low">Stock bajo (&lt; 10)</option>
+                <option value="out">Sin stock</option>
+                <option value="available">Disponible</option>
               </select>
             </div>
           </div>
+        </section>
+
+        <!-- Products Table -->
+        <section class="card">
+          <div class="card-header">
+            <h2>📋 Productos</h2>
+            <span
+              id="product-count"
+              class="badge"
+              >0 productos</span
+            >
+          </div>
+          <div class="table-container">
+            <table id="products-table">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Categoría</th>
+                  <th>Precio</th>
+                  <th>Cantidad</th>
+                  <th>Total</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="products-body">
+                <tr>
+                  <td
+                    colspan="6"
+                    class="empty-state">
+                    No hay productos. ¡Agrega uno!
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Reports Section (Lazy Loaded) -->
+        <section class="card">
+          <div class="card-header">
+            <h2>📊 Reportes</h2>
+            <button
+              id="load-reports"
+              class="btn btn-secondary">
+              Cargar Reportes
+            </button>
+          </div>
+          <div
+            id="reports-container"
+            class="reports-grid">
+            <p class="placeholder">
+              Haz clic en "Cargar Reportes" para ver estadísticas
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>Week 04 - Destructuring & Módulos ES6 | Bootcamp JavaScript</p>
+      </footer>
+    </div>
+
+    <!-- Edit Modal -->
+    <div
+      id="edit-modal"
+      class="modal hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>✏️ Editar Producto</h3>
+          <button
+            class="modal-close"
+            id="modal-close">
+            &times;
+          </button>
+        </div>
+        <form id="edit-form">
+          <input
+            type="hidden"
+            id="edit-id" />
+          <div class="form-group">
+            <label for="edit-name">Nombre</label>
+            <input
+              type="text"
+              id="edit-name"
+              required />
+          </div>
+          <div class="form-group">
+            <label for="edit-category">Categoría</label>
+            <select
+              id="edit-category"
+              required></select>
+          </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="price">Precio ($)</label>
-              <input type="number" id="price" name="price" min="0" step="0.01" required placeholder="0.00">
+              <label for="edit-price">Precio ($)</label>
+              <input
+                type="number"
+                id="edit-price"
+                min="0"
+                step="0.01"
+                required />
             </div>
             <div class="form-group">
-              <label for="quantity">Cantidad</label>
-              <input type="number" id="quantity" name="quantity" min="0" required placeholder="0">
+              <label for="edit-quantity">Cantidad</label>
+              <input
+                type="number"
+                id="edit-quantity"
+                min="0"
+                required />
             </div>
           </div>
           <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Agregar Producto</button>
-            <button type="reset" class="btn btn-secondary">Limpiar</button>
+            <button
+              type="submit"
+              class="btn btn-primary">
+              Guardar
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="cancel-edit">
+              Cancelar
+            </button>
           </div>
         </form>
-      </section>
-
-      <!-- Filters -->
-      <section class="card">
-        <h2>🔍 Filtros</h2>
-        <div class="filters">
-          <div class="form-group">
-            <input type="text" id="search" placeholder="Buscar producto...">
-          </div>
-          <div class="form-group">
-            <select id="filter-category">
-              <option value="">Todas las categorías</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <select id="filter-stock">
-              <option value="">Todo el stock</option>
-              <option value="low">Stock bajo (&lt; 10)</option>
-              <option value="out">Sin stock</option>
-              <option value="available">Disponible</option>
-            </select>
-          </div>
-        </div>
-      </section>
-
-      <!-- Products Table -->
-      <section class="card">
-        <div class="card-header">
-          <h2>📋 Productos</h2>
-          <span id="product-count" class="badge">0 productos</span>
-        </div>
-        <div class="table-container">
-          <table id="products-table">
-            <thead>
-              <tr>
-                <th>Nombre</th>
-                <th>Categoría</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th>Total</th>
-                <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody id="products-body">
-              <tr>
-                <td colspan="6" class="empty-state">No hay productos. ¡Agrega uno!</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <!-- Reports Section (Lazy Loaded) -->
-      <section class="card">
-        <div class="card-header">
-          <h2>📊 Reportes</h2>
-          <button id="load-reports" class="btn btn-secondary">Cargar Reportes</button>
-        </div>
-        <div id="reports-container" class="reports-grid">
-          <p class="placeholder">Haz clic en "Cargar Reportes" para ver estadísticas</p>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <p>Week 04 - Destructuring & Módulos ES6 | Bootcamp JavaScript</p>
-    </footer>
-  </div>
-
-  <!-- Edit Modal -->
-  <div id="edit-modal" class="modal hidden">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3>✏️ Editar Producto</h3>
-        <button class="modal-close" id="modal-close">&times;</button>
       </div>
-      <form id="edit-form">
-        <input type="hidden" id="edit-id">
-        <div class="form-group">
-          <label for="edit-name">Nombre</label>
-          <input type="text" id="edit-name" required>
-        </div>
-        <div class="form-group">
-          <label for="edit-category">Categoría</label>
-          <select id="edit-category" required></select>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="edit-price">Precio ($)</label>
-            <input type="number" id="edit-price" min="0" step="0.01" required>
-          </div>
-          <div class="form-group">
-            <label for="edit-quantity">Cantidad</label>
-            <input type="number" id="edit-quantity" min="0" required>
-          </div>
-        </div>
-        <div class="form-actions">
-          <button type="submit" class="btn btn-primary">Guardar</button>
-          <button type="button" class="btn btn-secondary" id="cancel-edit">Cancelar</button>
-        </div>
-      </form>
     </div>
-  </div>
 
-  <script type="module" src="./starter/main.js"></script>
-</body>
+    <script
+      type="module"
+      src="./starter/main.js"></script>
+  </body>
 </html>

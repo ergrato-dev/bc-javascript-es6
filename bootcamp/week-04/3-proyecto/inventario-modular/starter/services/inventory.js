@@ -35,7 +35,7 @@ export const getAll = () => {
  * @param {number} id
  * @returns {Product|undefined}
  */
-export const getById = (id) => {
+export const getById = id => {
   // TODO: Find and return product by id
 };
 
@@ -45,7 +45,7 @@ export const getById = (id) => {
  * @param {Object} productData - Product data
  * @returns {Product} - Created product
  */
-export const add = (productData) => {
+export const add = productData => {
   // TODO: Create new Product, add to array, save to storage
 };
 
@@ -65,7 +65,7 @@ export const update = (id, updates) => {
  * @param {number} id - Product ID
  * @returns {boolean} - Success status
  */
-export const remove = (id) => {
+export const remove = id => {
   // TODO: Remove product from array, save to storage
 };
 
@@ -75,7 +75,11 @@ export const remove = (id) => {
  * @param {Object} filters - Filter criteria
  * @returns {Array<Product>}
  */
-export const filter = ({ search = '', category = '', stockFilter = '' } = {}) => {
+export const filter = ({
+  search = '',
+  category = '',
+  stockFilter = '',
+} = {}) => {
   // TODO: Implement filtering logic
   // - Filter by search term (name includes)
   // - Filter by category
@@ -87,7 +91,7 @@ export const filter = ({ search = '', category = '', stockFilter = '' } = {}) =>
  * @param {string} categoryId
  * @returns {Array<Product>}
  */
-export const getByCategory = (categoryId) => {
+export const getByCategory = categoryId => {
   // TODO: Filter products by category
 };
 
@@ -107,5 +111,5 @@ export default {
   update,
   remove,
   filter,
-  getByCategory
+  getByCategory,
 };

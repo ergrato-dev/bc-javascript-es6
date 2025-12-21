@@ -26,7 +26,7 @@ export const validateProduct = ({ name, category, price, quantity } = {}) => {
 
   return {
     isValid: errors.length === 0,
-    errors
+    errors,
   };
 };
 
@@ -35,7 +35,7 @@ export const validateProduct = ({ name, category, price, quantity } = {}) => {
  * @param {*} value
  * @returns {boolean}
  */
-export const isValidPrice = (value) => {
+export const isValidPrice = value => {
   // TODO: Check if value is a valid price (number >= 0)
 };
 
@@ -44,7 +44,7 @@ export const isValidPrice = (value) => {
  * @param {*} value
  * @returns {boolean}
  */
-export const isValidQuantity = (value) => {
+export const isValidQuantity = value => {
   // TODO: Check if value is a valid quantity (integer >= 0)
 };
 
@@ -53,10 +53,11 @@ export const isValidQuantity = (value) => {
  * @param {string} input
  * @returns {string}
  */
-export const sanitize = (input) => {
+export const sanitize = input => {
   // TODO: Trim and escape HTML characters
   if (typeof input !== 'string') return '';
-  return input.trim()
+  return input
+    .trim()
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');

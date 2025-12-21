@@ -26,7 +26,8 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
   background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
@@ -117,7 +118,8 @@ body {
   font-weight: 500;
 }
 
-input, select {
+input,
+select {
   background: var(--bg-tertiary);
   border: 1px solid transparent;
   border-radius: 4px;
@@ -127,7 +129,8 @@ input, select {
   transition: border-color 0.2s;
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
   outline: none;
   border-color: var(--accent-yellow);
 }
@@ -208,7 +211,8 @@ table {
   border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
   padding: 0.75rem;
   text-align: left;
   border-bottom: 1px solid var(--bg-tertiary);
@@ -281,10 +285,18 @@ tr:hover {
   color: var(--accent-yellow);
 }
 
-.report-card.success .value { color: var(--accent-green); }
-.report-card.warning .value { color: var(--accent-orange); }
-.report-card.danger .value { color: var(--accent-red); }
-.report-card.info .value { color: var(--accent-blue); }
+.report-card.success .value {
+  color: var(--accent-green);
+}
+.report-card.warning .value {
+  color: var(--accent-orange);
+}
+.report-card.danger .value {
+  color: var(--accent-red);
+}
+.report-card.info .value {
+  color: var(--accent-blue);
+}
 
 .placeholder {
   grid-column: 1 / -1;
@@ -345,8 +357,14 @@ tr:hover {
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .fade-in {
@@ -373,5 +391,7 @@ tr:hover {
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }

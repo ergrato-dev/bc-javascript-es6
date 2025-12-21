@@ -25,7 +25,7 @@ export const initEvents = () => {
  * TODO: Use destructuring to extract form data
  * @param {Event} event
  */
-export const handleFormSubmit = (event) => {
+export const handleFormSubmit = event => {
   event.preventDefault();
 
   // TODO: Get form data using FormData
@@ -53,7 +53,7 @@ export const handleFilterChange = () => {
  * Handle edit button click
  * @param {number} productId
  */
-export const handleEdit = (productId) => {
+export const handleEdit = productId => {
   // TODO: Open modal with product data
   // - Get product by ID
   // - Populate form fields
@@ -64,7 +64,7 @@ export const handleEdit = (productId) => {
  * Handle delete button click
  * @param {number} productId
  */
-export const handleDelete = (productId) => {
+export const handleDelete = productId => {
   // TODO: Confirm and delete product
   // - Show confirmation
   // - Delete product
@@ -75,7 +75,7 @@ export const handleDelete = (productId) => {
  * Handle edit form submission
  * @param {Event} event
  */
-export const handleEditSubmit = (event) => {
+export const handleEditSubmit = event => {
   event.preventDefault();
 
   // TODO: Update product
@@ -102,7 +102,7 @@ export const handleLoadReports = async () => {
  * Open edit modal
  * @param {Object} product
  */
-export const openModal = (product) => {
+export const openModal = product => {
   // TODO: Show modal and populate with product data
 };
 
@@ -117,7 +117,7 @@ export const closeModal = () => {
  * Delegate table actions using event delegation
  * @param {Event} event
  */
-export const handleTableAction = (event) => {
+export const handleTableAction = event => {
   // TODO: Use event delegation for edit/delete buttons
   // - Check event.target
   // - Extract action and product id from data attributes
