@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <!-- Background -->
+  <rect width="800" height="520" fill="#1a202c"/>
+
+  <!-- Title -->
+  <text x="400" y="40" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#f0db4f" text-anchor="middle">
+    Destructuring de Objetos
+  </text>
+
+  <!-- Subtitle -->
+  <text x="400" y="65" font-family="system-ui, sans-serif" font-size="14" fill="#a0aec0" text-anchor="middle">
+    Extracción de propiedades con alias, defaults y anidamiento
+  </text>
+
+  <!-- Section 1: Basic -->
+  <rect x="30" y="90" width="235" height="130" fill="#2d3748" rx="8"/>
+  <text x="147" y="115" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f0db4f" text-anchor="middle">Básico</text>
+
+  <rect x="45" y="125" width="205" height="80" fill="#374151" rx="4"/>
+  <text x="55" y="145" font-family="Courier, monospace" font-size="10" fill="#a0aec0">const user = {name:'Ana'};</text>
+  <text x="55" y="165" font-family="Courier, monospace" font-size="11" fill="#a0aec0">// Mismo nombre</text>
+  <text x="55" y="185" font-family="Courier, monospace" font-size="11" fill="#4299e1">const</text>
+  <text x="95" y="185" font-family="Courier, monospace" font-size="11" fill="#f0db4f">{name}</text>
+  <text x="145" y="185" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">= user;</text>
+
+  <!-- Section 2: Alias -->
+  <rect x="280" y="90" width="235" height="130" fill="#2d3748" rx="8"/>
+  <text x="397" y="115" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f0db4f" text-anchor="middle">Alias (Renombrar)</text>
+
+  <rect x="295" y="125" width="205" height="80" fill="#374151" rx="4"/>
+  <text x="305" y="145" font-family="Courier, monospace" font-size="10" fill="#a0aec0">const user = {name:'Ana'};</text>
+  <text x="305" y="165" font-family="Courier, monospace" font-size="11" fill="#a0aec0">// Renombrar con :</text>
+  <text x="305" y="185" font-family="Courier, monospace" font-size="11" fill="#4299e1">const</text>
+  <text x="345" y="185" font-family="Courier, monospace" font-size="11" fill="#f0db4f">{name</text>
+  <text x="385" y="185" font-family="Courier, monospace" font-size="11" fill="#ed8936">: userName</text>
+  <text x="463" y="185" font-family="Courier, monospace" font-size="11" fill="#f0db4f">}</text>
+
+  <!-- Section 3: Default values -->
+  <rect x="530" y="90" width="240" height="130" fill="#2d3748" rx="8"/>
+  <text x="650" y="115" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f0db4f" text-anchor="middle">Valores por Defecto</text>
+
+  <rect x="545" y="125" width="210" height="80" fill="#374151" rx="4"/>
+  <text x="555" y="145" font-family="Courier, monospace" font-size="10" fill="#a0aec0">const user = {name:'Ana'};</text>
+  <text x="555" y="165" font-family="Courier, monospace" font-size="11" fill="#a0aec0">// Default con =</text>
+  <text x="555" y="185" font-family="Courier, monospace" font-size="11" fill="#4299e1">const</text>
+  <text x="595" y="185" font-family="Courier, monospace" font-size="11" fill="#f0db4f">{age</text>
+  <text x="625" y="185" font-family="Courier, monospace" font-size="11" fill="#ed8936">= 18</text>
+  <text x="660" y="185" font-family="Courier, monospace" font-size="11" fill="#f0db4f">}</text>
+  <text x="670" y="185" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">= user;</text>
+
+  <!-- Section 4: Nested -->
+  <rect x="30" y="235" width="355" height="140" fill="#2d3748" rx="8"/>
+  <text x="207" y="260" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f0db4f" text-anchor="middle">Destructuring Anidado</text>
+
+  <rect x="45" y="270" width="325" height="90" fill="#374151" rx="4"/>
+  <text x="55" y="290" font-family="Courier, monospace" font-size="10" fill="#a0aec0">const user = { address: { city: 'Lima', country: 'PE' } };</text>
+  <text x="55" y="310" font-family="Courier, monospace" font-size="11" fill="#a0aec0">// Acceso anidado directo</text>
+  <text x="55" y="330" font-family="Courier, monospace" font-size="11" fill="#4299e1">const</text>
+  <text x="95" y="330" font-family="Courier, monospace" font-size="11" fill="#f0db4f">{ address: { city, country } }</text>
+  <text x="310" y="330" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">= user;</text>
+  <text x="55" y="350" font-family="Courier, monospace" font-size="11" fill="#48bb78">// city='Lima', country='PE'</text>
+
+  <!-- Section 5: Rest -->
+  <rect x="400" y="235" width="370" height="140" fill="#2d3748" rx="8"/>
+  <text x="585" y="260" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f0db4f" text-anchor="middle">Rest en Objetos (...)</text>
+
+  <rect x="415" y="270" width="340" height="90" fill="#374151" rx="4"/>
+  <text x="425" y="290" font-family="Courier, monospace" font-size="10" fill="#a0aec0">const user = { name:'Ana', age:25, email:'a@b.com' };</text>
+  <text x="425" y="310" font-family="Courier, monospace" font-size="11" fill="#a0aec0">// Extraer algunas, resto en objeto</text>
+  <text x="425" y="330" font-family="Courier, monospace" font-size="11" fill="#4299e1">const</text>
+  <text x="465" y="330" font-family="Courier, monospace" font-size="11" fill="#f0db4f">{ name, ...rest }</text>
+  <text x="580" y="330" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">= user;</text>
+  <text x="425" y="350" font-family="Courier, monospace" font-size="10" fill="#48bb78">// rest = { age:25, email:'a@b.com' }</text>
+
+  <!-- Section 6: Function params -->
+  <rect x="30" y="390" width="355" height="115" fill="#2d3748" rx="8"/>
+  <text x="207" y="415" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f0db4f" text-anchor="middle">En Parámetros de Función</text>
+
+  <rect x="45" y="425" width="325" height="65" fill="#374151" rx="4"/>
+  <text x="55" y="445" font-family="Courier, monospace" font-size="11" fill="#a0aec0">// Destructuring directo en params</text>
+  <text x="55" y="465" font-family="Courier, monospace" font-size="11" fill="#4299e1">const</text>
+  <text x="95" y="465" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">greet = (</text>
+  <text x="160" y="465" font-family="Courier, monospace" font-size="11" fill="#f0db4f">{ name, age = 0 }</text>
+  <text x="285" y="465" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">) =></text>
+  <text x="55" y="482" font-family="Courier, monospace" font-size="11" fill="#48bb78">  `${name} tiene ${age} años`;</text>
+
+  <!-- Section 7: Alias + Default -->
+  <rect x="400" y="390" width="370" height="115" fill="#2d3748" rx="8"/>
+  <text x="585" y="415" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f0db4f" text-anchor="middle">Alias + Default Combinados</text>
+
+  <rect x="415" y="425" width="340" height="65" fill="#374151" rx="4"/>
+  <text x="425" y="445" font-family="Courier, monospace" font-size="10" fill="#a0aec0">const config = { timeout: 5000 };</text>
+  <text x="425" y="465" font-family="Courier, monospace" font-size="11" fill="#4299e1">const</text>
+  <text x="465" y="465" font-family="Courier, monospace" font-size="11" fill="#f0db4f">{</text>
+  <text x="425" y="482" font-family="Courier, monospace" font-size="10" fill="#f0db4f">  timeout</text>
+  <text x="495" y="482" font-family="Courier, monospace" font-size="10" fill="#ed8936">: ms = 3000</text>
+  <text x="590" y="482" font-family="Courier, monospace" font-size="10" fill="#f0db4f">}</text>
+  <text x="600" y="482" font-family="Courier, monospace" font-size="10" fill="#e2e8f0">= config;</text>
+  <text x="670" y="482" font-family="Courier, monospace" font-size="10" fill="#48bb78">// ms=5000</text>
+</svg>

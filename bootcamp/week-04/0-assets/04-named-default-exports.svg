@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480">
+  <!-- Background -->
+  <rect width="800" height="480" fill="#1a202c"/>
+
+  <!-- Title -->
+  <text x="400" y="40" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#f0db4f" text-anchor="middle">
+    Named Exports vs Default Export
+  </text>
+
+  <!-- Subtitle -->
+  <text x="400" y="65" font-family="system-ui, sans-serif" font-size="14" fill="#a0aec0" text-anchor="middle">
+    Comparativa y cuándo usar cada uno
+  </text>
+
+  <!-- Named Exports Section -->
+  <rect x="30" y="90" width="360" height="250" fill="#2d3748" rx="10"/>
+  <rect x="30" y="90" width="360" height="40" fill="#4299e1" rx="10"/>
+  <rect x="30" y="120" width="360" height="10" fill="#4299e1"/>
+  <text x="210" y="118" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#1a202c" text-anchor="middle">Named Exports</text>
+
+  <!-- Named code example -->
+  <rect x="45" y="145" width="330" height="80" fill="#374151" rx="4"/>
+  <text x="55" y="165" font-family="Courier, monospace" font-size="11" fill="#a0aec0">// utils.js</text>
+  <text x="55" y="185" font-family="Courier, monospace" font-size="11" fill="#4299e1">export const</text>
+  <text x="135" y="185" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">PI = 3.14;</text>
+  <text x="55" y="205" font-family="Courier, monospace" font-size="11" fill="#4299e1">export const</text>
+  <text x="135" y="205" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">sum = (a,b) => a+b;</text>
+  <text x="55" y="225" font-family="Courier, monospace" font-size="11" fill="#4299e1">export const</text>
+  <text x="135" y="225" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">multiply = (a,b) => a*b;</text>
+
+  <!-- Named characteristics -->
+  <text x="55" y="250" font-family="system-ui, sans-serif" font-size="12" fill="#48bb78">✓ Múltiples por archivo</text>
+  <text x="55" y="270" font-family="system-ui, sans-serif" font-size="12" fill="#48bb78">✓ Nombre obligatorio</text>
+  <text x="55" y="290" font-family="system-ui, sans-serif" font-size="12" fill="#48bb78">✓ Tree-shaking friendly</text>
+  <text x="55" y="310" font-family="system-ui, sans-serif" font-size="12" fill="#48bb78">✓ import { name } required</text>
+  <text x="55" y="330" font-family="system-ui, sans-serif" font-size="12" fill="#a0aec0">📦 Ideal para utilidades</text>
+
+  <!-- Default Export Section -->
+  <rect x="410" y="90" width="360" height="250" fill="#2d3748" rx="10"/>
+  <rect x="410" y="90" width="360" height="40" fill="#ed8936" rx="10"/>
+  <rect x="410" y="120" width="360" height="10" fill="#ed8936"/>
+  <text x="590" y="118" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#1a202c" text-anchor="middle">Default Export</text>
+
+  <!-- Default code example -->
+  <rect x="425" y="145" width="330" height="80" fill="#374151" rx="4"/>
+  <text x="435" y="165" font-family="Courier, monospace" font-size="11" fill="#a0aec0">// Calculator.js</text>
+  <text x="435" y="185" font-family="Courier, monospace" font-size="11" fill="#ed8936">export default</text>
+  <text x="535" y="185" font-family="Courier, monospace" font-size="11" fill="#4299e1">class</text>
+  <text x="570" y="185" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">Calculator {</text>
+  <text x="445" y="205" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">add(a, b) { return a + b; }</text>
+  <text x="445" y="225" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">sub(a, b) { return a - b; }</text>
+  <text x="435" y="225" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">}</text>
+
+  <!-- Default characteristics -->
+  <text x="435" y="250" font-family="system-ui, sans-serif" font-size="12" fill="#ed8936">✓ Solo UNO por archivo</text>
+  <text x="435" y="270" font-family="system-ui, sans-serif" font-size="12" fill="#ed8936">✓ Nombre al importar flexible</text>
+  <text x="435" y="290" font-family="system-ui, sans-serif" font-size="12" fill="#ed8936">✓ import Name (sin llaves)</text>
+  <text x="435" y="310" font-family="system-ui, sans-serif" font-size="12" fill="#ed8936">✓ Representa lo principal</text>
+  <text x="435" y="330" font-family="system-ui, sans-serif" font-size="12" fill="#a0aec0">📦 Ideal para clases/componentes</text>
+
+  <!-- Import comparison -->
+  <rect x="30" y="355" width="740" height="110" fill="#2d3748" rx="10"/>
+  <text x="400" y="380" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f0db4f" text-anchor="middle">Cómo Importar</text>
+
+  <!-- Named import -->
+  <rect x="50" y="395" width="330" height="55" fill="#374151" rx="4"/>
+  <text x="215" y="413" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#4299e1" text-anchor="middle">Named: Requiere llaves { }</text>
+  <text x="60" y="435" font-family="Courier, monospace" font-size="11" fill="#4299e1">import</text>
+  <text x="100" y="435" font-family="Courier, monospace" font-size="11" fill="#f0db4f">{ PI, sum }</text>
+  <text x="175" y="435" font-family="Courier, monospace" font-size="11" fill="#4299e1">from</text>
+  <text x="210" y="435" font-family="Courier, monospace" font-size="11" fill="#48bb78">'./utils.js'</text>
+  <text x="295" y="435" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">;</text>
+
+  <!-- Default import -->
+  <rect x="420" y="395" width="330" height="55" fill="#374151" rx="4"/>
+  <text x="585" y="413" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#ed8936" text-anchor="middle">Default: Sin llaves, nombre libre</text>
+  <text x="430" y="435" font-family="Courier, monospace" font-size="11" fill="#4299e1">import</text>
+  <text x="470" y="435" font-family="Courier, monospace" font-size="11" fill="#ed8936">Calc</text>
+  <text x="500" y="435" font-family="Courier, monospace" font-size="11" fill="#4299e1">from</text>
+  <text x="530" y="435" font-family="Courier, monospace" font-size="11" fill="#48bb78">'./Calculator.js'</text>
+  <text x="650" y="435" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">;</text>
+
+  <!-- Tip -->
+  <text x="400" y="475" font-family="system-ui, sans-serif" font-size="12" fill="#a0aec0" text-anchor="middle">
+    💡 Puedes combinar ambos: import Default, { named1, named2 } from './module.js'
+  </text>
+</svg>

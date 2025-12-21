@@ -73,11 +73,11 @@ Esta carpeta contiene los diagramas SVG para la **Semana 4: Destructuring y Mód
 
 ## ✅ Checklist de Assets
 
-- [ ] 01-destructuring-arrays.svg - Extracción en arrays
-- [ ] 02-destructuring-objetos.svg - Objetos y anidado
-- [ ] 03-modulos-es6.svg - Sistema de módulos
-- [ ] 04-named-default-exports.svg - Tipos de export
-- [ ] 05-dynamic-imports.svg - Carga dinámica
+- [x] 01-destructuring-arrays.svg - Extracción en arrays
+- [x] 02-destructuring-objetos.svg - Objetos y anidado
+- [x] 03-modulos-es6.svg - Sistema de módulos
+- [x] 04-named-default-exports.svg - Tipos de export
+- [x] 05-dynamic-imports.svg - Carga dinámica
 
 ---
 

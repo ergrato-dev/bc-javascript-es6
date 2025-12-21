@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#1a202c"/>
+
+  <!-- Title -->
+  <text x="400" y="40" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#f0db4f" text-anchor="middle">
+    Sistema de Módulos ES6
+  </text>
+
+  <!-- Subtitle -->
+  <text x="400" y="65" font-family="system-ui, sans-serif" font-size="14" fill="#a0aec0" text-anchor="middle">
+    import / export - Organización modular del código
+  </text>
+
+  <!-- Module A - Exporting -->
+  <rect x="50" y="100" width="300" height="180" fill="#2d3748" rx="10"/>
+  <rect x="50" y="100" width="300" height="35" fill="#374151" rx="10"/>
+  <rect x="50" y="125" width="300" height="10" fill="#374151"/>
+  <text x="200" y="123" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#48bb78" text-anchor="middle">📤 math.js (exporta)</text>
+
+  <rect x="65" y="145" width="270" height="120" fill="#374151" rx="4"/>
+  <text x="75" y="165" font-family="Courier, monospace" font-size="11" fill="#a0aec0">// Named exports</text>
+  <text x="75" y="185" font-family="Courier, monospace" font-size="11" fill="#48bb78">export</text>
+  <text x="120" y="185" font-family="Courier, monospace" font-size="11" fill="#4299e1">const</text>
+  <text x="160" y="185" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">PI = 3.14159;</text>
+
+  <text x="75" y="210" font-family="Courier, monospace" font-size="11" fill="#48bb78">export</text>
+  <text x="120" y="210" font-family="Courier, monospace" font-size="11" fill="#4299e1">const</text>
+  <text x="160" y="210" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">sum = (a,b) =></text>
+  <text x="85" y="225" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">a + b;</text>
+
+  <text x="75" y="250" font-family="Courier, monospace" font-size="11" fill="#a0aec0">// Default export</text>
+  <text x="75" y="270" font-family="Courier, monospace" font-size="11" fill="#ed8936">export default</text>
+  <text x="175" y="270" font-family="Courier, monospace" font-size="11" fill="#4299e1">class</text>
+  <text x="210" y="270" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">Calculator{}</text>
+
+  <!-- Arrow -->
+  <path d="M 360 190 L 430 190" stroke="#f0db4f" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f0db4f"/>
+    </marker>
+  </defs>
+  <text x="395" y="175" font-family="system-ui, sans-serif" font-size="11" fill="#f0db4f" text-anchor="middle">import</text>
+
+  <!-- Module B - Importing -->
+  <rect x="450" y="100" width="300" height="180" fill="#2d3748" rx="10"/>
+  <rect x="450" y="100" width="300" height="35" fill="#374151" rx="10"/>
+  <rect x="450" y="125" width="300" height="10" fill="#374151"/>
+  <text x="600" y="123" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#4299e1" text-anchor="middle">📥 main.js (importa)</text>
+
+  <rect x="465" y="145" width="270" height="120" fill="#374151" rx="4"/>
+  <text x="475" y="165" font-family="Courier, monospace" font-size="11" fill="#a0aec0">// Named imports</text>
+  <text x="475" y="185" font-family="Courier, monospace" font-size="11" fill="#4299e1">import</text>
+  <text x="515" y="185" font-family="Courier, monospace" font-size="11" fill="#f0db4f">{ PI, sum }</text>
+  <text x="475" y="200" font-family="Courier, monospace" font-size="11" fill="#4299e1">  from</text>
+  <text x="515" y="200" font-family="Courier, monospace" font-size="11" fill="#48bb78">'./math.js'</text>
+  <text x="600" y="200" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">;</text>
+
+  <text x="475" y="225" font-family="Courier, monospace" font-size="11" fill="#a0aec0">// Default import</text>
+  <text x="475" y="245" font-family="Courier, monospace" font-size="11" fill="#4299e1">import</text>
+  <text x="515" y="245" font-family="Courier, monospace" font-size="11" fill="#ed8936">Calculator</text>
+  <text x="475" y="260" font-family="Courier, monospace" font-size="11" fill="#4299e1">  from</text>
+  <text x="515" y="260" font-family="Courier, monospace" font-size="11" fill="#48bb78">'./math.js'</text>
+  <text x="600" y="260" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">;</text>
+
+  <!-- Import variations -->
+  <rect x="50" y="300" width="700" height="180" fill="#2d3748" rx="10"/>
+  <text x="400" y="325" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#f0db4f" text-anchor="middle">Variaciones de Import</text>
+
+  <!-- Column 1 -->
+  <rect x="70" y="340" width="200" height="55" fill="#374151" rx="4"/>
+  <text x="170" y="358" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#4299e1" text-anchor="middle">Named Import</text>
+  <text x="80" y="380" font-family="Courier, monospace" font-size="10" fill="#4299e1">import</text>
+  <text x="115" y="380" font-family="Courier, monospace" font-size="10" fill="#f0db4f">{ a, b }</text>
+  <text x="165" y="380" font-family="Courier, monospace" font-size="10" fill="#4299e1">from</text>
+  <text x="195" y="380" font-family="Courier, monospace" font-size="10" fill="#48bb78">'./m'</text>
+
+  <!-- Column 2 -->
+  <rect x="290" y="340" width="200" height="55" fill="#374151" rx="4"/>
+  <text x="390" y="358" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#ed8936" text-anchor="middle">Default Import</text>
+  <text x="300" y="380" font-family="Courier, monospace" font-size="10" fill="#4299e1">import</text>
+  <text x="335" y="380" font-family="Courier, monospace" font-size="10" fill="#ed8936">Thing</text>
+  <text x="370" y="380" font-family="Courier, monospace" font-size="10" fill="#4299e1">from</text>
+  <text x="400" y="380" font-family="Courier, monospace" font-size="10" fill="#48bb78">'./m'</text>
+
+  <!-- Column 3 -->
+  <rect x="510" y="340" width="220" height="55" fill="#374151" rx="4"/>
+  <text x="620" y="358" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#a78bfa" text-anchor="middle">Namespace Import</text>
+  <text x="520" y="380" font-family="Courier, monospace" font-size="10" fill="#4299e1">import</text>
+  <text x="555" y="380" font-family="Courier, monospace" font-size="10" fill="#a78bfa">* as utils</text>
+  <text x="620" y="380" font-family="Courier, monospace" font-size="10" fill="#4299e1">from</text>
+  <text x="650" y="380" font-family="Courier, monospace" font-size="10" fill="#48bb78">'./m'</text>
+
+  <!-- Row 2 -->
+  <rect x="130" y="410" width="240" height="55" fill="#374151" rx="4"/>
+  <text x="250" y="428" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#48bb78" text-anchor="middle">Con Alias</text>
+  <text x="140" y="450" font-family="Courier, monospace" font-size="10" fill="#4299e1">import</text>
+  <text x="175" y="450" font-family="Courier, monospace" font-size="10" fill="#f0db4f">{ name</text>
+  <text x="220" y="450" font-family="Courier, monospace" font-size="10" fill="#4299e1">as</text>
+  <text x="240" y="450" font-family="Courier, monospace" font-size="10" fill="#48bb78">alias</text>
+  <text x="270" y="450" font-family="Courier, monospace" font-size="10" fill="#f0db4f">}</text>
+  <text x="280" y="450" font-family="Courier, monospace" font-size="10" fill="#4299e1">from</text>
+  <text x="310" y="450" font-family="Courier, monospace" font-size="10" fill="#48bb78">'./m'</text>
+
+  <rect x="390" y="410" width="260" height="55" fill="#374151" rx="4"/>
+  <text x="520" y="428" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#ef4444" text-anchor="middle">Side Effect Import</text>
+  <text x="400" y="450" font-family="Courier, monospace" font-size="10" fill="#4299e1">import</text>
+  <text x="440" y="450" font-family="Courier, monospace" font-size="10" fill="#ef4444">'./styles.css'</text>
+  <text x="545" y="450" font-family="Courier, monospace" font-size="10" fill="#a0aec0">// solo efectos</text>
+</svg>

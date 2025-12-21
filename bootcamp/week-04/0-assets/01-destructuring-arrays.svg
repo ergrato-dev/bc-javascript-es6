@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#1a202c"/>
+
+  <!-- Title -->
+  <text x="400" y="40" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#f0db4f" text-anchor="middle">
+    Destructuring de Arrays
+  </text>
+
+  <!-- Subtitle -->
+  <text x="400" y="65" font-family="system-ui, sans-serif" font-size="14" fill="#a0aec0" text-anchor="middle">
+    Extracción de valores con sintaxis concisa
+  </text>
+
+  <!-- Section 1: Basic -->
+  <rect x="30" y="90" width="230" height="140" fill="#2d3748" rx="8"/>
+  <text x="145" y="115" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f0db4f" text-anchor="middle">Básico</text>
+
+  <!-- Code block -->
+  <rect x="45" y="125" width="200" height="90" fill="#374151" rx="4"/>
+  <text x="55" y="145" font-family="Courier, monospace" font-size="11" fill="#a0aec0">// Array original</text>
+  <text x="55" y="162" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">const arr = [1, 2, 3];</text>
+  <text x="55" y="182" font-family="Courier, monospace" font-size="11" fill="#a0aec0">// Destructuring</text>
+  <text x="55" y="199" font-family="Courier, monospace" font-size="11" fill="#4299e1">const</text>
+  <text x="95" y="199" font-family="Courier, monospace" font-size="11" fill="#f0db4f">[a, b, c]</text>
+  <text x="170" y="199" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">= arr;</text>
+
+  <!-- Section 2: Skip elements -->
+  <rect x="280" y="90" width="230" height="140" fill="#2d3748" rx="8"/>
+  <text x="395" y="115" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f0db4f" text-anchor="middle">Saltar Elementos</text>
+
+  <rect x="295" y="125" width="200" height="90" fill="#374151" rx="4"/>
+  <text x="305" y="145" font-family="Courier, monospace" font-size="11" fill="#a0aec0">const nums = [1,2,3,4];</text>
+  <text x="305" y="165" font-family="Courier, monospace" font-size="11" fill="#a0aec0">// Skip con comas</text>
+  <text x="305" y="185" font-family="Courier, monospace" font-size="11" fill="#4299e1">const</text>
+  <text x="345" y="185" font-family="Courier, monospace" font-size="11" fill="#f0db4f">[first, , third]</text>
+  <text x="305" y="205" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">  = nums;</text>
+
+  <!-- Section 3: Rest pattern -->
+  <rect x="530" y="90" width="240" height="140" fill="#2d3748" rx="8"/>
+  <text x="650" y="115" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f0db4f" text-anchor="middle">Rest Pattern (...)</text>
+
+  <rect x="545" y="125" width="210" height="90" fill="#374151" rx="4"/>
+  <text x="555" y="145" font-family="Courier, monospace" font-size="11" fill="#a0aec0">const data = [1,2,3,4,5];</text>
+  <text x="555" y="165" font-family="Courier, monospace" font-size="11" fill="#a0aec0">// Rest captura el resto</text>
+  <text x="555" y="185" font-family="Courier, monospace" font-size="11" fill="#4299e1">const</text>
+  <text x="595" y="185" font-family="Courier, monospace" font-size="11" fill="#f0db4f">[head, ...tail]</text>
+  <text x="555" y="205" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">  = data;</text>
+
+  <!-- Section 4: Default values -->
+  <rect x="30" y="250" width="230" height="140" fill="#2d3748" rx="8"/>
+  <text x="145" y="275" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f0db4f" text-anchor="middle">Valores por Defecto</text>
+
+  <rect x="45" y="285" width="200" height="90" fill="#374151" rx="4"/>
+  <text x="55" y="305" font-family="Courier, monospace" font-size="11" fill="#a0aec0">const arr = [1];</text>
+  <text x="55" y="325" font-family="Courier, monospace" font-size="11" fill="#a0aec0">// Default si undefined</text>
+  <text x="55" y="345" font-family="Courier, monospace" font-size="11" fill="#4299e1">const</text>
+  <text x="95" y="345" font-family="Courier, monospace" font-size="11" fill="#f0db4f">[a, b</text>
+  <text x="130" y="345" font-family="Courier, monospace" font-size="11" fill="#ed8936">= 10</text>
+  <text x="165" y="345" font-family="Courier, monospace" font-size="11" fill="#f0db4f">]</text>
+  <text x="175" y="345" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">= arr;</text>
+  <text x="55" y="365" font-family="Courier, monospace" font-size="11" fill="#48bb78">// b = 10</text>
+
+  <!-- Section 5: Swap -->
+  <rect x="280" y="250" width="230" height="140" fill="#2d3748" rx="8"/>
+  <text x="395" y="275" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f0db4f" text-anchor="middle">Intercambiar Variables</text>
+
+  <rect x="295" y="285" width="200" height="90" fill="#374151" rx="4"/>
+  <text x="305" y="305" font-family="Courier, monospace" font-size="11" fill="#4299e1">let</text>
+  <text x="325" y="305" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">a = 1, b = 2;</text>
+  <text x="305" y="325" font-family="Courier, monospace" font-size="11" fill="#a0aec0">// Swap sin temp</text>
+  <text x="305" y="345" font-family="Courier, monospace" font-size="11" fill="#f0db4f">[a, b] = [b, a];</text>
+  <text x="305" y="368" font-family="Courier, monospace" font-size="11" fill="#48bb78">// a=2, b=1 ✓</text>
+
+  <!-- Section 6: Nested -->
+  <rect x="530" y="250" width="240" height="140" fill="#2d3748" rx="8"/>
+  <text x="650" y="275" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f0db4f" text-anchor="middle">Anidado</text>
+
+  <rect x="545" y="285" width="210" height="90" fill="#374151" rx="4"/>
+  <text x="555" y="305" font-family="Courier, monospace" font-size="10" fill="#a0aec0">const matrix = [[1,2],[3,4]];</text>
+  <text x="555" y="325" font-family="Courier, monospace" font-size="11" fill="#a0aec0">// Destructuring anidado</text>
+  <text x="555" y="345" font-family="Courier, monospace" font-size="11" fill="#4299e1">const</text>
+  <text x="595" y="345" font-family="Courier, monospace" font-size="11" fill="#f0db4f">[[a,b],[c,d]]</text>
+  <text x="555" y="365" font-family="Courier, monospace" font-size="11" fill="#e2e8f0">  = matrix;</text>
+
+  <!-- Visual diagram -->
+  <rect x="150" y="410" width="500" height="70" fill="#2d3748" rx="8"/>
+  <text x="400" y="428" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f0db4f" text-anchor="middle">Flujo Visual</text>
+
+  <!-- Array visualization -->
+  <rect x="180" y="450" width="30" height="25" fill="#374151" stroke="#4299e1" stroke-width="2" rx="3"/>
+  <text x="195" y="467" font-family="Courier, monospace" font-size="12" fill="#e2e8f0" text-anchor="middle">1</text>
+
+  <rect x="215" y="450" width="30" height="25" fill="#374151" stroke="#4299e1" stroke-width="2" rx="3"/>
+  <text x="230" y="467" font-family="Courier, monospace" font-size="12" fill="#e2e8f0" text-anchor="middle">2</text>
+
+  <rect x="250" y="450" width="30" height="25" fill="#374151" stroke="#4299e1" stroke-width="2" rx="3"/>
+  <text x="265" y="467" font-family="Courier, monospace" font-size="12" fill="#e2e8f0" text-anchor="middle">3</text>
+
+  <!-- Arrows -->
+  <path d="M 195 450 L 195 440 L 370 440 L 370 450" stroke="#f0db4f" stroke-width="2" fill="none"/>
+  <path d="M 230 450 L 230 443 L 435 443 L 435 450" stroke="#f0db4f" stroke-width="2" fill="none"/>
+  <path d="M 265 450 L 265 446 L 500 446 L 500 450" stroke="#f0db4f" stroke-width="2" fill="none"/>
+
+  <!-- Variables -->
+  <rect x="355" y="450" width="30" height="25" fill="#374151" stroke="#48bb78" stroke-width="2" rx="3"/>
+  <text x="370" y="467" font-family="Courier, monospace" font-size="12" fill="#48bb78" text-anchor="middle">a</text>
+
+  <rect x="420" y="450" width="30" height="25" fill="#374151" stroke="#48bb78" stroke-width="2" rx="3"/>
+  <text x="435" y="467" font-family="Courier, monospace" font-size="12" fill="#48bb78" text-anchor="middle">b</text>
+
+  <rect x="485" y="450" width="30" height="25" fill="#374151" stroke="#48bb78" stroke-width="2" rx="3"/>
+  <text x="500" y="467" font-family="Courier, monospace" font-size="12" fill="#48bb78" text-anchor="middle">c</text>
+
+  <text x="310" y="467" font-family="system-ui, sans-serif" font-size="14" fill="#f0db4f" text-anchor="middle">→</text>
+  <text x="390" y="467" font-family="system-ui, sans-serif" font-size="14" fill="#a0aec0" text-anchor="middle">,</text>
+  <text x="455" y="467" font-family="system-ui, sans-serif" font-size="14" fill="#a0aec0" text-anchor="middle">,</text>
+</svg>
