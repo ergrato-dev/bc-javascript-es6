@@ -1,69 +1,151 @@
-# 🏋️ Ejercicio 01: Destructuring de Arrays
+# 📘 Ejercicio 01: Destructuring de Arrays
 
-## 🎯 Objetivo
+## 🎯 Objetivos
 
-Practicar la extracción de valores de arrays usando destructuring ES6+.
-
----
-
-## 📋 Instrucciones
-
-Completa los ejercicios en `starter/index.js`. Cada ejercicio tiene instrucciones específicas y tests que verifican tu solución.
+- Comprender la sintaxis de destructuring de arrays
+- Practicar extracción de elementos por posición
+- Dominar rest pattern, skip y valores por defecto
+- Aplicar destructuring en funciones
 
 ---
 
-## 🧪 Ejercicios
+## 📋 Descripción
 
-### Ejercicio 1.1: Extracción Básica
-Extrae los primeros tres elementos del array en variables separadas.
+Este es un **ejercicio guiado paso a paso**. Aprenderás destructuring de arrays descomentando código y observando los resultados.
 
-### Ejercicio 1.2: Skip de Elementos
-Extrae solo el primer y tercer elemento, omitiendo el segundo.
+---
 
-### Ejercicio 1.3: Rest Pattern
-Separa el primer elemento del resto del array.
+## 📝 Práctica Guiada
 
-### Ejercicio 1.4: Valores por Defecto
-Extrae elementos con valores por defecto para posiciones que no existen.
+### Paso 1: Extracción Básica
 
-### Ejercicio 1.5: Swap de Variables
-Intercambia los valores de dos variables usando destructuring.
+Extraer elementos de un array asignándolos a variables:
 
-### Ejercicio 1.6: Destructuring Anidado
-Extrae valores de arrays dentro de arrays.
+```javascript
+const [first, second, third] = colors;
+```
 
-### Ejercicio 1.7: En Parámetros de Función
-Crea una función que reciba un array y use destructuring en sus parámetros.
+**Abre `starter/index.js`** y descomenta la sección del Paso 1.
 
-### Ejercicio 1.8: Retorno de Funciones
-Usa destructuring para capturar múltiples valores retornados.
+---
+
+### Paso 2: Skip de Elementos
+
+Omitir elementos usando comas vacías:
+
+```javascript
+const [first, , third] = numbers; // Salta el segundo
+```
+
+---
+
+### Paso 3: Rest Pattern
+
+Capturar "el resto" de elementos con `...`:
+
+```javascript
+const [primary, ...others] = colors;
+```
+
+---
+
+### Paso 4: Valores por Defecto
+
+Asignar defaults para elementos que no existen:
+
+```javascript
+const [a, b = 'default'] = shortArray;
+```
+
+---
+
+### Paso 5: Swap de Variables
+
+Intercambiar valores sin variable temporal:
+
+```javascript
+[x, y] = [y, x];
+```
+
+---
+
+### Paso 6: Destructuring Anidado
+
+Extraer de arrays dentro de arrays:
+
+```javascript
+const [, [x, y]] = coordinates;
+```
+
+---
+
+### Paso 7: En Parámetros de Función
+
+Destructuring directamente en los parámetros:
+
+```javascript
+const sum = ([a, b, c]) => a + b + c;
+```
+
+---
+
+### Paso 8: Retorno de Funciones
+
+Capturar múltiples valores retornados:
+
+```javascript
+const [min, max] = getMinMax(numbers);
+```
+
+---
+
+### Paso 9: Combinación Avanzada
+
+Combinar skip, rest y destructuring de objetos:
+
+```javascript
+const [name, year, , { prop }] = mixed;
+```
+
+---
+
+### Paso 10: Caso Práctico
+
+Aplicar destructuring en un cálculo de distancia entre puntos.
+
+---
+
+## ▶️ Ejecución
+
+```bash
+cd starter
+node index.js
+```
 
 ---
 
 ## ⏱️ Tiempo Estimado
 
-40 minutos
+30-40 minutos
 
 ---
 
-## 🎯 Criterios de Éxito
+## ✅ Checklist
 
-- [ ] Todos los ejercicios completados
-- [ ] Código ejecuta sin errores
-- [ ] Uso correcto de sintaxis de destructuring
-- [ ] No usar índices directos (array[0]) donde se pide destructuring
-
----
-
-## 💡 Pistas
-
-1. Usa comas para saltar elementos: `const [a, , c] = arr`
-2. Rest siempre va al final: `const [first, ...rest] = arr`
-3. Defaults se aplican con `=`: `const [a = 'default'] = arr`
+- [ ] Paso 1: Extracción básica descomentado
+- [ ] Paso 2: Skip de elementos descomentado
+- [ ] Paso 3: Rest pattern descomentado
+- [ ] Paso 4: Valores por defecto descomentado
+- [ ] Paso 5: Swap descomentado
+- [ ] Paso 6: Anidado descomentado
+- [ ] Paso 7: Parámetros de función descomentado
+- [ ] Paso 8: Retorno de funciones descomentado
+- [ ] Paso 9: Combinación avanzada descomentado
+- [ ] Paso 10: Caso práctico descomentado
 
 ---
 
 ## 🔗 Recursos
 
-- [Teoría: Destructuring Arrays](../../1-teoria/01-destructuring-arrays.md)
+- [Teoría: Destructuring Avanzado](../../1-teoria/01-destructuring-avanzado.md)
 - [MDN: Destructuring](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
