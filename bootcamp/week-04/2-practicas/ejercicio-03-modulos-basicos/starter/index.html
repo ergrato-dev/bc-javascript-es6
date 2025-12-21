@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 03: Módulos Básicos</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        background: #1a202c;
+        color: #e2e8f0;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+      h1 {
+        color: #f0db4f;
+        margin-bottom: 1rem;
+      }
+      h2 {
+        color: #48bb78;
+        margin: 1.5rem 0 0.5rem;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .output {
+        background: #2d3748;
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 0.5rem 0;
+        font-family: 'Courier New', monospace;
+      }
+      .success {
+        border-left: 4px solid #48bb78;
+      }
+      .error {
+        border-left: 4px solid #ef4444;
+      }
+      button {
+        background: #f0db4f;
+        color: #1a202c;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        margin: 0.25rem;
+      }
+      button:hover {
+        background: #d4c03f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🏋️ Ejercicio 03: Módulos Básicos</h1>
+
+      <h2>📐 Math Utils</h2>
+      <div
+        class="output"
+        id="math-output">
+        Esperando...
+      </div>
+      <button onclick="testMath()">Probar Math</button>
+
+      <h2>📝 String Utils</h2>
+      <div
+        class="output"
+        id="string-output">
+        Esperando...
+      </div>
+      <button onclick="testStrings()">Probar Strings</button>
+
+      <h2>⚙️ Config</h2>
+      <div
+        class="output"
+        id="config-output">
+        Esperando...
+      </div>
+      <button onclick="testConfig()">Probar Config</button>
+
+      <h2>🎯 Test Completo</h2>
+      <div
+        class="output"
+        id="full-output">
+        Esperando...
+      </div>
+      <button onclick="runAllTests()">Ejecutar Todo</button>
+    </div>
+
+    <script
+      type="module"
+      src="./main.js"></script>
+  </body>
+</html>

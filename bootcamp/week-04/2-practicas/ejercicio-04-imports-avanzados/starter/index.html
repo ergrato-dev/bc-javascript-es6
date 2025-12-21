@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 04: Imports Avanzados</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        background: #1a202c;
+        color: #e2e8f0;
+        padding: 2rem;
+      }
+      h1 {
+        color: #f0db4f;
+        margin-bottom: 1rem;
+      }
+      h2 {
+        color: #48bb78;
+        margin: 1.5rem 0 0.5rem;
+        font-size: 1.2rem;
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin: 1rem 0;
+      }
+      .feature-card {
+        background: #2d3748;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border: 2px solid transparent;
+        transition: border-color 0.3s;
+      }
+      .feature-card:hover {
+        border-color: #f0db4f;
+      }
+      .feature-card h3 {
+        color: #f0db4f;
+        margin-bottom: 0.5rem;
+      }
+      .output {
+        background: #374151;
+        padding: 1rem;
+        border-radius: 4px;
+        margin: 0.5rem 0;
+        min-height: 60px;
+        font-family: monospace;
+      }
+      button {
+        background: #f0db4f;
+        color: #1a202c;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        margin: 0.25rem;
+      }
+      button:hover {
+        background: #d4c03f;
+      }
+      button:disabled {
+        background: #4a5568;
+        color: #718096;
+        cursor: not-allowed;
+      }
+      .status {
+        font-size: 0.875rem;
+        color: #a0aec0;
+        margin-top: 0.5rem;
+      }
+      .loaded {
+        color: #48bb78;
+      }
+      .loading {
+        color: #f0db4f;
+      }
+      .error {
+        color: #ef4444;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🏋️ Ejercicio 04: Imports Avanzados</h1>
+      <p>Los módulos se cargan bajo demanda al usar cada feature.</p>
+
+      <div class="feature-grid">
+        <!-- Calculator Feature -->
+        <div
+          class="feature-card"
+          id="calc-card">
+          <h3>🧮 Calculator</h3>
+          <p>Operaciones matemáticas</p>
+          <div
+            class="output"
+            id="calc-output">
+            No cargado
+          </div>
+          <button id="calc-btn">Cargar y Usar</button>
+          <div
+            class="status"
+            id="calc-status">
+            Estado: No cargado
+          </div>
+        </div>
+
+        <!-- Converter Feature -->
+        <div
+          class="feature-card"
+          id="conv-card">
+          <h3>🔄 Converter</h3>
+          <p>Conversión de unidades</p>
+          <div
+            class="output"
+            id="conv-output">
+            No cargado
+          </div>
+          <button id="conv-btn">Cargar y Usar</button>
+          <div
+            class="status"
+            id="conv-status">
+            Estado: No cargado
+          </div>
+        </div>
+
+        <!-- Formatter Feature -->
+        <div
+          class="feature-card"
+          id="fmt-card">
+          <h3>📝 Formatter</h3>
+          <p>Formateo de datos</p>
+          <div
+            class="output"
+            id="fmt-output">
+            No cargado
+          </div>
+          <button id="fmt-btn">Cargar y Usar</button>
+          <div
+            class="status"
+            id="fmt-status">
+            Estado: No cargado
+          </div>
+        </div>
+      </div>
+
+      <h2>📊 Module Registry</h2>
+      <div
+        class="output"
+        id="registry-output">
+        Módulos cargados: 0
+      </div>
+      <button id="show-registry">Mostrar Registry</button>
+      <button id="clear-registry">Limpiar Cache</button>
+    </div>
+
+    <script
+      type="module"
+      src="./app.js"></script>
+  </body>
+</html>
