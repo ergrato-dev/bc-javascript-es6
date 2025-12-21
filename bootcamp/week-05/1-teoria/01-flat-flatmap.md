@@ -24,6 +24,10 @@ const departments = [
 // ¿Cómo obtener una lista plana de todos los empleados?
 ```
 
+### 📊 Diagrama: Aplanamiento con flat()
+
+![Diagrama flat()](../0-assets/01-flat-flatmap.svg)
+
 ---
 
 ## 1️⃣ El Método `flat()`

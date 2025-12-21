@@ -28,6 +28,10 @@ const nums = Array.of(1, 2, 3);
 console.log(nums); // [1, 2, 3]
 ```
 
+### 📊 Diagrama: Array.from() y Array.of()
+
+![Diagrama Array.from() y Array.of()](../0-assets/03-array-from-of.svg)
+
 ---
 
 ## 1️⃣ `Array.from()` - Básico

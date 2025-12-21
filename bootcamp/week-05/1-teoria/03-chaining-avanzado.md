@@ -21,6 +21,10 @@ const result = data
   .slice(...);
 ```
 
+### 📊 Diagrama: Pipeline de Transformación
+
+![Diagrama Chaining Pipeline](../0-assets/04-chaining-pipeline.svg)
+
 ---
 
 ## 1️⃣ Fundamentos del Chaining

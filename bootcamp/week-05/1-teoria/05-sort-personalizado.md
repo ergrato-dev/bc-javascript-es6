@@ -24,6 +24,10 @@ console.log(numbers.sort()); // [1, 10, 2, 30] ❌
 // '1' < '10' < '2' < '30'
 ```
 
+### 📊 Diagrama: Función de Comparación
+
+![Diagrama Sort Compare](../0-assets/05-sort-compare.svg)
+
 ---
 
 ## 1️⃣ Fundamentos de `sort()`

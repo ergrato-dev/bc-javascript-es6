@@ -32,8 +32,8 @@
   <text class="subtitle" x="40" y="70">Datos Iniciales:</text>
   <rect class="data-box" x="40" y="85" width="720" height="55"/>
   <text class="code" x="55" y="105">const users = [</text>
-  <text class="code" x="70" y="120">{name: 'Ana', age: 28, active: true}, {name: 'Bob', age: 17, active: true}, {name: 'Carlos', age: 35, active: false}, ...</text>
-  <text class="code" x="55" y="135">];</text>
+  <text class="code" x="70" y="120">{name: 'Ana', age: 28, active: true}, {name: 'Bob', age: 17, active: true}, ...</text>
+  <text class="code" x="55" y="135">];  // 5 usuarios con name, age, active</text>
 
   <!-- Pipeline Flow -->
   <text class="subtitle" x="40" y="175">Pipeline de Transformación:</text>
@@ -86,7 +86,7 @@
   <!-- Step 4: sort -->
   <rect class="step-box" x="140" y="300" width="160" height="65"/>
   <text class="method" x="190" y="320">.sort()</text>
-  <text class="code" x="155" y="340">(a, b) => a.localeCompare(b)</text>
+  <text class="code" x="155" y="340">localeCompare</text>
   <text class="comment" x="155" y="355">// Ordenar A-Z</text>
 
   <path class="arrow" d="M130 332 L100 332"/>
