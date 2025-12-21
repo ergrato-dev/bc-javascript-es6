@@ -3,6 +3,14 @@
 # ============================================
 
 # ============================================
+# Soluciones de Ejercicios y Proyectos
+# ============================================
+# Las soluciones no se suben al repo público
+# Los estudiantes deben resolver por su cuenta
+**/solution/
+**/solutions/
+
+# ============================================
 # Node.js
 # ============================================
 node_modules/
