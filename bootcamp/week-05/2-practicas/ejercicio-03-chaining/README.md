@@ -1,171 +1,269 @@
-# 🏋️ Ejercicio 03: Chaining Complejo
+# 📘 Ejercicio 03: Chaining Avanzado
 
-## 🎯 Objetivo
+## 🎯 Objetivos
 
-Dominar el encadenamiento de métodos de array para realizar transformaciones complejas de datos de forma legible y eficiente.
+- Dominar el encadenamiento de métodos de array
+- Crear pipelines de transformación de datos
+- Optimizar cadenas de métodos
 
 ---
 
 ## 📋 Descripción
 
-Trabajarás con datasets realistas aplicando múltiples métodos encadenados para filtrar, transformar, ordenar y extraer información.
+Method chaining permite conectar múltiples operaciones en una sola expresión fluida. Es una técnica fundamental para procesar datos de forma declarativa y legible.
 
 ---
 
-## 📚 Conceptos Clave
+## 📝 Práctica Guiada
 
-- Encadenar `filter()`, `map()`, `sort()`, `slice()`
-- Optimizar el orden de operaciones
-- Extraer funciones para legibilidad
-- Combinar filters para mejor rendimiento
+### Paso 1: Chaining Básico
 
----
-
-## 🎯 Tareas
-
-### Tarea 1: Pipeline Básico
+El chaining funciona porque cada método de array retorna un nuevo array:
 
 ```javascript
-const products = [
-  { name: 'Laptop', price: 1000, inStock: true },
-  { name: 'Phone', price: 500, inStock: false },
-  { name: 'Tablet', price: 300, inStock: true },
-  { name: 'Watch', price: 200, inStock: true },
-  { name: 'Headphones', price: 150, inStock: false }
-];
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-// TODO: Productos en stock, ordenados por precio desc, solo nombres
-// Resultado: ['Laptop', 'Tablet', 'Watch']
+// Cada método retorna un array, permitiendo encadenar
+const result = numbers
+  .filter(n => n > 3)      // [4, 5, 6, 7, 8, 9, 10]
+  .map(n => n * 2)         // [8, 10, 12, 14, 16, 18, 20]
+  .slice(0, 3);            // [8, 10, 12]
 ```
 
-### Tarea 2: Top N con Transformación
+**Abre `starter/index.js`** y descomenta el primer ejemplo.
+
+---
+
+### Paso 2: Pipeline de Datos
+
+Procesar datos de usuarios siguiendo un flujo lógico:
 
 ```javascript
 const users = [
-  { name: 'Ana', score: 85, active: true },
-  { name: 'Luis', score: 92, active: true },
-  { name: 'María', score: 78, active: false },
-  { name: 'Carlos', score: 95, active: true },
-  { name: 'Pedro', score: 88, active: true }
+  { name: 'Ana', age: 25, active: true },
+  { name: 'Luis', age: 17, active: true },
+  { name: 'María', age: 30, active: false }
 ];
 
-// TODO: Top 3 usuarios activos por score, formato "Name: score pts"
-// Resultado: ['Carlos: 95 pts', 'Luis: 92 pts', 'Pedro: 88 pts']
+const result = users
+  .filter(u => u.active)        // Solo activos
+  .filter(u => u.age >= 18)     // Solo mayores
+  .map(u => u.name.toUpperCase()); // Solo nombres en mayúsculas
+// ['ANA']
 ```
 
-### Tarea 3: Filtrado Múltiple Optimizado
+**Descomenta** el pipeline de usuarios en el starter.
+
+---
+
+### Paso 3: Top N Elementos
+
+Patrón común: ordenar y tomar los primeros N:
 
 ```javascript
-const employees = [
-  { name: 'Ana', dept: 'IT', salary: 5000, years: 3 },
-  { name: 'Luis', dept: 'HR', salary: 4000, years: 5 },
-  { name: 'María', dept: 'IT', salary: 5500, years: 7 },
-  { name: 'Carlos', dept: 'IT', salary: 4500, years: 2 },
-  { name: 'Pedro', dept: 'HR', salary: 4200, years: 4 }
+const products = [
+  { name: 'A', price: 100 },
+  { name: 'B', price: 50 },
+  { name: 'C', price: 200 }
 ];
 
-// TODO: Empleados de IT con más de 2 años, salario > 4500
-// Ordenados por salario desc
-// Resultado: [{ name: 'María', ... }, { name: 'Ana', ... }]
+const top2Expensive = products
+  .sort((a, b) => b.price - a.price)  // Mayor a menor
+  .slice(0, 2)                         // Primeros 2
+  .map(p => p.name);                   // Solo nombres
+// ['C', 'A']
 ```
 
-### Tarea 4: Extracción de Funciones
+⚠️ **Importante**: `sort()` muta el array original. Usa `[...arr]` para evitarlo.
+
+**Descomenta** el ejemplo de Top N productos.
+
+---
+
+### Paso 4: Agregación con reduce()
+
+`reduce()` al final de una cadena permite agregar resultados:
 
 ```javascript
 const orders = [
-  { id: 1, total: 150, status: 'completed', date: '2024-01-15' },
-  { id: 2, total: 200, status: 'pending', date: '2024-01-16' },
-  { id: 3, total: 75, status: 'completed', date: '2024-01-14' },
-  { id: 4, total: 300, status: 'completed', date: '2024-01-17' },
-  { id: 5, total: 50, status: 'cancelled', date: '2024-01-13' }
+  { product: 'A', price: 100, qty: 2 },
+  { product: 'B', price: 50, qty: 3 }
 ];
 
-// TODO: Crear funciones separadas y usarlas en el chain
-// - isCompleted: filtra órdenes completadas
-// - hasMinTotal: filtra órdenes con total >= 100
-// - toOrderSummary: transforma a { id, total }
-// - byTotalDesc: comparador para ordenar por total desc
+const total = orders
+  .filter(o => o.qty > 1)
+  .map(o => o.price * o.qty)
+  .reduce((sum, subtotal) => sum + subtotal, 0);
+// 350
 ```
 
-### Tarea 5: Agregación con Chaining
+**Descomenta** el ejemplo de cálculo de total.
+
+---
+
+### Paso 5: Extraer Funciones
+
+Para mejorar legibilidad, extrae funciones con nombres descriptivos:
 
 ```javascript
-const transactions = [
-  { type: 'income', category: 'salary', amount: 3000 },
-  { type: 'expense', category: 'rent', amount: 1000 },
-  { type: 'income', category: 'freelance', amount: 500 },
-  { type: 'expense', category: 'food', amount: 300 },
-  { type: 'expense', category: 'transport', amount: 150 }
-];
+const isActive = user => user.active;
+const isAdult = user => user.age >= 18;
+const getName = user => user.name;
 
-// TODO: Total de gastos (expenses)
-// Resultado: 1450
+const activeAdultNames = users
+  .filter(isActive)
+  .filter(isAdult)
+  .map(getName);
 ```
 
-### Tarea 6: Chain con flatMap
+El código se lee como prosa: "filtra activos, filtra adultos, obtén nombres".
+
+**Descomenta** el ejemplo con funciones extraídas.
+
+---
+
+### Paso 6: Chaining con flatMap()
+
+`flatMap()` en una cadena permite expandir mientras filtras:
 
 ```javascript
 const departments = [
-  { name: 'IT', employees: ['Ana', 'Luis', 'María'] },
-  { name: 'HR', employees: ['Carlos', 'Pedro'] },
-  { name: 'Sales', employees: ['Laura', 'Jorge', 'Sofia', 'Miguel'] }
+  { name: 'IT', employees: ['Ana', 'Luis'] },
+  { name: 'HR', employees: ['María'] }
 ];
 
-// TODO: Departamentos con más de 2 empleados,
-// lista de todos sus empleados ordenados alfabéticamente
-// Resultado: ['Ana', 'Jorge', 'Laura', 'Luis', 'María', 'Miguel', 'Sofia']
+const allEmployees = departments
+  .filter(d => d.employees.length > 1)
+  .flatMap(d => d.employees)
+  .map(name => name.toUpperCase());
+// ['ANA', 'LUIS']
 ```
 
-### Tarea 7: Procesamiento de Strings
+**Descomenta** el ejemplo de departamentos.
+
+---
+
+### Paso 7: Buscar y Transformar
+
+Combina `find()` o `some()`/`every()` en cadenas:
 
 ```javascript
-const comments = [
-  '  Great product!  ',
-  'not bad',
-  '   AMAZING SERVICE   ',
-  'Could be better',
-  '  love it!  '
+const products = [
+  { id: 1, name: 'Laptop', inStock: true },
+  { id: 2, name: 'Phone', inStock: false }
 ];
 
-// TODO: Limpiar espacios, capitalizar, filtrar > 10 chars, ordenar
-// Resultado: ['Amazing service', 'Could be better', 'Great product!']
+const hasAvailable = products
+  .filter(p => p.inStock)
+  .some(p => p.name.includes('Lap'));
+// true
 ```
 
-### Tarea 8: Pipeline Condicional
+**Descomenta** el ejemplo de búsqueda.
+
+---
+
+### Paso 8: Transformación Compleja
+
+Pipeline completo con múltiples transformaciones:
 
 ```javascript
-const items = [
-  { name: 'A', price: 100, featured: true },
-  { name: 'B', price: 50, featured: false },
-  { name: 'C', price: 75, featured: true },
-  { name: 'D', price: 200, featured: false }
+const data = [
+  { name: 'ana garcia', score: 85, status: 'active' },
+  { name: 'luis martinez', score: 92, status: 'inactive' },
+  { name: 'maria lopez', score: 78, status: 'active' }
 ];
 
-// TODO: Crear función que acepte opciones
-// filterItems(items, { onlyFeatured: true, minPrice: 50, sortBy: 'price' })
+const result = data
+  .filter(d => d.status === 'active')
+  .map(d => ({
+    ...d,
+    name: d.name.split(' ').map(w => 
+      w.charAt(0).toUpperCase() + w.slice(1)
+    ).join(' ')
+  }))
+  .sort((a, b) => b.score - a.score);
+```
+
+**Descomenta** el ejemplo de transformación compleja.
+
+---
+
+### Paso 9: Estadísticas en una Cadena
+
+Calcular múltiples estadísticas:
+
+```javascript
+const scores = [85, 92, 78, 95, 88];
+
+const stats = scores
+  .sort((a, b) => a - b)
+  .reduce((acc, score, i, arr) => ({
+    min: acc.min ?? score,
+    max: score,
+    avg: (acc.sum + score) / (i + 1),
+    sum: acc.sum + score,
+    count: i + 1
+  }), { sum: 0 });
+```
+
+**Descomenta** el ejemplo de estadísticas.
+
+---
+
+### Paso 10: Pipeline Reutilizable
+
+Crea funciones que retornan pipelines:
+
+```javascript
+const processUsers = users => users
+  .filter(u => u.active)
+  .filter(u => u.age >= 18)
+  .sort((a, b) => b.score - a.score)
+  .slice(0, 5)
+  .map(u => ({ name: u.name, score: u.score }));
+
+// Reutilizable con cualquier array de usuarios
+const topUsers = processUsers(allUsers);
+```
+
+**Descomenta** el último ejemplo.
+
+---
+
+## 🚀 Cómo Ejecutar
+
+```bash
+cd bootcamp/week-05/2-practicas/ejercicio-03-chaining
+node starter/index.js
 ```
 
 ---
 
-## 📁 Archivos
+## ✅ Verificación
 
-- `starter/index.js` - Archivo inicial
-- `solution/index.js` - Solución completa
-
----
-
-## ⏱️ Tiempo Estimado
-
-50 minutos
+Al finalizar, deberías ver:
+- Filtros encadenados funcionando
+- Cálculos de totales correctos
+- Top N elementos ordenados
+- Transformaciones complejas aplicadas
+- Estadísticas calculadas
 
 ---
 
-## 💡 Pistas
+## 💡 Consejos
 
-1. Filtrar antes de mapear mejora rendimiento
-2. Combina múltiples condiciones en un solo filter
-3. Extrae funciones con nombres descriptivos
-4. Usa `slice()` después de `sort()` para Top N
+1. **Orden importa**: filter → sort → slice es más eficiente que sort → filter → slice
+2. **Inmutabilidad**: Usa `[...arr]` antes de `sort()` para no mutar el original
+3. **Legibilidad**: Extrae funciones con nombres descriptivos
+4. **Performance**: Combina filter+map en un solo reduce si es crítico
+
+---
+
+## 📚 Recursos
+
+- [Teoría: Chaining Avanzado](../../1-teoria/03-chaining-avanzado.md)
+- [MDN: Array methods](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
 ---
 

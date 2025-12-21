@@ -1,202 +1,206 @@
 /**
- * Ejercicio 02: Array.from() y Array.of()
- *
- * Practica la creación de arrays desde diferentes fuentes
+ * 📘 Ejercicio 02: Array.from() y Array.of()
+ * Práctica guiada - Descomenta cada sección para aprender
  */
 
-// ============================================
-// TAREA 1: Caracteres de un String
-// ============================================
-
-const word = 'JavaScript';
-
-// TODO: Convertir a array de caracteres
-const characters = null; // Implementar
-
-console.log('Tarea 1 - Caracteres:', characters);
-// Esperado: ['J', 'a', 'v', 'a', 'S', 'c', 'r', 'i', 'p', 't']
+console.log('=== Ejercicio 02: Array.from() y Array.of() ===\n');
 
 // ============================================
-// TAREA 2: Caracteres Únicos
+// PASO 1: Array.from() Básico
 // ============================================
+console.log('--- Paso 1: Array.from() básico ---');
 
-const text = 'programming';
+// Desde un string (cada carácter es un elemento)
+// Descomenta las siguientes líneas:
+// const fromString = Array.from('hello');
+// console.log('Desde string:', fromString);
+// Esperado: ['h', 'e', 'l', 'l', 'o']
 
-// TODO: Obtener caracteres únicos ordenados
-const uniqueChars = null; // Implementar
+// Desde un Set (elimina duplicados automáticamente)
+// const fromSet = Array.from(new Set([1, 2, 2, 3, 3, 3]));
+// console.log('Desde Set:', fromSet);
+// Esperado: [1, 2, 3]
 
-console.log('Tarea 2 - Caracteres únicos:', uniqueChars);
-// Esperado: ['a', 'g', 'i', 'm', 'n', 'o', 'p', 'r']
-
-// ============================================
-// TAREA 3: De Set a Array
-// ============================================
-
-const numbersSet = new Set([1, 2, 3, 2, 1, 4, 5, 4]);
-
-// TODO: Convertir Set a Array
-const numbersArray = null; // Implementar
-
-console.log('Tarea 3 - Set a Array:', numbersArray);
-// Esperado: [1, 2, 3, 4, 5]
+console.log('');
 
 // ============================================
-// TAREA 4: De Map a Array de Objetos
+// PASO 2: Convertir NodeList (simulado)
 // ============================================
+console.log('--- Paso 2: Convertir estructuras ---');
 
-const userMap = new Map([
-  ['u1', { name: 'Ana', age: 25 }],
-  ['u2', { name: 'Luis', age: 30 }],
-  ['u3', { name: 'María', age: 28 }],
-]);
-
-// TODO: Convertir a array de objetos con id incluido
-const usersArray = null; // Implementar
-
-console.log('Tarea 4 - Map a Array:', usersArray);
-// Esperado: [{ id: 'u1', name: 'Ana', age: 25 }, ...]
-
-// ============================================
-// TAREA 5: Generar Rango de Números
-// ============================================
-
-// TODO: Crear función que genere array de números desde start hasta end
-const createRange = (start, end) => {
-  // Implementar
-  return null;
+// Simulamos un NodeList con un objeto array-like
+const nodeLikeObject = {
+  0: 'div1',
+  1: 'div2',
+  2: 'div3',
+  length: 3,
 };
 
-console.log('Tarea 5 - Rango 1-5:', createRange(1, 5));
+// Array.from convierte objetos array-like a arrays reales
+// Descomenta la siguiente línea:
+// const realArray = Array.from(nodeLikeObject);
+// console.log('NodeList a Array:', realArray);
+// Esperado: ['div1', 'div2', 'div3']
+
+console.log('');
+
+// ============================================
+// PASO 3: Array.from() con Función de Mapeo
+// ============================================
+console.log('--- Paso 3: Mapeo durante creación ---');
+
+const letters = 'abc';
+
+// El segundo argumento transforma cada elemento
+// Descomenta las siguientes líneas:
+// const upperLetters = Array.from(letters, char => char.toUpperCase());
+// console.log('Con mapeo:', upperLetters);
+// Esperado: ['A', 'B', 'C']
+
+// Ejemplo: multiplicar números
+// const nums = [1, 2, 3];
+// const doubled = Array.from(nums, n => n * 2);
+// console.log('Duplicados:', doubled);
+// Esperado: [2, 4, 6]
+
+console.log('');
+
+// ============================================
+// PASO 4: Crear Secuencias Numéricas
+// ============================================
+console.log('--- Paso 4: Generar secuencias ---');
+
+// { length: N } se comporta como un array de N elementos
+// El primer parámetro de la función es el valor (undefined), el segundo es el índice
+// Descomenta las siguientes líneas:
+
+// const zeroToFour = Array.from({ length: 5 }, (_, index) => index);
+// console.log('0 a 4:', zeroToFour);
+// Esperado: [0, 1, 2, 3, 4]
+
+// const oneToFive = Array.from({ length: 5 }, (_, i) => i + 1);
+// console.log('1 a 5:', oneToFive);
 // Esperado: [1, 2, 3, 4, 5]
-console.log('Tarea 5 - Rango 10-15:', createRange(10, 15));
+
+// const evens = Array.from({ length: 5 }, (_, i) => i * 2);
+// console.log('Pares:', evens);
+// Esperado: [0, 2, 4, 6, 8]
+
+console.log('');
+
+// ============================================
+// PASO 5: Generar Rangos
+// ============================================
+console.log('--- Paso 5: Función range ---');
+
+// Función para generar rangos de números
+// Descomenta las siguientes líneas:
+// const range = (start, end) =>
+//   Array.from({ length: end - start + 1 }, (_, i) => start + i);
+
+// console.log('Range 1-5:', range(1, 5));
+// Esperado: [1, 2, 3, 4, 5]
+
+// console.log('Range 10-15:', range(10, 15));
 // Esperado: [10, 11, 12, 13, 14, 15]
 
-// ============================================
-// TAREA 6: Generar Array de Ceros
-// ============================================
-
-// TODO: Crear array de 10 ceros
-const zeros = null; // Implementar
-
-console.log('Tarea 6 - Array de ceros:', zeros);
-// Esperado: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+console.log('');
 
 // ============================================
-// TAREA 7: Generar Índices
+// PASO 6: Array.of()
 // ============================================
+console.log('--- Paso 6: Array.of() ---');
 
-// TODO: Crear array de índices del 0 al 9
-const indices = null; // Implementar
+// Array() tiene comportamiento inconsistente:
+// Descomenta las siguientes líneas:
+// console.log('Array(3):', Array(3));          // [empty × 3]
+// console.log('Array(1, 2):', Array(1, 2));    // [1, 2]
 
-console.log('Tarea 7 - Índices:', indices);
-// Esperado: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+// Array.of() siempre crea un array con los elementos dados:
+// console.log('Array.of(3):', Array.of(3));       // [3]
+// console.log('Array.of(1, 2):', Array.of(1, 2)); // [1, 2]
+// console.log('Array.of(1, 2, 3):', Array.of(1, 2, 3)); // [1, 2, 3]
 
-// ============================================
-// TAREA 8: Números Aleatorios
-// ============================================
-
-// TODO: Generar 5 números aleatorios entre 1 y 100
-const randomNumbers = null; // Implementar
-
-console.log('Tarea 8 - Aleatorios:', randomNumbers);
-// Resultado: array de 5 números aleatorios
+console.log('');
 
 // ============================================
-// TAREA 9: Alfabeto
+// PASO 7: Clonar y Transformar
 // ============================================
+console.log('--- Paso 7: Clonar arrays ---');
 
-// TODO: Generar array con letras a-z
-// Pista: String.fromCharCode(97) === 'a'
-const alphabet = null; // Implementar
+const original = [1, 2, 3, 4, 5];
 
-console.log('Tarea 9 - Alfabeto:', alphabet);
-// Esperado: ['a', 'b', 'c', ..., 'z']
+// Array.from crea una copia (shallow copy)
+// Descomenta las siguientes líneas:
+// const clone = Array.from(original);
+// console.log('Clone:', clone);
+// console.log('Son diferentes:', original !== clone);
 
-// ============================================
-// TAREA 10: Matriz 3x3
-// ============================================
+// Con transformación
+// const squared = Array.from(original, x => x * x);
+// console.log('Cuadrados:', squared);
+// Esperado: [1, 4, 9, 16, 25]
 
-// TODO: Crear matriz 3x3 inicializada con ceros
-const matrix3x3 = null; // Implementar
-
-console.log('Tarea 10 - Matriz 3x3:');
-console.table(matrix3x3);
-// Esperado: [[0,0,0], [0,0,0], [0,0,0]]
+console.log('');
 
 // ============================================
-// TAREA 11: Matriz con Posiciones
+// PASO 8: Crear Matriz (Array 2D)
 // ============================================
+console.log('--- Paso 8: Matrices ---');
 
-// TODO: Crear matriz 3x3 donde cada celda contiene "fila,columna"
-const positionMatrix = null; // Implementar
+// Generar matriz de filas × columnas
+// Descomenta las siguientes líneas:
+// const createMatrix = (rows, cols, fill = 0) =>
+//   Array.from({ length: rows }, () =>
+//     Array.from({ length: cols }, () => fill)
+//   );
 
-console.log('Tarea 11 - Matriz posiciones:');
-console.table(positionMatrix);
-// Esperado: [['0,0','0,1','0,2'], ['1,0','1,1','1,2'], ['2,0','2,1','2,2']]
+// console.log('Matriz 2x3:', createMatrix(2, 3, 0));
+// Esperado: [[0, 0, 0], [0, 0, 0]]
 
-// ============================================
-// TAREA 12: Array.of vs Array
-// ============================================
+// console.log('Matriz 3x3:', createMatrix(3, 3, 1));
+// Esperado: [[1, 1, 1], [1, 1, 1], [1, 1, 1]]
 
-// TODO: Demostrar la diferencia
-const withArray = null; // Array(5) - ¿qué devuelve?
-const withArrayOf = null; // Array.of(5) - ¿qué devuelve?
-
-console.log('Tarea 12 - Array(5):', withArray);
-console.log('Tarea 12 - Array.of(5):', withArrayOf);
-// Explicar la diferencia en comentarios
+console.log('');
 
 // ============================================
-// TAREA 13: Convertir Arguments
+// PASO 9: Chunks (Dividir Array)
 // ============================================
+console.log('--- Paso 9: Dividir en chunks ---');
 
-// TODO: Crear función que sume todos sus argumentos
-function sumAll() {
-  // Implementar usando Array.from(arguments)
-  return null;
-}
+// Dividir un array en grupos de tamaño N
+// Descomenta las siguientes líneas:
+// const chunk = (arr, size) =>
+//   Array.from(
+//     { length: Math.ceil(arr.length / size) },
+//     (_, i) => arr.slice(i * size, i * size + size)
+//   );
 
-console.log('Tarea 13 - sumAll(1,2,3,4,5):', sumAll(1, 2, 3, 4, 5));
-// Esperado: 15
+// const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// console.log('Chunks de 3:', chunk(data, 3));
+// Esperado: [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]]
 
-// ============================================
-// TAREA 14: Dividir en Chunks
-// ============================================
+// console.log('Chunks de 4:', chunk(data, 4));
+// Esperado: [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10]]
 
-// TODO: Función que divide un array en subarrays de tamaño n
-const chunk = (array, size) => {
-  // Implementar
-  return null;
-};
-
-console.log(
-  'Tarea 14 - chunk([1,2,3,4,5,6,7], 3):',
-  chunk([1, 2, 3, 4, 5, 6, 7], 3)
-);
-// Esperado: [[1,2,3], [4,5,6], [7]]
+console.log('');
 
 // ============================================
-// TAREA 15: Generar IDs Únicos
+// PASO 10: Generar Datos de Prueba
 // ============================================
+console.log('--- Paso 10: Datos de prueba ---');
 
-// TODO: Función que genera n IDs únicos aleatorios
-const generateIds = n => {
-  // Implementar
-  return null;
-};
+// Generar usuarios de prueba
+// Descomenta las siguientes líneas:
+// const generateUsers = count =>
+//   Array.from({ length: count }, (_, i) => ({
+//     id: i + 1,
+//     name: `User ${i + 1}`,
+//     email: `user${i + 1}@example.com`,
+//     active: i % 2 === 0
+//   }));
 
-console.log('Tarea 15 - IDs:', generateIds(3));
-// Resultado: ['x7f2k9m3n', 'a1b2c3d4e', 'q8w9e0r1t'] (aleatorios)
+// console.log('Usuarios generados:', generateUsers(3));
 
-// ============================================
-// BONUS: Crear tabla de multiplicar
-// ============================================
-
-// TODO: Función que genera tabla de multiplicar del número n
-const multiplicationTable = n => {
-  // Implementar
-  return null;
-};
-
-console.log('Bonus - Tabla del 7:', multiplicationTable(7));
-// Esperado: [{ operation: '7 × 1', result: 7 }, { operation: '7 × 2', result: 14 }, ...]
+console.log('');
+console.log('=== ¡Descomenta cada sección y ejecuta de nuevo! ===');

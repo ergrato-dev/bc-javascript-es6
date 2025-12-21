@@ -110,7 +110,7 @@ const items = [
 ];
 
 // Queremos: ['Apple', 'Apple', 'Orange']
-const expanded = items.flatMap(item => 
+const expanded = items.flatMap(item =>
   Array(item.qty).fill(item.name)
 );
 ```
@@ -129,7 +129,7 @@ Truco poderoso: retornar `[]` para "eliminar" un elemento:
 const numbers = [1, 2, 3, 4, 5];
 
 // Solo pares, duplicados
-const result = numbers.flatMap(n => 
+const result = numbers.flatMap(n =>
   n % 2 === 0 ? [n, n] : []  // [] elimina el elemento
 );
 // [2, 2, 4, 4]

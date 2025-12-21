@@ -1,177 +1,268 @@
-# 🏋️ Ejercicio 04: Sort y Transformaciones
+# 📘 Ejercicio 04: Sort y Transformaciones
 
-## 🎯 Objetivo
+## 🎯 Objetivos
 
-Dominar el ordenamiento personalizado con `sort()` y aplicar transformaciones complejas de datos usando múltiples métodos de array.
+- Dominar el ordenamiento con comparadores personalizados
+- Manejar ordenamiento multi-criterio
+- Aplicar transformaciones complejas con reduce()
 
 ---
 
 ## 📋 Descripción
 
-Practicarás ordenamiento numérico, alfabético, por múltiples criterios, manejo de valores especiales (null, undefined) y transformaciones de datos complejas.
+El método `sort()` es más poderoso de lo que parece. Con comparadores personalizados puedes ordenar por cualquier criterio. Combinado con transformaciones, puedes procesar datos de cualquier complejidad.
 
 ---
 
-## 📚 Conceptos Clave
+## 📝 Práctica Guiada
 
-- Comparadores para `sort()`: `(a, b) => a - b`
-- `localeCompare()` para strings
-- Ordenamiento multi-criterio
-- Manejo de null/undefined en sort
-- Transformaciones con `reduce()`
+### Paso 1: El Problema de sort() por Defecto
+
+Por defecto, `sort()` convierte todo a string y ordena alfabéticamente:
+
+```javascript
+const numbers = [10, 2, 30, 1];
+numbers.sort();  // [1, 10, 2, 30] ❌ ¡Mal!
+
+// Esto pasa porque compara strings: "10" < "2"
+```
+
+**Solución**: Usar un comparador numérico.
+
+**Abre `starter/index.js`** y descomenta el primer ejemplo para ver la diferencia.
 
 ---
 
-## 🎯 Tareas
+### Paso 2: Comparador Numérico
 
-### Tarea 1: Ordenamiento Numérico
-
-```javascript
-const numbers = [10, 2, 30, 1, 25, 5, 100, 8];
-
-// TODO: Ordenar ascendente y descendente
-// Ascendente: [1, 2, 5, 8, 10, 25, 30, 100]
-// Descendente: [100, 30, 25, 10, 8, 5, 2, 1]
-```
-
-### Tarea 2: Ordenamiento Alfabético
+El comparador recibe dos elementos y debe retornar:
+- Negativo: `a` va antes que `b`
+- Cero: mantener orden
+- Positivo: `b` va antes que `a`
 
 ```javascript
-const names = ['María', 'ana', 'Carlos', 'LUIS', 'pedro'];
+const numbers = [10, 2, 30, 1];
 
-// TODO: Ordenar alfabéticamente (case-insensitive)
-// Resultado: ['ana', 'Carlos', 'LUIS', 'María', 'pedro']
+// Ascendente: a - b
+numbers.sort((a, b) => a - b);  // [1, 2, 10, 30] ✅
+
+// Descendente: b - a
+numbers.sort((a, b) => b - a);  // [30, 10, 2, 1] ✅
 ```
 
-### Tarea 3: Ordenar Objetos por Propiedad
+**Descomenta** el ejemplo de ordenamiento numérico.
+
+---
+
+### Paso 3: Ordenar Strings (Case-Insensitive)
+
+Para strings, usa `localeCompare()` que maneja acentos y mayúsculas:
+
+```javascript
+const names = ['María', 'ana', 'Carlos', 'LUIS'];
+
+// ❌ sort() por defecto pone mayúsculas primero
+names.sort();  // ['Carlos', 'LUIS', 'María', 'ana']
+
+// ✅ localeCompare ignora mayúsculas/minúsculas
+names.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+// ['ana', 'Carlos', 'LUIS', 'María']
+```
+
+**Descomenta** el ejemplo de ordenamiento de strings.
+
+---
+
+### Paso 4: Ordenar Objetos por Propiedad
+
+Accede a la propiedad dentro del comparador:
 
 ```javascript
 const products = [
-  { name: 'Laptop', price: 1000, rating: 4.5 },
-  { name: 'Phone', price: 500, rating: 4.8 },
-  { name: 'Tablet', price: 300, rating: 4.2 },
-  { name: 'Watch', price: 200, rating: 4.9 }
+  { name: 'Laptop', price: 1000 },
+  { name: 'Mouse', price: 25 },
+  { name: 'Monitor', price: 300 }
 ];
 
-// TODO: Ordenar por precio (asc), por rating (desc), por nombre (asc)
+// Por precio ascendente
+products.sort((a, b) => a.price - b.price);
+
+// Por nombre alfabético
+products.sort((a, b) => a.name.localeCompare(b.name));
 ```
 
-### Tarea 4: Ordenamiento Multi-criterio
+**Descomenta** los ejemplos de ordenamiento de objetos.
+
+---
+
+### Paso 5: Ordenamiento Multi-criterio
+
+Si el primer criterio es igual, usa el segundo:
 
 ```javascript
 const employees = [
   { name: 'Ana', dept: 'IT', salary: 5000 },
   { name: 'Luis', dept: 'HR', salary: 4000 },
-  { name: 'María', dept: 'IT', salary: 5000 },
-  { name: 'Carlos', dept: 'HR', salary: 4000 },
-  { name: 'Pedro', dept: 'IT', salary: 4500 }
+  { name: 'María', dept: 'IT', salary: 5000 }
 ];
 
-// TODO: Ordenar por departamento (asc), luego por salario (desc)
+// Por departamento, luego por salario descendente
+employees.sort((a, b) => {
+  const deptCompare = a.dept.localeCompare(b.dept);
+  if (deptCompare !== 0) return deptCompare;
+  return b.salary - a.salary;  // Si mismo dept, mayor salario primero
+});
 ```
 
-### Tarea 5: Manejar Null/Undefined
+**Descomenta** el ejemplo multi-criterio.
+
+---
+
+### Paso 6: Manejar null/undefined
+
+Los valores nulos necesitan manejo especial:
 
 ```javascript
 const scores = [
   { name: 'Ana', score: 85 },
   { name: 'Luis', score: null },
-  { name: 'María', score: 92 },
-  { name: 'Carlos', score: undefined },
-  { name: 'Pedro', score: 78 }
+  { name: 'María', score: 92 }
 ];
 
-// TODO: Ordenar por score desc, nulls al final
+// Ordenar por score desc, nulls al final
+scores.sort((a, b) => {
+  if (a.score == null) return 1;   // a va al final
+  if (b.score == null) return -1;  // b va al final
+  return b.score - a.score;
+});
 ```
 
-### Tarea 6: Ordenamiento Natural de Strings
+**Descomenta** el ejemplo con nulls.
+
+---
+
+### Paso 7: Ordenamiento Natural de Strings
+
+Para ordenar "file2" antes que "file10":
 
 ```javascript
-const files = ['file10.txt', 'file2.txt', 'file1.txt', 'file20.txt', 'file3.txt'];
+const files = ['file10.txt', 'file2.txt', 'file1.txt'];
 
-// TODO: Ordenar naturalmente
-// Resultado: ['file1.txt', 'file2.txt', 'file3.txt', 'file10.txt', 'file20.txt']
+// ❌ Orden alfabético: file1, file10, file2
+files.sort();
+
+// ✅ Orden natural: file1, file2, file10
+files.sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
 ```
 
-### Tarea 7: Ordenar por Prioridad Personalizada
+**Descomenta** el ejemplo de ordenamiento natural.
+
+---
+
+### Paso 8: Ordenar por Prioridad Personalizada
+
+Define un mapa de prioridades:
 
 ```javascript
 const tasks = [
-  { title: 'Bug fix', priority: 'high' },
-  { title: 'Feature', priority: 'medium' },
-  { title: 'Refactor', priority: 'low' },
-  { title: 'Hotfix', priority: 'critical' },
-  { title: 'Docs', priority: 'low' }
+  { title: 'Bug', priority: 'high' },
+  { title: 'Feature', priority: 'low' },
+  { title: 'Hotfix', priority: 'critical' }
 ];
 
-// TODO: Ordenar por prioridad: critical > high > medium > low
+const priorityOrder = { critical: 0, high: 1, medium: 2, low: 3 };
+
+tasks.sort((a, b) => 
+  priorityOrder[a.priority] - priorityOrder[b.priority]
+);
+// Hotfix (critical), Bug (high), Feature (low)
 ```
 
-### Tarea 8: Agrupar Datos (groupBy)
+**Descomenta** el ejemplo de prioridades.
+
+---
+
+### Paso 9: Agrupar con reduce() (groupBy)
+
+Transforma un array en un objeto agrupado:
 
 ```javascript
 const sales = [
   { product: 'A', region: 'North', amount: 100 },
   { product: 'B', region: 'South', amount: 200 },
-  { product: 'A', region: 'South', amount: 150 },
-  { product: 'B', region: 'North', amount: 180 }
+  { product: 'A', region: 'South', amount: 150 }
 ];
 
-// TODO: Agrupar por región
-// Resultado: { North: [...], South: [...] }
+const byRegion = sales.reduce((groups, sale) => {
+  const key = sale.region;
+  groups[key] = groups[key] || [];
+  groups[key].push(sale);
+  return groups;
+}, {});
+// { North: [...], South: [...] }
 ```
 
-### Tarea 9: Normalizar Datos
+**Descomenta** el ejemplo de agrupación.
+
+---
+
+### Paso 10: Normalizar (indexar por ID)
+
+Convierte un array en un objeto indexado:
 
 ```javascript
 const users = [
   { id: 1, name: 'Ana' },
-  { id: 2, name: 'Luis' },
-  { id: 3, name: 'María' }
+  { id: 2, name: 'Luis' }
 ];
 
-// TODO: Convertir a objeto indexado por id
-// Resultado: { 1: { id: 1, name: 'Ana' }, 2: {...}, 3: {...} }
+const usersById = users.reduce((acc, user) => {
+  acc[user.id] = user;
+  return acc;
+}, {});
+// { 1: { id: 1, name: 'Ana' }, 2: { id: 2, name: 'Luis' } }
 ```
 
-### Tarea 10: Pipeline Completo
+Esto es muy útil para acceso O(1) por ID.
 
-```javascript
-const rawData = [
-  { name: 'ana garcia', age: 25, status: 'A', score: 85 },
-  { name: 'luis martinez', age: 30, status: 'I', score: 92 },
-  { name: 'maria lopez', age: 28, status: 'A', score: 78 },
-  { name: 'carlos ruiz', age: 35, status: 'A', score: 95 }
-];
+**Descomenta** el último ejemplo.
 
-// TODO: Pipeline completo
-// 1. Filtrar status 'A'
-// 2. Transformar: capitalizar nombre, agregar campo fullName
-// 3. Ordenar por score desc
-// 4. Tomar top 2
+---
+
+## 🚀 Cómo Ejecutar
+
+```bash
+cd bootcamp/week-05/2-practicas/ejercicio-04-sort-transform
+node starter/index.js
 ```
 
 ---
 
-## 📁 Archivos
+## ✅ Verificación
 
-- `starter/index.js` - Archivo inicial
-- `solution/index.js` - Solución completa
-
----
-
-## ⏱️ Tiempo Estimado
-
-50 minutos
+Al finalizar, deberías ver:
+- Ordenamiento numérico correcto
+- Strings ordenados case-insensitive
+- Objetos ordenados por múltiples criterios
+- Nulls manejados correctamente
+- Datos agrupados e indexados
 
 ---
 
-## 💡 Pistas
+## 💡 Tips Importantes
 
-1. `sort()` muta el array original - usa `[...arr].sort()`
-2. `localeCompare()` maneja acentos y mayúsculas
-3. Para multi-criterio, retorna 0 si son iguales y continúa
-4. `reduce()` es ideal para transformaciones complejas
+1. **sort() muta el original**: Usa `[...arr].sort()` para preservar el original
+2. **localeCompare()** es tu amigo para strings
+3. **Retorna 0** para mantener el orden cuando son iguales
+4. **Multi-criterio**: Si el primero es 0, evalúa el siguiente
+
+---
+
+## 📚 Recursos
+
+- [Teoría: Sort Personalizado](../../1-teoria/05-sort-personalizado.md)
+- [MDN: Array.sort()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+- [MDN: localeCompare()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare)
 
 ---
 

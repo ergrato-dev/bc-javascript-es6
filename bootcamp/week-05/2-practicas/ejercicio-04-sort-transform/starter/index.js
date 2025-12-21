@@ -1,39 +1,68 @@
 /**
- * Ejercicio 04: Sort y Transformaciones
- *
- * Practica ordenamiento personalizado y transformaciones
+ * 📘 Ejercicio 04: Sort y Transformaciones
+ * Práctica guiada - Descomenta cada sección para aprender
  */
 
+console.log('=== Ejercicio 04: Sort y Transformaciones ===\n');
+
 // ============================================
-// TAREA 1: Ordenamiento Numérico
+// PASO 1: El Problema de sort() por Defecto
 // ============================================
+console.log('--- Paso 1: Problema de sort() ---');
+
+const numbersDefault = [10, 2, 30, 1, 25, 5];
+
+// sort() por defecto convierte a string y ordena alfabéticamente
+// Descomenta las siguientes líneas:
+// const badSort = [...numbersDefault].sort();
+// console.log('sort() por defecto:', badSort);
+// Resultado incorrecto: [1, 10, 2, 25, 30, 5]
+
+console.log('');
+
+// ============================================
+// PASO 2: Comparador Numérico
+// ============================================
+console.log('--- Paso 2: Ordenamiento numérico ---');
 
 const numbers = [10, 2, 30, 1, 25, 5, 100, 8];
 
-// TODO: Ordenar ascendente
-const ascending = null; // Implementar
+// (a, b) => a - b → ascendente
+// (a, b) => b - a → descendente
+// Descomenta las siguientes líneas:
+// const ascending = [...numbers].sort((a, b) => a - b);
+// const descending = [...numbers].sort((a, b) => b - a);
 
-// TODO: Ordenar descendente
-const descending = null; // Implementar
+// console.log('Ascendente:', ascending);
+// Esperado: [1, 2, 5, 8, 10, 25, 30, 100]
 
-console.log('Tarea 1 - Asc:', ascending);
-console.log('Tarea 1 - Desc:', descending);
+// console.log('Descendente:', descending);
+// Esperado: [100, 30, 25, 10, 8, 5, 2, 1]
+
+console.log('');
 
 // ============================================
-// TAREA 2: Ordenamiento Alfabético
+// PASO 3: Ordenar Strings (Case-Insensitive)
 // ============================================
+console.log('--- Paso 3: Strings case-insensitive ---');
 
 const names = ['María', 'ana', 'Carlos', 'LUIS', 'pedro'];
 
-// TODO: Ordenar alfabéticamente (case-insensitive)
-const sortedNames = null; // Implementar
+// localeCompare maneja acentos y mayúsculas
+// Descomenta las siguientes líneas:
+// const sortedNames = [...names].sort((a, b) =>
+//   a.toLowerCase().localeCompare(b.toLowerCase())
+// );
 
-console.log('Tarea 2:', sortedNames);
+// console.log('Nombres ordenados:', sortedNames);
 // Esperado: ['ana', 'Carlos', 'LUIS', 'María', 'pedro']
 
+console.log('');
+
 // ============================================
-// TAREA 3: Ordenar Objetos por Propiedad
+// PASO 4: Ordenar Objetos por Propiedad
 // ============================================
+console.log('--- Paso 4: Objetos por propiedad ---');
 
 const products = [
   { name: 'Laptop', price: 1000, rating: 4.5 },
@@ -42,22 +71,23 @@ const products = [
   { name: 'Watch', price: 200, rating: 4.9 },
 ];
 
-// TODO: Por precio ascendente
-const byPriceAsc = null; // Implementar
+// Accede a la propiedad en el comparador
+// Descomenta las siguientes líneas:
+// const byPriceAsc = [...products].sort((a, b) => a.price - b.price);
+// console.log('Por precio:', byPriceAsc.map(p => `${p.name}: $${p.price}`));
 
-// TODO: Por rating descendente
-const byRatingDesc = null; // Implementar
+// const byRatingDesc = [...products].sort((a, b) => b.rating - a.rating);
+// console.log('Por rating:', byRatingDesc.map(p => `${p.name}: ${p.rating}`));
 
-// TODO: Por nombre alfabético
-const byName = null; // Implementar
+// const byName = [...products].sort((a, b) => a.name.localeCompare(b.name));
+// console.log('Por nombre:', byName.map(p => p.name));
 
-console.log('Tarea 3 - Por precio:', byPriceAsc);
-console.log('Tarea 3 - Por rating:', byRatingDesc);
-console.log('Tarea 3 - Por nombre:', byName);
+console.log('');
 
 // ============================================
-// TAREA 4: Ordenamiento Multi-criterio
+// PASO 5: Ordenamiento Multi-criterio
 // ============================================
+console.log('--- Paso 5: Multi-criterio ---');
 
 const employees = [
   { name: 'Ana', dept: 'IT', salary: 5000 },
@@ -67,14 +97,23 @@ const employees = [
   { name: 'Pedro', dept: 'IT', salary: 4500 },
 ];
 
-// TODO: Por departamento (asc), luego por salario (desc)
-const byDeptAndSalary = null; // Implementar
+// Si el primer criterio es igual (0), evalúa el segundo
+// Descomenta las siguientes líneas:
+// const byDeptAndSalary = [...employees].sort((a, b) => {
+//   const deptCompare = a.dept.localeCompare(b.dept);
+//   if (deptCompare !== 0) return deptCompare;
+//   return b.salary - a.salary;  // Mayor salario primero dentro del mismo dept
+// });
 
-console.log('Tarea 4:', byDeptAndSalary);
+// console.log('Por dept + salario:');
+// byDeptAndSalary.forEach(e => console.log(`  ${e.dept} - ${e.name}: $${e.salary}`));
+
+console.log('');
 
 // ============================================
-// TAREA 5: Manejar Null/Undefined
+// PASO 6: Manejar null/undefined
 // ============================================
+console.log('--- Paso 6: Manejar nulls ---');
 
 const scores = [
   { name: 'Ana', score: 85 },
@@ -84,32 +123,41 @@ const scores = [
   { name: 'Pedro', score: 78 },
 ];
 
-// TODO: Ordenar por score desc, nulls al final
-const sortedScores = null; // Implementar
+// Nulls van al final
+// Descomenta las siguientes líneas:
+// const sortedScores = [...scores].sort((a, b) => {
+//   if (a.score == null) return 1;   // a al final
+//   if (b.score == null) return -1;  // b al final
+//   return b.score - a.score;        // Mayor primero
+// });
 
-console.log('Tarea 5:', sortedScores);
+// console.log('Con nulls al final:');
+// sortedScores.forEach(s => console.log(`  ${s.name}: ${s.score ?? 'N/A'}`));
+
+console.log('');
 
 // ============================================
-// TAREA 6: Ordenamiento Natural de Strings
+// PASO 7: Ordenamiento Natural
 // ============================================
+console.log('--- Paso 7: Ordenamiento natural ---');
 
-const files = [
-  'file10.txt',
-  'file2.txt',
-  'file1.txt',
-  'file20.txt',
-  'file3.txt',
-];
+const files = ['file10.txt', 'file2.txt', 'file1.txt', 'file20.txt', 'file3.txt'];
 
-// TODO: Ordenar naturalmente
-const naturalSorted = null; // Implementar
+// { numeric: true } hace que "2" < "10"
+// Descomenta las siguientes líneas:
+// const naturalSorted = [...files].sort((a, b) =>
+//   a.localeCompare(b, undefined, { numeric: true })
+// );
 
-console.log('Tarea 6:', naturalSorted);
+// console.log('Orden natural:', naturalSorted);
 // Esperado: ['file1.txt', 'file2.txt', 'file3.txt', 'file10.txt', 'file20.txt']
 
+console.log('');
+
 // ============================================
-// TAREA 7: Ordenar por Prioridad Personalizada
+// PASO 8: Prioridad Personalizada
 // ============================================
+console.log('--- Paso 8: Prioridad personalizada ---');
 
 const tasks = [
   { title: 'Bug fix', priority: 'high' },
@@ -119,14 +167,23 @@ const tasks = [
   { title: 'Docs', priority: 'low' },
 ];
 
-// TODO: critical > high > medium > low
-const byPriority = null; // Implementar
+// Mapa de prioridades (menor número = más importante)
+const priorityOrder = { critical: 0, high: 1, medium: 2, low: 3 };
 
-console.log('Tarea 7:', byPriority);
+// Descomenta las siguientes líneas:
+// const byPriority = [...tasks].sort((a, b) =>
+//   priorityOrder[a.priority] - priorityOrder[b.priority]
+// );
+
+// console.log('Por prioridad:');
+// byPriority.forEach(t => console.log(`  [${t.priority}] ${t.title}`));
+
+console.log('');
 
 // ============================================
-// TAREA 8: Agrupar Datos (groupBy)
+// PASO 9: Agrupar con reduce() (groupBy)
 // ============================================
+console.log('--- Paso 9: Agrupar datos ---');
 
 const sales = [
   { product: 'A', region: 'North', amount: 100 },
@@ -135,38 +192,39 @@ const sales = [
   { product: 'B', region: 'North', amount: 180 },
 ];
 
-// TODO: Agrupar por región
-const byRegion = null; // Implementar
+// reduce para agrupar por una propiedad
+// Descomenta las siguientes líneas:
+// const byRegion = sales.reduce((groups, sale) => {
+//   const key = sale.region;
+//   groups[key] = groups[key] || [];
+//   groups[key].push(sale);
+//   return groups;
+// }, {});
 
-console.log('Tarea 8:', byRegion);
+// console.log('Agrupado por región:', byRegion);
+
+console.log('');
 
 // ============================================
-// TAREA 9: Normalizar Datos
+// PASO 10: Normalizar (indexar por ID)
 // ============================================
+console.log('--- Paso 10: Indexar por ID ---');
 
 const users = [
-  { id: 1, name: 'Ana' },
-  { id: 2, name: 'Luis' },
-  { id: 3, name: 'María' },
+  { id: 1, name: 'Ana', email: 'ana@mail.com' },
+  { id: 2, name: 'Luis', email: 'luis@mail.com' },
+  { id: 3, name: 'María', email: 'maria@mail.com' },
 ];
 
-// TODO: Indexar por id
-const usersById = null; // Implementar
+// Convierte array a objeto para acceso O(1)
+// Descomenta las siguientes líneas:
+// const usersById = users.reduce((acc, user) => {
+//   acc[user.id] = user;
+//   return acc;
+// }, {});
 
-console.log('Tarea 9:', usersById);
+// console.log('Indexado por ID:', usersById);
+// console.log('Acceso directo:', usersById[2].name);  // 'Luis'
 
-// ============================================
-// TAREA 10: Pipeline Completo
-// ============================================
-
-const rawData = [
-  { name: 'ana garcia', age: 25, status: 'A', score: 85 },
-  { name: 'luis martinez', age: 30, status: 'I', score: 92 },
-  { name: 'maria lopez', age: 28, status: 'A', score: 78 },
-  { name: 'carlos ruiz', age: 35, status: 'A', score: 95 },
-];
-
-// TODO: Pipeline completo
-const topActiveUsers = null; // Implementar
-
-console.log('Tarea 10:', topActiveUsers);
+console.log('');
+console.log('=== ¡Descomenta cada sección y ejecuta de nuevo! ===');
