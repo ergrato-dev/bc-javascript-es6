@@ -224,7 +224,13 @@ console.log(testAccount.getBalance('wrong')); // Attempt 3 - Locked!
 console.log('Is locked:', testAccount.isLocked);
 
 console.log('\n=== CreditCard Test ===');
-const card = new CreditCard('4111111111111111', '123', '12/25', 'Ana García', 5000);
+const card = new CreditCard(
+  '4111111111111111',
+  '123',
+  '12/25',
+  'Ana García',
+  5000
+);
 console.log('Card:', card.cardNumber); // ****-****-****-1111
 console.log('Available credit:', card.availableCredit); // 5000
 

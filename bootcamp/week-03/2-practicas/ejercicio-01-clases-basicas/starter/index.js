@@ -111,4 +111,6 @@ console.log(`Items: ${customer.cart.getItemCount()}`);
 console.log('\n=== Checkout ===');
 const order = customer.checkout();
 console.log(order);
-console.log(`Carrito después del checkout: ${customer.cart.getItemCount()} items`);
+console.log(
+  `Carrito después del checkout: ${customer.cart.getItemCount()} items`
+);

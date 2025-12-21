@@ -154,7 +154,7 @@ console.log('Únicos:', ArrayUtils.unique(numbers));
 const users = [
   { name: 'Ana', role: 'admin' },
   { name: 'Carlos', role: 'user' },
-  { name: 'María', role: 'admin' }
+  { name: 'María', role: 'admin' },
 ];
 console.log('Agrupados:', ArrayUtils.groupBy(users, 'role'));
 console.log('Chunks:', ArrayUtils.chunk([1, 2, 3, 4, 5, 6, 7], 3));

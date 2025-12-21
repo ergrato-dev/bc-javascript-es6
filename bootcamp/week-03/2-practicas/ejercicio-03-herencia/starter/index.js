@@ -143,7 +143,13 @@ car.openTrunk();
 console.log('Trunk open:', car.trunkOpen);
 
 console.log('\n=== Motorcycle Test ===');
-const moto = new Motorcycle('Harley-Davidson', 'Sportster', 2022, 'cruiser', 1200);
+const moto = new Motorcycle(
+  'Harley-Davidson',
+  'Sportster',
+  2022,
+  'cruiser',
+  1200
+);
 console.log(moto.getInfo());
 moto.putHelmet();
 moto.raiseKickstand();
