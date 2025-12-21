@@ -43,10 +43,10 @@ console.log(city); // "Madrid"
 A diferencia de arrays, en objetos el orden es irrelevante:
 
 ```javascript
-const product = { 
-  id: 1, 
-  title: 'Laptop', 
-  price: 999 
+const product = {
+  id: 1,
+  title: 'Laptop',
+  price: 999
 };
 
 // El orden no afecta
@@ -73,10 +73,10 @@ const apiResponse = {
 };
 
 // Renombrar a camelCase
-const { 
-  user_name: userName, 
+const {
+  user_name: userName,
   user_email: userEmail,
-  created_at: createdAt 
+  created_at: createdAt
 } = apiResponse;
 
 console.log(userName);  // "john_doe"
@@ -105,9 +105,9 @@ console.log(port);    // 3000
 console.log(timeout); // 5000 (default)
 
 // Combinar alias con default
-const { 
+const {
   host: serverHost = '127.0.0.1',
-  debug: isDebug = false 
+  debug: isDebug = false
 } = config;
 
 console.log(serverHost); // "localhost" (existe en config)
@@ -133,13 +133,13 @@ const employee = {
 };
 
 // Extraer propiedades anidadas
-const { 
+const {
   name: employeeName,
-  department: { 
+  department: {
     name: deptName,
     floor,
-    manager: { 
-      name: managerName 
+    manager: {
+      name: managerName
     }
   }
 } = employee;
@@ -171,10 +171,10 @@ console.log(name);    // "Ana"
 console.log(details); // { email: "ana@email.com", age: 28, city: "Barcelona" }
 
 // Útil para separar propiedades
-const { password, ...safeUser } = { 
-  username: 'john', 
-  password: 'secret123', 
-  email: 'john@mail.com' 
+const { password, ...safeUser } = {
+  username: 'john',
+  password: 'secret123',
+  email: 'john@mail.com'
 };
 
 console.log(safeUser); // { username: "john", email: "john@mail.com" }
@@ -211,12 +211,12 @@ createUser({ name: 'Admin', email: 'admin@mail.com', role: 'admin' });
 
 ```javascript
 // Función con objeto de opciones y defaults
-const fetchData = ({ 
-  url, 
-  method = 'GET', 
-  headers = {}, 
+const fetchData = ({
+  url,
+  method = 'GET',
+  headers = {},
   timeout = 5000,
-  retries = 3 
+  retries = 3
 } = {}) => {
   console.log(`${method} ${url}`);
   console.log(`Timeout: ${timeout}ms, Retries: ${retries}`);
@@ -258,7 +258,7 @@ const company = {
   ]
 };
 
-const { 
+const {
   name: companyName,
   employees: [ceo, ...staff],
   locations: [{ city: hqCity }]
@@ -303,22 +303,22 @@ const fetchUser = async (id) => {
 
 ```javascript
 // Simular props de componente
-const Button = ({ 
-  text, 
-  onClick, 
+const Button = ({
+  text,
+  onClick,
   type = 'button',
   disabled = false,
   className = '',
-  ...rest 
+  ...rest
 }) => {
   console.log(`Button: ${text}, type: ${type}, disabled: ${disabled}`);
   console.log('Extra props:', rest);
 };
 
-Button({ 
-  text: 'Click me', 
-  onClick: () => {}, 
-  'data-testid': 'main-btn' 
+Button({
+  text: 'Click me',
+  onClick: () => {},
+  'data-testid': 'main-btn'
 });
 ```
 
@@ -341,7 +341,7 @@ const loadConfig = () => ({
   }
 });
 
-const { 
+const {
   database: { host: dbHost, port: dbPort },
   server: { port: serverPort },
   features: { darkMode }
@@ -355,21 +355,21 @@ console.log(`Dark mode: ${darkMode}`);
 #### Manejo de respuestas de API
 
 ```javascript
-const handleApiResponse = ({ 
-  data, 
-  status, 
+const handleApiResponse = ({
+  data,
+  status,
   error = null,
-  meta: { 
-    total = 0, 
-    page = 1, 
-    perPage = 10 
+  meta: {
+    total = 0,
+    page = 1,
+    perPage = 10
   } = {}
 }) => {
   if (error) {
     console.error(`Error ${status}: ${error}`);
     return null;
   }
-  
+
   console.log(`Page ${page}/${Math.ceil(total / perPage)}`);
   console.log(`Showing ${data.length} of ${total} items`);
   return data;
@@ -430,12 +430,12 @@ const person = { name: 'Ana' };
 ### Ejercicio 2: Anidado
 ```javascript
 // Extrae la ciudad del usuario
-const data = { 
-  user: { 
-    profile: { 
-      address: { city: 'Madrid' } 
-    } 
-  } 
+const data = {
+  user: {
+    profile: {
+      address: { city: 'Madrid' }
+    }
+  }
 };
 // Tu código aquí
 ```

@@ -226,7 +226,7 @@ const processData = ([first, ...rest]) => {
   console.log('Rest:', rest);
 };
 
-processData([1, 2, 3, 4]); 
+processData([1, 2, 3, 4]);
 // "First: 1"
 // "Rest: [2, 3, 4]"
 
@@ -255,7 +255,7 @@ const fetchAllData = async () => {
     fetch('/api/posts').then(r => r.json()),
     fetch('/api/comments').then(r => r.json())
   ]);
-  
+
   return { users, posts, comments };
 };
 ```
