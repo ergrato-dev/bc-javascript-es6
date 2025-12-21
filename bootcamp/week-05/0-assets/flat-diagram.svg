@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <style>
+      .bg { fill: #1e1e1e; }
+      .title { fill: #f0db4f; font-family: Inter, system-ui, sans-serif; font-size: 24px; font-weight: 600; }
+      .label { fill: #e0e0e0; font-family: Inter, system-ui, sans-serif; font-size: 14px; }
+      .code { fill: #9cdcfe; font-family: 'Fira Code', monospace; font-size: 13px; }
+      .comment { fill: #6a9955; font-family: 'Fira Code', monospace; font-size: 12px; }
+      .array-box { fill: #2d2d2d; stroke: #f0db4f; stroke-width: 2; rx: 8; }
+      .nested-box { fill: #3d3d3d; stroke: #569cd6; stroke-width: 1.5; rx: 4; }
+      .arrow { stroke: #f0db4f; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .flat-result { fill: #2d2d2d; stroke: #4ec9b0; stroke-width: 2; rx: 8; }
+      .item { fill: #ce9178; font-family: 'Fira Code', monospace; font-size: 14px; }
+      .method { fill: #dcdcaa; font-family: 'Fira Code', monospace; font-size: 14px; font-weight: 600; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f0db4f"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect class="bg" width="800" height="400"/>
+  
+  <!-- Title -->
+  <text class="title" x="400" y="35" text-anchor="middle">flat() - Aplanar Arrays Anidados</text>
+  
+  <!-- Original Array -->
+  <text class="label" x="40" y="80">Array Original (anidado):</text>
+  <rect class="array-box" x="40" y="95" width="300" height="120"/>
+  
+  <!-- Nested boxes -->
+  <rect class="nested-box" x="55" y="115" width="80" height="35"/>
+  <text class="item" x="75" y="138">'a', 'b'</text>
+  
+  <rect class="nested-box" x="150" y="115" width="80" height="35"/>
+  <text class="item" x="170" y="138">'c', 'd'</text>
+  
+  <rect class="nested-box" x="245" y="115" width="80" height="35"/>
+  <text class="item" x="275" y="138">'e'</text>
+  
+  <text class="code" x="55" y="185">[['a','b'], ['c','d'], ['e']]</text>
+  
+  <!-- Arrow and method -->
+  <path class="arrow" d="M350 155 L430 155"/>
+  <text class="method" x="370" y="145">.flat()</text>
+  
+  <!-- Result Array -->
+  <text class="label" x="450" y="80">Array Aplanado:</text>
+  <rect class="flat-result" x="450" y="95" width="310" height="120"/>
+  
+  <text class="item" x="475" y="145">'a'</text>
+  <text class="item" x="515" y="145">'b'</text>
+  <text class="item" x="555" y="145">'c'</text>
+  <text class="item" x="595" y="145">'d'</text>
+  <text class="item" x="635" y="145">'e'</text>
+  
+  <text class="code" x="475" y="185">['a', 'b', 'c', 'd', 'e']</text>
+  
+  <!-- Depth Example -->
+  <text class="label" x="40" y="260">Controlando la profundidad:</text>
+  
+  <!-- Deep nested -->
+  <rect class="array-box" x="40" y="275" width="200" height="50"/>
+  <text class="code" x="55" y="305">[1, [2, [3, [4]]]]</text>
+  
+  <!-- flat(1) -->
+  <path class="arrow" d="M250 300 L310 300"/>
+  <text class="method" x="245" y="290">.flat(1)</text>
+  <rect class="nested-box" x="320" y="275" width="140" height="50"/>
+  <text class="code" x="330" y="305">[1, 2, [3, [4]]]</text>
+  
+  <!-- flat(Infinity) -->
+  <path class="arrow" d="M470 300 L530 300"/>
+  <text class="method" x="455" y="290">.flat(∞)</text>
+  <rect class="flat-result" x="540" y="275" width="130" height="50"/>
+  <text class="code" x="555" y="305">[1, 2, 3, 4]</text>
+  
+  <!-- Note -->
+  <text class="comment" x="40" y="370">// flat() no modifica el array original, retorna uno nuevo</text>
+  <text class="comment" x="40" y="388">// Elimina automáticamente espacios vacíos (empty slots)</text>
+</svg>

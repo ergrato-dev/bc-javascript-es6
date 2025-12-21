@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <style>
+      .bg { fill: #1e1e1e; }
+      .title { fill: #f0db4f; font-family: Inter, system-ui, sans-serif; font-size: 24px; font-weight: 600; }
+      .subtitle { fill: #4ec9b0; font-family: Inter, system-ui, sans-serif; font-size: 16px; }
+      .label { fill: #e0e0e0; font-family: Inter, system-ui, sans-serif; font-size: 14px; }
+      .code { fill: #9cdcfe; font-family: 'Fira Code', monospace; font-size: 13px; }
+      .comment { fill: #6a9955; font-family: 'Fira Code', monospace; font-size: 12px; }
+      .array-box { fill: #2d2d2d; stroke: #f0db4f; stroke-width: 2; rx: 8; }
+      .step-box { fill: #3d3d3d; stroke: #569cd6; stroke-width: 1.5; rx: 6; }
+      .result-box { fill: #2d2d2d; stroke: #4ec9b0; stroke-width: 2; rx: 8; }
+      .arrow { stroke: #f0db4f; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .item { fill: #ce9178; font-family: 'Fira Code', monospace; font-size: 13px; }
+      .method { fill: #dcdcaa; font-family: 'Fira Code', monospace; font-size: 14px; font-weight: 600; }
+      .keyword { fill: #c586c0; font-family: 'Fira Code', monospace; font-size: 13px; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f0db4f"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect class="bg" width="800" height="450"/>
+  
+  <!-- Title -->
+  <text class="title" x="400" y="35" text-anchor="middle">flatMap() - Map + Flat en Un Paso</text>
+  
+  <!-- Original Array -->
+  <text class="label" x="40" y="75">Array de strings:</text>
+  <rect class="array-box" x="40" y="90" width="200" height="50"/>
+  <text class="item" x="55" y="120">['hello world', 'hi']</text>
+  
+  <!-- Step 1: Map -->
+  <path class="arrow" d="M250 115 L290 115"/>
+  <text class="method" x="295" y="100">.map()</text>
+  
+  <rect class="step-box" x="295" y="90" width="200" height="70"/>
+  <text class="code" x="305" y="115">str => str.split(' ')</text>
+  <text class="comment" x="305" y="135">// Divide cada string</text>
+  
+  <!-- Map Result -->
+  <path class="arrow" d="M505 115 L545 115"/>
+  
+  <rect class="array-box" x="545" y="85" width="220" height="75"/>
+  <text class="item" x="560" y="115">[['hello','world'],</text>
+  <text class="item" x="560" y="135"> ['hi']]</text>
+  <text class="label" x="630" y="75">Anidado</text>
+  
+  <!-- Step 2: Flat -->
+  <path class="arrow" d="M655 170 L655 200"/>
+  <text class="method" x="670" y="195">.flat()</text>
+  
+  <rect class="result-box" x="545" y="210" width="220" height="50"/>
+  <text class="item" x="560" y="240">['hello','world','hi']</text>
+  <text class="label" x="630" y="200">Aplanado</text>
+  
+  <!-- VS -->
+  <text class="subtitle" x="400" y="295" text-anchor="middle">⚡ flatMap() hace ambos pasos en uno (más eficiente)</text>
+  
+  <!-- flatMap direct -->
+  <rect class="array-box" x="40" y="320" width="200" height="50"/>
+  <text class="item" x="55" y="350">['hello world', 'hi']</text>
+  
+  <path class="arrow" d="M250 345 L330 345"/>
+  <text class="method" x="245" y="330">.flatMap(str => str.split(' '))</text>
+  
+  <rect class="result-box" x="545" y="320" width="220" height="50"/>
+  <text class="item" x="560" y="350">['hello','world','hi']</text>
+  
+  <!-- Note -->
+  <text class="comment" x="40" y="420">// flatMap() solo aplana 1 nivel (equivale a .flat(1))</text>
+  <text class="comment" x="40" y="438">// Ideal para: expandir arrays, filtrar y transformar, separar strings</text>
+</svg>
