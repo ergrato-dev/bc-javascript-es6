@@ -107,12 +107,97 @@ bootcamp/week-XX/
 - Soluciones comentadas
 - Casos de uso del mundo real
 
+#### 📋 Formato de Ejercicios (Referencia: week-05)
+
+Los ejercicios son **tutoriales guiados**, NO tareas con TODOs. El estudiante aprende descomentando código:
+
+**README.md del ejercicio:**
+```markdown
+### Paso 1: Nombre del Concepto
+
+Explicación del concepto con ejemplo:
+
+\`\`\`javascript
+// Ejemplo explicativo
+const result = data.method(x => x.transform);
+\`\`\`
+
+**Abre `starter/index.js`** y descomenta la sección correspondiente.
+```
+
+**starter/index.js:**
+```javascript
+// ============================================
+// PASO 1: Nombre del Concepto
+// ============================================
+console.log('--- Paso 1: Nombre del Concepto ---');
+
+// Explicación breve del concepto
+// Descomenta las siguientes líneas:
+// const result = data.method(x => x.transform);
+// console.log('Resultado:', result);
+
+console.log('');
+```
+
+**solution/index.js:**
+```javascript
+// ============================================
+// PASO 1: Nombre del Concepto
+// ============================================
+console.log('--- Paso 1: Nombre del Concepto ---');
+
+const result = data.method(x => x.transform);
+console.log('Resultado:', result);
+```
+
+#### ❌ NO usar este formato en ejercicios:
+```javascript
+// ❌ INCORRECTO - Este formato es para PROYECTOS, no ejercicios
+const result = null; // TODO: Implementar
+```
+
+#### ✅ Usar este formato en ejercicios:
+```javascript
+// ✅ CORRECTO - Código comentado para descomentar
+// Descomenta las siguientes líneas:
+// const result = data.method(x => x.transform);
+// console.log('Resultado:', result);
+```
+
 ### 3. **Proyecto** (3-proyecto/)
 
 - Proyecto integrador que consolida lo aprendido
 - README.md con instrucciones claras
 - Código inicial o plantillas cuando sea apropiado
 - Criterios de evaluación específicos
+
+#### 📋 Formato de Proyecto (con TODOs)
+
+A diferencia de los ejercicios, el proyecto SÍ usa TODOs para que el estudiante implemente desde cero:
+
+**starter/script.js:**
+```javascript
+// ============================================
+// FUNCIÓN: nombreFuncion
+// Descripción de lo que debe hacer
+// ============================================
+
+/**
+ * Descripción de la función
+ * @param {tipo} param - Descripción
+ * @returns {tipo} Descripción
+ */
+const nombreFuncion = param => {
+  // TODO: Implementar lógica
+  return null;
+};
+```
+
+El estudiante debe:
+1. Leer las instrucciones en README.md
+2. Completar cada TODO con su propia implementación
+3. Usar lo aprendido en las prácticas guiadas
 
 ### 4. **Recursos** (4-recursos/)
 

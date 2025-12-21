@@ -95,7 +95,7 @@ Array.from({ length: 5 }, (_, i) => i * 2);
 Crea una función que genere rangos de números:
 
 ```javascript
-const range = (start, end) => 
+const range = (start, end) =>
   Array.from({ length: end - start + 1 }, (_, i) => start + i);
 
 range(1, 5);   // [1, 2, 3, 4, 5]

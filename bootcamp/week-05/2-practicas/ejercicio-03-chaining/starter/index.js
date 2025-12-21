@@ -233,13 +233,15 @@ console.log('');
 console.log('--- Paso 10: Pipeline reutilizable ---');
 
 // Función que retorna un pipeline configurado
-const createTopPerformers = (limit = 3) => users =>
-  users
-    .filter(u => u.active)
-    .filter(u => u.age >= 18)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, limit)
-    .map(u => ({ name: u.name, score: u.score }));
+const createTopPerformers =
+  (limit = 3) =>
+  users =>
+    users
+      .filter(u => u.active)
+      .filter(u => u.age >= 18)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, limit)
+      .map(u => ({ name: u.name, score: u.score }));
 
 // Crear pipelines específicos
 // Descomenta las siguientes líneas:

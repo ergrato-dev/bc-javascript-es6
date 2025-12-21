@@ -178,7 +178,7 @@ const result = data
   .filter(d => d.status === 'active')
   .map(d => ({
     ...d,
-    name: d.name.split(' ').map(w => 
+    name: d.name.split(' ').map(w =>
       w.charAt(0).toUpperCase() + w.slice(1)
     ).join(' ')
   }))

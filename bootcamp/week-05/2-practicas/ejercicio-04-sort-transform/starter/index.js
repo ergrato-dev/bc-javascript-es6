@@ -141,7 +141,13 @@ console.log('');
 // ============================================
 console.log('--- Paso 7: Ordenamiento natural ---');
 
-const files = ['file10.txt', 'file2.txt', 'file1.txt', 'file20.txt', 'file3.txt'];
+const files = [
+  'file10.txt',
+  'file2.txt',
+  'file1.txt',
+  'file20.txt',
+  'file3.txt',
+];
 
 // { numeric: true } hace que "2" < "10"
 // Descomenta las siguientes líneas:
