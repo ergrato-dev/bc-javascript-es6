@@ -152,7 +152,7 @@ class SecureObject {
   constructor() {
     this[_data] = {};
   }
-  
+
   [_validate](value) {
     // Método privado
   }
