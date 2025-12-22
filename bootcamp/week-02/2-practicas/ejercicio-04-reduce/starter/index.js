@@ -1,281 +1,278 @@
 /**
- * 📘 Ejercicio 04: Reduce Complejo
- * Domina reduce() para transformaciones avanzadas
+ * 📘 Ejercicio 04: reduce() - El Método Más Poderoso
+ *
+ * Este es un ejercicio guiado. Descomenta el código en cada paso
+ * para dominar el método reduce().
+ *
+ * Ejecuta: node index.js
  */
 
-// Datos de prueba
-const numbers = [10, 20, 30, 40, 50];
+// ============================================
+// DATOS DE PRUEBA (no modificar)
+// ============================================
+
+const numbers = [1, 2, 3, 4, 5];
 
 const products = [
-  { id: 1, name: 'Laptop', category: 'electronics', price: 999, quantity: 2 },
-  { id: 2, name: 'Mouse', category: 'electronics', price: 25, quantity: 5 },
-  { id: 3, name: 'Desk', category: 'furniture', price: 200, quantity: 1 },
-  { id: 4, name: 'Chair', category: 'furniture', price: 150, quantity: 4 },
+  { name: 'Laptop', price: 999, quantity: 2, category: 'electronics' },
+  { name: 'Mouse', price: 25, quantity: 5, category: 'electronics' },
+  { name: 'Desk', price: 200, quantity: 1, category: 'furniture' },
+  { name: 'Chair', price: 150, quantity: 3, category: 'furniture' },
+  { name: 'Monitor', price: 300, quantity: 2, category: 'electronics' },
 ];
 
-const users = [
-  { id: 1, name: 'Ana', role: 'admin', points: 100 },
-  { id: 2, name: 'Bob', role: 'user', points: 50 },
-  { id: 3, name: 'Carlos', role: 'admin', points: 80 },
-  { id: 4, name: 'Diana', role: 'user', points: 120 },
+const orders = [
+  { id: 1, customer: 'Ana', items: ['laptop', 'mouse'], total: 1024 },
+  { id: 2, customer: 'Bob', items: ['chair'], total: 150 },
+  { id: 3, customer: 'Ana', items: ['desk', 'chair'], total: 350 },
+  { id: 4, customer: 'Carlos', items: ['monitor', 'mouse'], total: 325 },
 ];
 
-const fruits = [
-  'apple',
-  'banana',
-  'apple',
-  'orange',
-  'banana',
-  'apple',
-  'grape',
-];
-
-const nestedArrays = [
-  [1, 2],
-  [3, 4],
-  [5, 6],
-];
+const words = ['Hola', 'mundo', 'JavaScript', 'es', 'genial'];
 
 // ============================================
-// PARTE 1: AGREGACIONES BÁSICAS
+// PASO 1: reduce() - Sintaxis Básica
 // ============================================
+console.log('--- Paso 1: Sintaxis Básica ---');
 
-/**
- * TODO: Suma todos los números
- * @param {number[]} numbers - Array de números
- * @returns {number} - Suma total
- */
-const sum = numbers => {
-  // TODO: Usa reduce para sumar, initial value = 0
-};
+// reduce((accumulator, currentValue) => newAccumulator, initialValue)
+// - accumulator: valor acumulado (resultado parcial)
+// - currentValue: elemento actual del array
+// - initialValue: valor inicial del acumulador
+// Descomenta las siguientes líneas:
 
-/**
- * TODO: Multiplica todos los números
- * @param {number[]} numbers - Array de números
- * @returns {number} - Producto total
- */
-const product = numbers => {
-  // TODO: Usa reduce para multiplicar, initial value = 1
-};
+// const sum = numbers.reduce((acc, num) => {
+//   console.log(`acc: ${acc}, num: ${num}, resultado: ${acc + num}`);
+//   return acc + num;
+// }, 0);
+// console.log('Suma total:', sum);
 
-/**
- * TODO: Calcula el promedio
- * @param {number[]} numbers - Array de números
- * @returns {number} - Promedio
- */
-const average = numbers => {
-  // TODO: Suma con reduce, luego divide por length
-};
-
-/**
- * TODO: Concatena strings con separador
- * @param {string[]} strings - Array de strings
- * @param {string} separator - Separador
- * @returns {string} - String concatenado
- */
-const joinStrings = (strings, separator = ' ') => {
-  // TODO: Usa reduce para concatenar con separador
-  // Cuidado: el primero no debe tener separador antes
-};
-
-/**
- * TODO: Encuentra el número máximo
- * @param {number[]} numbers - Array de números
- * @returns {number} - Número máximo
- */
-const max = numbers => {
-  // TODO: Usa reduce comparando acc > current
-};
+console.log('');
 
 // ============================================
-// PARTE 2: TRANSFORMACIONES COMPLEJAS
+// PASO 2: Suma y Multiplicación
 // ============================================
+console.log('--- Paso 2: Operaciones Numéricas ---');
 
-/**
- * TODO: Agrupa usuarios por role
- * @param {object[]} users - Array de usuarios
- * @returns {object} - { admin: [...], user: [...] }
- */
-const groupByRole = users => {
-  // TODO: Reduce a objeto, crea array si no existe la key
-  // { admin: [user1, user3], user: [user2, user4] }
-};
+// Descomenta las siguientes líneas:
 
-/**
- * TODO: Cuenta ocurrencias de cada fruta
- * @param {string[]} fruits - Array de frutas
- * @returns {object} - { apple: 3, banana: 2, ... }
- */
-const countOccurrences = fruits => {
-  // TODO: Reduce a objeto, incrementa contador
-  // acc[fruit] = (acc[fruit] || 0) + 1
-};
+// // Suma (forma compacta)
+// const total = numbers.reduce((acc, n) => acc + n, 0);
+// console.log('Suma:', total);
+//
+// // Multiplicación (producto)
+// const product = numbers.reduce((acc, n) => acc * n, 1);
+// console.log('Producto:', product);
+//
+// // Encontrar máximo
+// const max = numbers.reduce((acc, n) => (n > acc ? n : acc), numbers[0]);
+// console.log('Máximo:', max);
+//
+// // Encontrar mínimo
+// const min = numbers.reduce((acc, n) => (n < acc ? n : acc), numbers[0]);
+// console.log('Mínimo:', min);
 
-/**
- * TODO: Indexa productos por ID
- * @param {object[]} products - Array de productos
- * @returns {object} - { 1: product1, 2: product2, ... }
- */
-const indexById = products => {
-  // TODO: Reduce a objeto usando id como key
-  // { 1: {...}, 2: {...}, 3: {...}, 4: {...} }
-};
-
-/**
- * TODO: Aplana array de arrays (flatten)
- * @param {array[]} arrays - Array de arrays
- * @returns {array} - Array aplanado
- */
-const flatten = arrays => {
-  // TODO: Reduce con concat
-  // [[1,2], [3,4]] => [1,2,3,4]
-};
-
-/**
- * TODO: Invierte un objeto (keys ↔ values)
- * @param {object} obj - Objeto a invertir
- * @returns {object} - Objeto invertido
- */
-const invertObject = obj => {
-  // TODO: Usa Object.entries y reduce
-  // { a: 1, b: 2 } => { 1: 'a', 2: 'b' }
-};
+console.log('');
 
 // ============================================
-// PARTE 3: CASOS AVANZADOS
+// PASO 3: reduce() con Objetos
 // ============================================
+console.log('--- Paso 3: Sumar Propiedades ---');
 
-/**
- * TODO: Calcula total del carrito (price * quantity)
- * @param {object[]} products - Productos en carrito
- * @returns {number} - Total a pagar
- */
-const calculateCartTotal = products => {
-  // TODO: Reduce sumando (price * quantity)
-};
+// Sumar propiedades numéricas de objetos
+// Descomenta las siguientes líneas:
 
-/**
- * TODO: Crea estadísticas de puntos por rol
- * @param {object[]} users - Array de usuarios
- * @returns {object} - { admin: { total, avg, count }, user: {...} }
- */
-const getPointsStatsByRole = users => {
-  // TODO: Reduce agrupando y calculando total, avg, count
-  // Resultado: { admin: { total: 180, avg: 90, count: 2 }, user: {...} }
-};
+// // Total de precios
+// const totalPrice = products.reduce((acc, p) => acc + p.price, 0);
+// console.log('Total precios:', totalPrice);
+//
+// // Total de unidades
+// const totalQuantity = products.reduce((acc, p) => acc + p.quantity, 0);
+// console.log('Total unidades:', totalQuantity);
+//
+// // Valor del inventario (precio * cantidad)
+// const inventoryValue = products.reduce(
+//   (acc, p) => acc + p.price * p.quantity,
+//   0
+// );
+// console.log('Valor inventario: $' + inventoryValue);
 
-/**
- * TODO: Filtra y suma en un solo reduce
- * @param {number[]} numbers - Array de números
- * @param {number} threshold - Umbral
- * @returns {number} - Suma de números > threshold
- */
-const sumAboveThreshold = (numbers, threshold) => {
-  // TODO: Reduce sumando solo si current > threshold
-};
-
-/**
- * TODO: Transforma array de objetos a Map
- * @param {object[]} items - Array de items con id
- * @returns {Map} - Map con id como key
- */
-const arrayToMap = items => {
-  // TODO: Reduce creando un Map
-  // Initial value: new Map()
-  // acc.set(item.id, item)
-};
-
-/**
- * TODO: Valida que todos los campos estén completos
- * @param {object[]} fields - Array de campos
- * @returns {object} - { valid: boolean, errors: [] }
- */
-const validateFields = fields => {
-  // TODO: Reduce acumulando errores
-  // Cada field debe tener value no vacío
-  // Resultado: { valid: true/false, errors: [...] }
-};
-
-/**
- * TODO: Pipeline de transformaciones con reduce
- * @param {number[]} numbers - Array de números
- * @returns {number} - Resultado final
- */
-const pipeline = numbers => {
-  // TODO: Usa reduce para aplicar transformaciones:
-  // 1. Filtrar pares
-  // 2. Multiplicar por 2
-  // 3. Sumar todos
-  // Hazlo en un solo reduce sin usar filter/map
-};
+console.log('');
 
 // ============================================
-// PRUEBAS - NO MODIFICAR
+// PASO 4: Construir Objetos con reduce()
 // ============================================
+console.log('--- Paso 4: Construir Objetos ---');
 
-console.log('=== PARTE 1: AGREGACIONES BÁSICAS ===\n');
+// reduce() puede crear objetos desde arrays
+// Descomenta las siguientes líneas:
 
-console.log('Sum [10,20,30,40,50]:', sum(numbers));
-// Expected: 150
+// // Crear un diccionario por nombre
+// const productsByName = products.reduce((acc, p) => {
+//   acc[p.name] = p.price;
+//   return acc;
+// }, {});
+// console.log('Productos por nombre:', productsByName);
+//
+// // Agrupar por categoría
+// const byCategory = products.reduce((acc, p) => {
+//   if (!acc[p.category]) {
+//     acc[p.category] = [];
+//   }
+//   acc[p.category].push(p.name);
+//   return acc;
+// }, {});
+// console.log('Por categoría:', byCategory);
 
-console.log('Product [1,2,3,4,5]:', product([1, 2, 3, 4, 5]));
-// Expected: 120
+console.log('');
 
-console.log('Average [10,20,30,40,50]:', average(numbers));
-// Expected: 30
+// ============================================
+// PASO 5: Contar Ocurrencias
+// ============================================
+console.log('--- Paso 5: Contar Ocurrencias ---');
 
-console.log(
-  'Join ["Hello", "from", "reduce"]:',
-  joinStrings(['Hello', 'from', 'reduce'])
-);
-// Expected: 'Hello from reduce'
+// Contar cuántas veces aparece cada elemento
+// Descomenta las siguientes líneas:
 
-console.log('Max [10,5,30,15,25]:', max([10, 5, 30, 15, 25]));
-// Expected: 30
+// const letters = ['a', 'b', 'a', 'c', 'b', 'a', 'd', 'b'];
+// const count = letters.reduce((acc, letter) => {
+//   acc[letter] = (acc[letter] || 0) + 1;
+//   return acc;
+// }, {});
+// console.log('Conteo de letras:', count);
+//
+// // Contar órdenes por cliente
+// const ordersByCustomer = orders.reduce((acc, order) => {
+//   acc[order.customer] = (acc[order.customer] || 0) + 1;
+//   return acc;
+// }, {});
+// console.log('Órdenes por cliente:', ordersByCustomer);
+//
+// // Total gastado por cliente
+// const spendingByCustomer = orders.reduce((acc, order) => {
+//   acc[order.customer] = (acc[order.customer] || 0) + order.total;
+//   return acc;
+// }, {});
+// console.log('Gasto por cliente:', spendingByCustomer);
 
-console.log('\n=== PARTE 2: TRANSFORMACIONES COMPLEJAS ===\n');
+console.log('');
 
-console.log('Group by role:', groupByRole(users));
-// Expected: { admin: [Ana, Carlos], user: [Bob, Diana] }
+// ============================================
+// PASO 6: Aplanar Arrays (Flatten)
+// ============================================
+console.log('--- Paso 6: Aplanar Arrays ---');
 
-console.log('Count occurrences:', countOccurrences(fruits));
-// Expected: { apple: 3, banana: 2, orange: 1, grape: 1 }
+// Convertir array de arrays en array plano
+// Descomenta las siguientes líneas:
 
-console.log('Index by ID:', indexById(products));
-// Expected: { 1: {...}, 2: {...}, 3: {...}, 4: {...} }
+// const nested = [[1, 2], [3, 4], [5, 6]];
+// const flat = nested.reduce((acc, arr) => [...acc, ...arr], []);
+// console.log('Nested:', nested);
+// console.log('Flat:', flat);
+//
+// // Todos los items de todas las órdenes
+// const allItems = orders.reduce((acc, order) => [...acc, ...order.items], []);
+// console.log('Todos los items:', allItems);
+//
+// // Nota: También puedes usar flat() (ES2019)
+// const flatModern = nested.flat();
+// console.log('Con flat():', flatModern);
 
-console.log('Flatten [[1,2], [3,4], [5,6]]:', flatten(nestedArrays));
-// Expected: [1, 2, 3, 4, 5, 6]
+console.log('');
 
-console.log('Invert { a: 1, b: 2, c: 3 }:', invertObject({ a: 1, b: 2, c: 3 }));
-// Expected: { 1: 'a', 2: 'b', 3: 'c' }
+// ============================================
+// PASO 7: reduce() como map() y filter()
+// ============================================
+console.log('--- Paso 7: reduce() Reemplaza Todo ---');
 
-console.log('\n=== PARTE 3: CASOS AVANZADOS ===\n');
+// reduce() es tan poderoso que puede hacer lo que map() y filter()
+// Descomenta las siguientes líneas:
 
-console.log('Cart total:', calculateCartTotal(products));
-// Expected: 3123 (999*2 + 25*5 + 200*1 + 150*4)
+// // reduce() como map()
+// const doubled = numbers.reduce((acc, n) => [...acc, n * 2], []);
+// console.log('Como map (x2):', doubled);
+//
+// // reduce() como filter()
+// const evens = numbers.reduce((acc, n) => {
+//   if (n % 2 === 0) acc.push(n);
+//   return acc;
+// }, []);
+// console.log('Como filter (pares):', evens);
+//
+// // reduce() como map + filter en una pasada
+// const expensiveNames = products.reduce((acc, p) => {
+//   if (p.price > 100) {
+//     acc.push(p.name.toUpperCase());
+//   }
+//   return acc;
+// }, []);
+// console.log('Caros (map+filter):', expensiveNames);
 
-console.log('Points stats by role:', getPointsStatsByRole(users));
-// Expected: { admin: { total: 180, avg: 90, count: 2 }, user: { total: 170, avg: 85, count: 2 } }
+console.log('');
 
-console.log(
-  'Sum above 25 in [10,20,30,40,50]:',
-  sumAboveThreshold(numbers, 25)
-);
-// Expected: 120 (30+40+50)
+// ============================================
+// PASO 8: Concatenar Strings
+// ============================================
+console.log('--- Paso 8: Concatenar Strings ---');
 
-console.log('Array to Map:', arrayToMap(users));
-// Expected: Map(4) { 1 => {...}, 2 => {...}, ... }
+// Construir un string desde un array
+// Descomenta las siguientes líneas:
 
-console.log(
-  'Validate fields:',
-  validateFields([
-    { name: 'email', value: 'test@example.com' },
-    { name: 'password', value: '' },
-    { name: 'name', value: 'John' },
-  ])
-);
-// Expected: { valid: false, errors: ['password is required'] }
+// const sentence = words.reduce((acc, word) => acc + ' ' + word);
+// console.log('Oración:', sentence.trim());
+//
+// // Con join() es más simple (pero reduce es más flexible)
+// const withJoin = words.join(' ');
+// console.log('Con join:', withJoin);
+//
+// // Crear lista HTML
+// const productNames = products.map(p => p.name);
+// const htmlList = productNames.reduce(
+//   (acc, name) => acc + `<li>${name}</li>`,
+//   '<ul>'
+// ) + '</ul>';
+// console.log('Lista HTML:', htmlList);
 
-console.log('Pipeline [1,2,3,4,5,6]:', pipeline([1, 2, 3, 4, 5, 6]));
-// Expected: 24 (pares: 2,4,6 → *2: 4,8,12 → suma: 24)
+console.log('');
+
+// ============================================
+// PASO 9: Caso Práctico - Carrito de Compras
+// ============================================
+console.log('--- Paso 9: Carrito de Compras ---');
+
+// Simulación de carrito con reduce()
+// Descomenta las siguientes líneas:
+
+// const cart = [
+//   { name: 'Laptop', price: 999, quantity: 1 },
+//   { name: 'Mouse', price: 25, quantity: 2 },
+//   { name: 'Keyboard', price: 75, quantity: 1 },
+// ];
+//
+// const cartSummary = cart.reduce(
+//   (acc, item) => {
+//     const itemTotal = item.price * item.quantity;
+//     return {
+//       items: acc.items + item.quantity,
+//       subtotal: acc.subtotal + itemTotal,
+//       products: [...acc.products, `${item.name} x${item.quantity}`]
+//     };
+//   },
+//   { items: 0, subtotal: 0, products: [] }
+// );
+//
+// console.log('Resumen del carrito:');
+// console.log('- Productos:', cartSummary.products);
+// console.log('- Total items:', cartSummary.items);
+// console.log('- Subtotal: $' + cartSummary.subtotal);
+// console.log('- IVA (21%): $' + (cartSummary.subtotal * 0.21).toFixed(2));
+// console.log('- Total: $' + (cartSummary.subtotal * 1.21).toFixed(2));
+
+console.log('');
+
+// ============================================
+// ✅ EJERCICIO COMPLETADO
+// ============================================
+console.log('🎉 ¡Felicidades! Has dominado reduce().');
+console.log('Este es el método más versátil de los arrays.');
+console.log('Practica creando tus propias reducciones.');

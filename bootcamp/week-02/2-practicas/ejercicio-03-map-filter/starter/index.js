@@ -12,11 +12,41 @@
 // ============================================
 
 const users = [
-  { id: 1, name: 'Ana García', email: 'ana@example.com', age: 25, active: true },
-  { id: 2, name: 'Bob Smith', email: 'bob@example.com', age: 17, active: false },
-  { id: 3, name: 'Carlos López', email: 'carlos@example.com', age: 30, active: true },
-  { id: 4, name: 'Diana Ruiz', email: 'diana@example.com', age: 22, active: true },
-  { id: 5, name: 'Eva Torres', email: 'eva@example.com', age: 16, active: false },
+  {
+    id: 1,
+    name: 'Ana García',
+    email: 'ana@example.com',
+    age: 25,
+    active: true,
+  },
+  {
+    id: 2,
+    name: 'Bob Smith',
+    email: 'bob@example.com',
+    age: 17,
+    active: false,
+  },
+  {
+    id: 3,
+    name: 'Carlos López',
+    email: 'carlos@example.com',
+    age: 30,
+    active: true,
+  },
+  {
+    id: 4,
+    name: 'Diana Ruiz',
+    email: 'diana@example.com',
+    age: 22,
+    active: true,
+  },
+  {
+    id: 5,
+    name: 'Eva Torres',
+    email: 'eva@example.com',
+    age: 16,
+    active: false,
+  },
 ];
 
 const products = [
@@ -236,4 +266,6 @@ console.log('');
 // ✅ EJERCICIO COMPLETADO
 // ============================================
 console.log('🎉 ¡Excelente! Has completado el ejercicio de map() y filter().');
-console.log('Revisa cada paso y experimenta creando tus propias transformaciones.');
+console.log(
+  'Revisa cada paso y experimenta creando tus propias transformaciones.'
+);
