@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>TechStore | E-commerce App</title>
+    <link
+      rel="stylesheet"
+      href="styles.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-brand">
+          <h1>🛒 TechStore</h1>
+        </div>
+
+        <div class="header-search">
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="Buscar productos..." />
+        </div>
+
+        <div class="header-actions">
+          <button
+            class="btn btn-icon"
+            id="cartToggle">
+            🛒
+            <span
+              id="cartCount"
+              class="badge"
+              >0</span
+            >
+          </button>
+          <div
+            class="user-area"
+            id="userArea">
+            <button
+              class="btn btn-secondary"
+              id="loginBtn">
+              👤 Login
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Sidebar: Filters -->
+        <aside class="sidebar">
+          <div class="filter-section">
+            <h3>Categorías</h3>
+            <div
+              class="filter-options"
+              id="categoryFilters">
+              <label class="filter-option">
+                <input
+                  type="radio"
+                  name="category"
+                  value=""
+                  checked />
+                <span>Todos</span>
+              </label>
+              <label class="filter-option">
+                <input
+                  type="radio"
+                  name="category"
+                  value="laptops" />
+                <span>💻 Laptops</span>
+              </label>
+              <label class="filter-option">
+                <input
+                  type="radio"
+                  name="category"
+                  value="phones" />
+                <span>📱 Phones</span>
+              </label>
+              <label class="filter-option">
+                <input
+                  type="radio"
+                  name="category"
+                  value="tablets" />
+                <span>📱 Tablets</span>
+              </label>
+              <label class="filter-option">
+                <input
+                  type="radio"
+                  name="category"
+                  value="accessories" />
+                <span>🎧 Accessories</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <h3>Precio</h3>
+            <div class="price-range">
+              <input
+                type="number"
+                id="minPrice"
+                placeholder="Min"
+                class="price-input" />
+              <span>-</span>
+              <input
+                type="number"
+                id="maxPrice"
+                placeholder="Max"
+                class="price-input" />
+            </div>
+            <button
+              class="btn btn-small"
+              id="applyPriceFilter">
+              Aplicar
+            </button>
+          </div>
+
+          <div class="filter-section">
+            <h3>Ordenar por</h3>
+            <select
+              id="sortSelect"
+              class="sort-select">
+              <option value="default">Relevancia</option>
+              <option value="price-asc">Precio: Menor a Mayor</option>
+              <option value="price-desc">Precio: Mayor a Menor</option>
+              <option value="name-asc">Nombre: A-Z</option>
+              <option value="name-desc">Nombre: Z-A</option>
+              <option value="rating">Mejor valorados</option>
+            </select>
+          </div>
+        </aside>
+
+        <!-- Products Grid -->
+        <section class="products-section">
+          <div class="products-header">
+            <h2>Productos</h2>
+            <span
+              id="productCount"
+              class="product-count"
+              >0 productos</span
+            >
+          </div>
+
+          <div
+            id="productGrid"
+            class="product-grid">
+            <!-- Products will be rendered here -->
+          </div>
+
+          <!-- Empty State -->
+          <div
+            id="emptyProducts"
+            class="empty-state hidden">
+            <span class="empty-icon">🔍</span>
+            <p>No se encontraron productos</p>
+            <button
+              class="btn btn-secondary"
+              id="clearFilters">
+              Limpiar filtros
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <!-- Cart Sidebar -->
+      <aside
+        class="cart-sidebar hidden"
+        id="cartSidebar">
+        <div class="cart-header">
+          <h2>🛒 Tu Carrito</h2>
+          <button
+            class="btn btn-icon"
+            id="closeCart">
+            ✕
+          </button>
+        </div>
+
+        <div
+          class="cart-items"
+          id="cartItems">
+          <!-- Cart items will be rendered here -->
+        </div>
+
+        <!-- Cart Empty State -->
+        <div
+          id="cartEmpty"
+          class="cart-empty">
+          <span class="empty-icon">🛒</span>
+          <p>Tu carrito está vacío</p>
+          <button
+            class="btn btn-secondary"
+            id="startShopping">
+            Empezar a comprar
+          </button>
+        </div>
+
+        <div
+          class="cart-footer"
+          id="cartFooter">
+          <div class="cart-totals">
+            <div class="cart-total-row">
+              <span>Subtotal:</span>
+              <span id="cartSubtotal">$0</span>
+            </div>
+            <div class="cart-total-row">
+              <span>Envío:</span>
+              <span id="cartShipping">Gratis</span>
+            </div>
+            <div class="cart-total-row total">
+              <span>Total:</span>
+              <span id="cartTotal">$0</span>
+            </div>
+          </div>
+
+          <div class="cart-actions">
+            <button
+              class="btn btn-secondary"
+              id="clearCart">
+              Vaciar
+            </button>
+            <button
+              class="btn btn-primary"
+              id="checkoutBtn">
+              Checkout 💳
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Cart Overlay -->
+      <div
+        class="overlay hidden"
+        id="cartOverlay"></div>
+
+      <!-- Login Modal -->
+      <div
+        class="modal hidden"
+        id="loginModal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 id="modalTitle">Iniciar Sesión</h2>
+            <button
+              class="btn btn-icon"
+              id="closeModal">
+              ✕
+            </button>
+          </div>
+
+          <form
+            id="authForm"
+            class="auth-form">
+            <div
+              class="form-group"
+              id="nameGroup"
+              style="display: none">
+              <label for="nameInput">Nombre</label>
+              <input
+                type="text"
+                id="nameInput"
+                class="form-input"
+                placeholder="Tu nombre" />
+            </div>
+
+            <div class="form-group">
+              <label for="emailInput">Email</label>
+              <input
+                type="email"
+                id="emailInput"
+                class="form-input"
+                placeholder="email@ejemplo.com"
+                required />
+            </div>
+
+            <div class="form-group">
+              <label for="passwordInput">Contraseña</label>
+              <input
+                type="password"
+                id="passwordInput"
+                class="form-input"
+                placeholder="••••••••"
+                required />
+            </div>
+
+            <div
+              id="formError"
+              class="form-error hidden"></div>
+
+            <button
+              type="submit"
+              class="btn btn-primary btn-block"
+              id="submitAuth">
+              Iniciar Sesión
+            </button>
+          </form>
+
+          <div class="modal-footer">
+            <p id="authSwitch">
+              ¿No tienes cuenta?
+              <a
+                href="#"
+                id="switchToRegister"
+                >Regístrate</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Overlay -->
+      <div
+        class="modal-overlay hidden"
+        id="modalOverlay"></div>
+
+      <!-- Notifications -->
+      <div
+        class="notifications"
+        id="notifications">
+        <!-- Notifications will be rendered here -->
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>Week 12 | Proyecto Integrador - E-commerce App</p>
+      </footer>
+    </div>
+
+    <!-- Load Script -->
+    <!-- Change to solution/js/main.js to see complete implementation -->
+    <script
+      src="starter/js/main.js"
+      type="module"></script>
+  </body>
+</html>
