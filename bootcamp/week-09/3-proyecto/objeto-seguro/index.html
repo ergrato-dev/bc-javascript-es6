@@ -1,139 +1,185 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Objeto Seguro - Week 09</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="container">
-    <header>
-      <h1>🔒 Objeto Seguro</h1>
-      <p>Demostración de Symbols para propiedades privadas</p>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Objeto Seguro - Week 09</title>
+    <link
+      rel="stylesheet"
+      href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🔒 Objeto Seguro</h1>
+        <p>Demostración de Symbols para propiedades privadas</p>
+      </header>
 
-    <main>
-      <!-- SecureUser Section -->
-      <section class="card">
-        <h2>👤 SecureUser</h2>
-        <p class="description">Usuario con datos sensibles ocultos</p>
-        
-        <div class="demo-area">
-          <div class="input-group">
-            <label>Nombre:</label>
-            <input type="text" id="userName" value="Alice">
-          </div>
-          <div class="input-group">
-            <label>Email:</label>
-            <input type="email" id="userEmail" value="alice@example.com">
-          </div>
-          <div class="input-group">
-            <label>Password:</label>
-            <input type="password" id="userPassword" value="secret123">
-          </div>
-          <div class="input-group">
-            <label>SSN:</label>
-            <input type="text" id="userSSN" value="123-45-6789">
-          </div>
-          
-          <div class="button-group">
-            <button id="createUser">Crear Usuario</button>
-            <button id="verifyPassword">Verificar Password</button>
-            <button id="showMaskedSSN">Mostrar SSN</button>
-            <button id="showUserKeys">Object.keys()</button>
-            <button id="showUserJSON">JSON.stringify()</button>
-          </div>
-        </div>
-        
-        <div class="output" id="userOutput">
-          <span class="placeholder">Crea un usuario para ver resultados...</span>
-        </div>
-      </section>
+      <main>
+        <!-- SecureUser Section -->
+        <section class="card">
+          <h2>👤 SecureUser</h2>
+          <p class="description">Usuario con datos sensibles ocultos</p>
 
-      <!-- SecureWallet Section -->
-      <section class="card">
-        <h2>💰 SecureWallet</h2>
-        <p class="description">Billetera con balance protegido e iterable</p>
-        
-        <div class="demo-area">
-          <div class="input-group">
-            <label>Balance inicial:</label>
-            <input type="number" id="walletInitial" value="100">
-          </div>
-          <div class="input-group">
-            <label>Cantidad:</label>
-            <input type="number" id="walletAmount" value="50">
-          </div>
-          
-          <div class="button-group">
-            <button id="createWallet">Crear Billetera</button>
-            <button id="depositWallet">Depositar</button>
-            <button id="withdrawWallet">Retirar</button>
-            <button id="walletAsNumber">+wallet (número)</button>
-            <button id="walletAsString">`${wallet}` (string)</button>
-            <button id="iterateWallet">Iterar Transacciones</button>
-          </div>
-        </div>
-        
-        <div class="output" id="walletOutput">
-          <span class="placeholder">Crea una billetera para ver resultados...</span>
-        </div>
-      </section>
+          <div class="demo-area">
+            <div class="input-group">
+              <label>Nombre:</label>
+              <input
+                type="text"
+                id="userName"
+                value="Alice" />
+            </div>
+            <div class="input-group">
+              <label>Email:</label>
+              <input
+                type="email"
+                id="userEmail"
+                value="alice@example.com" />
+            </div>
+            <div class="input-group">
+              <label>Password:</label>
+              <input
+                type="password"
+                id="userPassword"
+                value="secret123" />
+            </div>
+            <div class="input-group">
+              <label>SSN:</label>
+              <input
+                type="text"
+                id="userSSN"
+                value="123-45-6789" />
+            </div>
 
-      <!-- SecureConfig Section -->
-      <section class="card">
-        <h2>⚙️ SecureConfig</h2>
-        <p class="description">Configuración con claves API ocultas</p>
-        
-        <div class="demo-area">
-          <div class="input-group full-width">
-            <label>Configuración (JSON):</label>
-            <textarea id="configInput" rows="5">{
+            <div class="button-group">
+              <button id="createUser">Crear Usuario</button>
+              <button id="verifyPassword">Verificar Password</button>
+              <button id="showMaskedSSN">Mostrar SSN</button>
+              <button id="showUserKeys">Object.keys()</button>
+              <button id="showUserJSON">JSON.stringify()</button>
+            </div>
+          </div>
+
+          <div
+            class="output"
+            id="userOutput">
+            <span class="placeholder"
+              >Crea un usuario para ver resultados...</span
+            >
+          </div>
+        </section>
+
+        <!-- SecureWallet Section -->
+        <section class="card">
+          <h2>💰 SecureWallet</h2>
+          <p class="description">Billetera con balance protegido e iterable</p>
+
+          <div class="demo-area">
+            <div class="input-group">
+              <label>Balance inicial:</label>
+              <input
+                type="number"
+                id="walletInitial"
+                value="100" />
+            </div>
+            <div class="input-group">
+              <label>Cantidad:</label>
+              <input
+                type="number"
+                id="walletAmount"
+                value="50" />
+            </div>
+
+            <div class="button-group">
+              <button id="createWallet">Crear Billetera</button>
+              <button id="depositWallet">Depositar</button>
+              <button id="withdrawWallet">Retirar</button>
+              <button id="walletAsNumber">+wallet (número)</button>
+              <button id="walletAsString">`${wallet}` (string)</button>
+              <button id="iterateWallet">Iterar Transacciones</button>
+            </div>
+          </div>
+
+          <div
+            class="output"
+            id="walletOutput">
+            <span class="placeholder"
+              >Crea una billetera para ver resultados...</span
+            >
+          </div>
+        </section>
+
+        <!-- SecureConfig Section -->
+        <section class="card">
+          <h2>⚙️ SecureConfig</h2>
+          <p class="description">Configuración con claves API ocultas</p>
+
+          <div class="demo-area">
+            <div class="input-group full-width">
+              <label>Configuración (JSON):</label>
+              <textarea
+                id="configInput"
+                rows="5">
+{
   "apiUrl": "https://api.example.com",
   "timeout": 5000,
   "_apiKey": "sk-abc123xyz",
   "_dbPassword": "super-secret"
-}</textarea>
+}</textarea
+              >
+            </div>
+
+            <div class="button-group">
+              <button id="createConfig">Crear Config</button>
+              <button id="getPublicConfig">Config Pública</button>
+              <button id="hasApiKey">¿Tiene apiKey?</button>
+              <button id="useApiKey">Usar apiKey</button>
+              <button id="showConfigKeys">Object.keys()</button>
+            </div>
           </div>
-          
+
+          <div
+            class="output"
+            id="configOutput">
+            <span class="placeholder"
+              >Crea una configuración para ver resultados...</span
+            >
+          </div>
+        </section>
+
+        <!-- Inspection Section -->
+        <section class="card inspection">
+          <h2>🔍 Inspección de Símbolos</h2>
+          <p class="description">
+            Demuestra que los símbolos son accesibles si sabes cómo
+          </p>
+
           <div class="button-group">
-            <button id="createConfig">Crear Config</button>
-            <button id="getPublicConfig">Config Pública</button>
-            <button id="hasApiKey">¿Tiene apiKey?</button>
-            <button id="useApiKey">Usar apiKey</button>
-            <button id="showConfigKeys">Object.keys()</button>
+            <button id="inspectUser">Inspeccionar User</button>
+            <button id="inspectWallet">Inspeccionar Wallet</button>
+            <button id="inspectConfig">Inspeccionar Config</button>
           </div>
-        </div>
-        
-        <div class="output" id="configOutput">
-          <span class="placeholder">Crea una configuración para ver resultados...</span>
-        </div>
-      </section>
 
-      <!-- Inspection Section -->
-      <section class="card inspection">
-        <h2>🔍 Inspección de Símbolos</h2>
-        <p class="description">Demuestra que los símbolos son accesibles si sabes cómo</p>
-        
-        <div class="button-group">
-          <button id="inspectUser">Inspeccionar User</button>
-          <button id="inspectWallet">Inspeccionar Wallet</button>
-          <button id="inspectConfig">Inspeccionar Config</button>
-        </div>
-        
-        <div class="output" id="inspectOutput">
-          <span class="placeholder">Selecciona un objeto para inspeccionar sus símbolos...</span>
-        </div>
-      </section>
-    </main>
+          <div
+            class="output"
+            id="inspectOutput">
+            <span class="placeholder"
+              >Selecciona un objeto para inspeccionar sus símbolos...</span
+            >
+          </div>
+        </section>
+      </main>
 
-    <footer>
-      <p>Week 09 - Símbolos y Metaprogramación | Bootcamp JavaScript ES6+</p>
-    </footer>
-  </div>
+      <footer>
+        <p>Week 09 - Símbolos y Metaprogramación | Bootcamp JavaScript ES6+</p>
+      </footer>
+    </div>
 
-  <!-- Cambiar a starter/script.js para desarrollo -->
-  <script type="module" src="starter/script.js"></script>
-</body>
+    <!-- Cambiar a starter/script.js para desarrollo -->
+    <script
+      type="module"
+      src="starter/script.js"></script>
+  </body>
 </html>

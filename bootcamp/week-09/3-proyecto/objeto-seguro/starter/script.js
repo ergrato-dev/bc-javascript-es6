@@ -111,7 +111,6 @@ class SecureWallet {
    */
   constructor(initialBalance = 0) {
     // TODO: Almacenar balance en this[_balance]
-
     // TODO: Inicializar array de transacciones en this[_transactions]
     // Agregar transacción inicial si balance > 0
   }
@@ -208,7 +207,6 @@ class SecureConfig {
    */
   constructor(config) {
     // TODO: Inicializar this[_secrets] como objeto vacío
-
     // TODO: Iterar sobre config
     // - Si la clave empieza con _, guardar en this[_secrets] (sin el _)
     // - Si no, guardar como propiedad pública
@@ -278,7 +276,7 @@ const inspectObject = obj => {
     symbolKeys: Object.getOwnPropertySymbols(obj).map(s => s.description),
     allKeys: Reflect.ownKeys(obj).map(k =>
       typeof k === 'symbol' ? `Symbol(${k.description})` : k
-    )
+    ),
   };
 
   return result;
@@ -319,7 +317,13 @@ const initUI = () => {
       const ssn = document.getElementById('userSSN').value;
 
       currentUser = new SecureUser(name, email, password, ssn);
-      showOutput('userOutput', `✅ Usuario creado: ${currentUser.name}\nTipo: ${Object.prototype.toString.call(currentUser)}`, 'success');
+      showOutput(
+        'userOutput',
+        `✅ Usuario creado: ${
+          currentUser.name
+        }\nTipo: ${Object.prototype.toString.call(currentUser)}`,
+        'success'
+      );
     } catch (e) {
       showOutput('userOutput', `❌ Error: ${e.message}`, 'error');
     }
@@ -332,7 +336,11 @@ const initUI = () => {
     }
     const input = document.getElementById('userPassword').value;
     const result = currentUser.verifyPassword(input);
-    showOutput('userOutput', result ? '✅ Password correcto' : '❌ Password incorrecto', result ? 'success' : 'error');
+    showOutput(
+      'userOutput',
+      result ? '✅ Password correcto' : '❌ Password incorrecto',
+      result ? 'success' : 'error'
+    );
   });
 
   document.getElementById('showMaskedSSN').addEventListener('click', () => {
@@ -348,7 +356,15 @@ const initUI = () => {
       showOutput('userOutput', '⚠️ Primero crea un usuario', 'warning');
       return;
     }
-    showOutput('userOutput', `Object.keys():\n${JSON.stringify(Object.keys(currentUser), null, 2)}\n\n✅ Password y SSN NO aparecen`, 'info');
+    showOutput(
+      'userOutput',
+      `Object.keys():\n${JSON.stringify(
+        Object.keys(currentUser),
+        null,
+        2
+      )}\n\n✅ Password y SSN NO aparecen`,
+      'info'
+    );
   });
 
   document.getElementById('showUserJSON').addEventListener('click', () => {
@@ -356,15 +372,30 @@ const initUI = () => {
       showOutput('userOutput', '⚠️ Primero crea un usuario', 'warning');
       return;
     }
-    showOutput('userOutput', `JSON.stringify():\n${JSON.stringify(currentUser, null, 2)}\n\n✅ Solo datos públicos`, 'info');
+    showOutput(
+      'userOutput',
+      `JSON.stringify():\n${JSON.stringify(
+        currentUser,
+        null,
+        2
+      )}\n\n✅ Solo datos públicos`,
+      'info'
+    );
   });
 
   // ----- SecureWallet -----
   document.getElementById('createWallet').addEventListener('click', () => {
     try {
-      const initial = parseFloat(document.getElementById('walletInitial').value) || 0;
+      const initial =
+        parseFloat(document.getElementById('walletInitial').value) || 0;
       currentWallet = new SecureWallet(initial);
-      showOutput('walletOutput', `✅ Billetera creada con balance: $${currentWallet.getBalance().toFixed(2)}`, 'success');
+      showOutput(
+        'walletOutput',
+        `✅ Billetera creada con balance: $${currentWallet
+          .getBalance()
+          .toFixed(2)}`,
+        'success'
+      );
     } catch (e) {
       showOutput('walletOutput', `❌ Error: ${e.message}`, 'error');
     }
@@ -376,9 +407,16 @@ const initUI = () => {
       return;
     }
     try {
-      const amount = parseFloat(document.getElementById('walletAmount').value) || 0;
+      const amount =
+        parseFloat(document.getElementById('walletAmount').value) || 0;
       currentWallet.deposit(amount);
-      showOutput('walletOutput', `✅ Depositado: $${amount.toFixed(2)}\nNuevo balance: $${currentWallet.getBalance().toFixed(2)}`, 'success');
+      showOutput(
+        'walletOutput',
+        `✅ Depositado: $${amount.toFixed(2)}\nNuevo balance: $${currentWallet
+          .getBalance()
+          .toFixed(2)}`,
+        'success'
+      );
     } catch (e) {
       showOutput('walletOutput', `❌ Error: ${e.message}`, 'error');
     }
@@ -390,9 +428,16 @@ const initUI = () => {
       return;
     }
     try {
-      const amount = parseFloat(document.getElementById('walletAmount').value) || 0;
+      const amount =
+        parseFloat(document.getElementById('walletAmount').value) || 0;
       currentWallet.withdraw(amount);
-      showOutput('walletOutput', `✅ Retirado: $${amount.toFixed(2)}\nNuevo balance: $${currentWallet.getBalance().toFixed(2)}`, 'success');
+      showOutput(
+        'walletOutput',
+        `✅ Retirado: $${amount.toFixed(2)}\nNuevo balance: $${currentWallet
+          .getBalance()
+          .toFixed(2)}`,
+        'success'
+      );
     } catch (e) {
       showOutput('walletOutput', `❌ Error: ${e.message}`, 'error');
     }
@@ -403,7 +448,11 @@ const initUI = () => {
       showOutput('walletOutput', '⚠️ Primero crea una billetera', 'warning');
       return;
     }
-    showOutput('walletOutput', `+wallet = ${+currentWallet}\n\n(Symbol.toPrimitive con hint 'number')`, 'info');
+    showOutput(
+      'walletOutput',
+      `+wallet = ${+currentWallet}\n\n(Symbol.toPrimitive con hint 'number')`,
+      'info'
+    );
   });
 
   document.getElementById('walletAsString').addEventListener('click', () => {
@@ -411,7 +460,11 @@ const initUI = () => {
       showOutput('walletOutput', '⚠️ Primero crea una billetera', 'warning');
       return;
     }
-    showOutput('walletOutput', `\`\${wallet}\` = "${`${currentWallet}`}"\n\n(Symbol.toPrimitive con hint 'string')`, 'info');
+    showOutput(
+      'walletOutput',
+      `\`\${wallet}\` = "${`${currentWallet}`}"\n\n(Symbol.toPrimitive con hint 'string')`,
+      'info'
+    );
   });
 
   document.getElementById('iterateWallet').addEventListener('click', () => {
@@ -423,10 +476,19 @@ const initUI = () => {
     if (transactions.length === 0) {
       showOutput('walletOutput', 'No hay transacciones', 'dim');
     } else {
-      const formatted = transactions.map((tx, i) =>
-        `${i + 1}. ${tx.type}: $${tx.amount.toFixed(2)} - ${tx.date.toLocaleString()}`
-      ).join('\n');
-      showOutput('walletOutput', `Transacciones (via Symbol.iterator):\n${formatted}`, 'info');
+      const formatted = transactions
+        .map(
+          (tx, i) =>
+            `${i + 1}. ${tx.type}: $${tx.amount.toFixed(
+              2
+            )} - ${tx.date.toLocaleString()}`
+        )
+        .join('\n');
+      showOutput(
+        'walletOutput',
+        `Transacciones (via Symbol.iterator):\n${formatted}`,
+        'info'
+      );
     }
   });
 
@@ -436,7 +498,13 @@ const initUI = () => {
       const input = document.getElementById('configInput').value;
       const config = JSON.parse(input);
       currentConfig = new SecureConfig(config);
-      showOutput('configOutput', `✅ Configuración creada\nClaves públicas: ${Object.keys(currentConfig).join(', ')}`, 'success');
+      showOutput(
+        'configOutput',
+        `✅ Configuración creada\nClaves públicas: ${Object.keys(
+          currentConfig
+        ).join(', ')}`,
+        'success'
+      );
     } catch (e) {
       showOutput('configOutput', `❌ Error: ${e.message}`, 'error');
     }
@@ -444,24 +512,48 @@ const initUI = () => {
 
   document.getElementById('getPublicConfig').addEventListener('click', () => {
     if (!currentConfig) {
-      showOutput('configOutput', '⚠️ Primero crea una configuración', 'warning');
+      showOutput(
+        'configOutput',
+        '⚠️ Primero crea una configuración',
+        'warning'
+      );
       return;
     }
-    showOutput('configOutput', `Configuración pública:\n${JSON.stringify(currentConfig.getPublicConfig(), null, 2)}`, 'info');
+    showOutput(
+      'configOutput',
+      `Configuración pública:\n${JSON.stringify(
+        currentConfig.getPublicConfig(),
+        null,
+        2
+      )}`,
+      'info'
+    );
   });
 
   document.getElementById('hasApiKey').addEventListener('click', () => {
     if (!currentConfig) {
-      showOutput('configOutput', '⚠️ Primero crea una configuración', 'warning');
+      showOutput(
+        'configOutput',
+        '⚠️ Primero crea una configuración',
+        'warning'
+      );
       return;
     }
     const has = currentConfig.hasSecret('apiKey');
-    showOutput('configOutput', has ? '✅ Tiene apiKey configurada' : '❌ No tiene apiKey', has ? 'success' : 'warning');
+    showOutput(
+      'configOutput',
+      has ? '✅ Tiene apiKey configurada' : '❌ No tiene apiKey',
+      has ? 'success' : 'warning'
+    );
   });
 
   document.getElementById('useApiKey').addEventListener('click', () => {
     if (!currentConfig) {
-      showOutput('configOutput', '⚠️ Primero crea una configuración', 'warning');
+      showOutput(
+        'configOutput',
+        '⚠️ Primero crea una configuración',
+        'warning'
+      );
       return;
     }
     try {
@@ -477,10 +569,22 @@ const initUI = () => {
 
   document.getElementById('showConfigKeys').addEventListener('click', () => {
     if (!currentConfig) {
-      showOutput('configOutput', '⚠️ Primero crea una configuración', 'warning');
+      showOutput(
+        'configOutput',
+        '⚠️ Primero crea una configuración',
+        'warning'
+      );
       return;
     }
-    showOutput('configOutput', `Object.keys():\n${JSON.stringify(Object.keys(currentConfig), null, 2)}\n\n✅ Secrets NO aparecen`, 'info');
+    showOutput(
+      'configOutput',
+      `Object.keys():\n${JSON.stringify(
+        Object.keys(currentConfig),
+        null,
+        2
+      )}\n\n✅ Secrets NO aparecen`,
+      'info'
+    );
   });
 
   // ----- Inspection -----
@@ -489,7 +593,15 @@ const initUI = () => {
       showOutput('inspectOutput', '⚠️ Primero crea un usuario', 'warning');
       return;
     }
-    showOutput('inspectOutput', `🔍 Inspección de SecureUser:\n${JSON.stringify(inspectObject(currentUser), null, 2)}\n\n⚠️ Los símbolos SON accesibles con getOwnPropertySymbols`, 'warning');
+    showOutput(
+      'inspectOutput',
+      `🔍 Inspección de SecureUser:\n${JSON.stringify(
+        inspectObject(currentUser),
+        null,
+        2
+      )}\n\n⚠️ Los símbolos SON accesibles con getOwnPropertySymbols`,
+      'warning'
+    );
   });
 
   document.getElementById('inspectWallet').addEventListener('click', () => {
@@ -497,15 +609,35 @@ const initUI = () => {
       showOutput('inspectOutput', '⚠️ Primero crea una billetera', 'warning');
       return;
     }
-    showOutput('inspectOutput', `🔍 Inspección de SecureWallet:\n${JSON.stringify(inspectObject(currentWallet), null, 2)}\n\n⚠️ Los símbolos SON accesibles con getOwnPropertySymbols`, 'warning');
+    showOutput(
+      'inspectOutput',
+      `🔍 Inspección de SecureWallet:\n${JSON.stringify(
+        inspectObject(currentWallet),
+        null,
+        2
+      )}\n\n⚠️ Los símbolos SON accesibles con getOwnPropertySymbols`,
+      'warning'
+    );
   });
 
   document.getElementById('inspectConfig').addEventListener('click', () => {
     if (!currentConfig) {
-      showOutput('inspectOutput', '⚠️ Primero crea una configuración', 'warning');
+      showOutput(
+        'inspectOutput',
+        '⚠️ Primero crea una configuración',
+        'warning'
+      );
       return;
     }
-    showOutput('inspectOutput', `🔍 Inspección de SecureConfig:\n${JSON.stringify(inspectObject(currentConfig), null, 2)}\n\n⚠️ Los símbolos SON accesibles con getOwnPropertySymbols`, 'warning');
+    showOutput(
+      'inspectOutput',
+      `🔍 Inspección de SecureConfig:\n${JSON.stringify(
+        inspectObject(currentConfig),
+        null,
+        2
+      )}\n\n⚠️ Los símbolos SON accesibles con getOwnPropertySymbols`,
+      'warning'
+    );
   });
 };
 

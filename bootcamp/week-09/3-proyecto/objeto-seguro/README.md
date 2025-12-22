@@ -5,7 +5,7 @@
 Construirás un sistema de **objetos seguros** que utiliza Symbols para implementar:
 
 - Propiedades "privadas" ocultas de enumeraciones
-- Métodos internos no accesibles directamente  
+- Métodos internos no accesibles directamente
 - Personalización con Well-known Symbols
 - Control de acceso a datos sensibles
 
