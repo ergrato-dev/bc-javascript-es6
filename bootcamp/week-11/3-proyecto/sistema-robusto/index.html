@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager Robusto | Week 11</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <h1>📋 Task Manager Robusto</h1>
+      <p class="subtitle">Manejo de errores profesional</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="app-main">
+      <!-- Add Task Form -->
+      <section class="add-task-section">
+        <form id="taskForm" class="task-form">
+          <div class="input-group">
+            <input 
+              type="text" 
+              id="taskInput" 
+              class="task-input"
+              placeholder="Nueva tarea..."
+              autocomplete="off"
+            >
+            <button type="submit" class="btn btn-primary" id="addBtn">
+              Agregar
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Error Display -->
+      <section id="errorSection" class="error-section hidden">
+        <div class="error-box">
+          <span class="error-icon">⚠️</span>
+          <span id="errorMessage" class="error-message"></span>
+          <button class="error-close" id="errorClose">×</button>
+        </div>
+      </section>
+
+      <!-- Loading Indicator -->
+      <section id="loadingSection" class="loading-section hidden">
+        <div class="loading-box">
+          <span class="loading-spinner">🔄</span>
+          <span id="loadingMessage">Procesando...</span>
+        </div>
+      </section>
+
+      <!-- Task List -->
+      <section class="tasks-section">
+        <div id="taskList" class="task-list">
+          <!-- Tasks will be rendered here -->
+        </div>
+        
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-state">
+          <span class="empty-icon">📝</span>
+          <p>No hay tareas. ¡Agrega una!</p>
+        </div>
+      </section>
+
+      <!-- Stats -->
+      <section class="stats-section">
+        <div class="stats-box">
+          <span id="statsTotal" class="stat">
+            <span class="stat-value">0</span> tareas
+          </span>
+          <span class="stat-divider">|</span>
+          <span id="statsCompleted" class="stat">
+            <span class="stat-value">0</span> completadas
+          </span>
+        </div>
+      </section>
+    </main>
+
+    <!-- Debug Panel (for development) -->
+    <aside class="debug-panel">
+      <details>
+        <summary>🔧 Debug Log</summary>
+        <div id="debugLog" class="debug-log">
+          <!-- Debug messages will appear here -->
+        </div>
+        <button id="clearDebug" class="btn btn-small">Limpiar</button>
+      </details>
+    </aside>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Week 11 | Manejo de Errores Moderno</p>
+    </footer>
+  </div>
+
+  <!-- Load Script -->
+  <!-- Change to solution/script.js to see complete implementation -->
+  <script src="starter/script.js" type="module"></script>
+</body>
+</html>
