@@ -105,28 +105,28 @@
   <text class="label" x="400" y="270" text-anchor="middle" font-weight="bold">🔢 Frequency Counter</text>
   <text class="subtitle" x="300" y="290" font-size="10">Contar ocurrencias</text>
 
-  <text class="code" x="300" y="315">countFrequency("javascript")</text>
+  <text class="code" x="300" y="315">count("javascript")</text>
 
   <rect x="300" y="325" width="200" height="80" fill="#1e40af" stroke="#3b82f6" rx="4"/>
   <text class="label" x="310" y="345">'a' → 2</text>
   <text class="label" x="310" y="365">'j' → 1</text>
-  <text class="label" x="310" y="385">'v' → 1, 's' → 1, ...</text>
+  <text class="label" x="310" y="385">'v' → 1</text>
   <text class="label" x="400" y="345">'c' → 1</text>
   <text class="label" x="400" y="365">'r' → 1</text>
-  <text class="label" x="400" y="385">'i' → 1, 'p' → 1, 't' → 1</text>
+  <text class="label" x="400" y="385">'s' → 1</text>
 
   <!-- TTL Cache -->
   <rect class="box" x="530" y="245" width="240" height="170"/>
   <text class="label" x="650" y="270" text-anchor="middle" font-weight="bold">⏱️ TTL Cache</text>
   <text class="subtitle" x="550" y="290" font-size="10">Cache con tiempo de expiración</text>
 
-  <rect x="550" y="305" width="200" height="45" fill="#1e40af" stroke="#3b82f6" rx="4"/>
-  <text class="label" x="560" y="325">"token"</text>
-  <text class="code" x="560" y="340">expires: 1703179200000</text>
+  <rect x="550" y="300" width="200" height="40" fill="#1e40af" stroke="#3b82f6" rx="4"/>
+  <text class="label" x="560" y="318">"token"</text>
+  <text class="code" x="560" y="333">expires: 1703179200</text>
 
-  <text class="code" x="550" y="370">cache.set('token', 'abc', 5000)</text>
-  <text class="subtitle" x="550" y="390" font-size="10">↳ Expira en 5 segundos</text>
-  <text class="code" x="550" y="410">cache.get('token') // undefined (expirado)</text>
+  <text class="code" x="550" y="360">set('token', 'abc', 5000)</text>
+  <text class="subtitle" x="550" y="378" font-size="10">↳ Expira en 5 segundos</text>
+  <text class="code" x="550" y="398">get('token') → undefined</text>
 
   <!-- Footer -->
   <text class="subtitle" x="400" y="440" text-anchor="middle">Week 07 - Sets y Maps | JavaScript ES6+</text>
