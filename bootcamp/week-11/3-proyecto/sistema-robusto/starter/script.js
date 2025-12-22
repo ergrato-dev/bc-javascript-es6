@@ -17,9 +17,9 @@ const CONFIG = {
   STORAGE_KEY: 'robust-tasks',
   MIN_TITLE_LENGTH: 3,
   MAX_TITLE_LENGTH: 100,
-  API_FAIL_RATE: 0.3,  // 30% chance of failure
+  API_FAIL_RATE: 0.3, // 30% chance of failure
   MAX_RETRIES: 3,
-  BASE_DELAY: 500
+  BASE_DELAY: 500,
 };
 
 // ============================================
@@ -179,7 +179,9 @@ const withRetry = async (fn, maxRetries = CONFIG.MAX_RETRIES) => {
       }
 
       // Backoff: 500ms, 1000ms, 2000ms...
-      await new Promise(r => setTimeout(r, CONFIG.BASE_DELAY * Math.pow(2, attempt - 1)));
+      await new Promise(r =>
+        setTimeout(r, CONFIG.BASE_DELAY * Math.pow(2, attempt - 1))
+      );
     }
   }
 
@@ -349,9 +351,9 @@ const renderTasks = () => {
     const taskEl = document.createElement('div');
     taskEl.className = `task-item ${task.completed ? 'completed' : ''}`;
     taskEl.innerHTML = `
-      <input 
-        type="checkbox" 
-        class="task-checkbox" 
+      <input
+        type="checkbox"
+        class="task-checkbox"
         ${task.completed ? 'checked' : ''}
         data-id="${task.id}"
       >
@@ -413,7 +415,7 @@ const handleSubmit = async event => {
           id: Date.now().toString(),
           title,
           completed: false,
-          createdAt: new Date().toISOString()
+          createdAt: new Date().toISOString(),
         };
 
         tasks.push(newTask);
@@ -428,7 +430,6 @@ const handleSubmit = async event => {
     input.classList.remove('error');
     renderTasks();
     debugLog('info', `Tarea creada: "${title}"`);
-
   } catch (error) {
     showError(error);
 
@@ -457,7 +458,12 @@ const handleTaskClick = async event => {
         task.completed = target.checked;
         saveTasks(tasks);
         renderTasks();
-        debugLog('info', `Tarea ${task.completed ? 'completada' : 'pendiente'}: "${task.title}"`);
+        debugLog(
+          'info',
+          `Tarea ${task.completed ? 'completada' : 'pendiente'}: "${
+            task.title
+          }"`
+        );
       } catch (error) {
         showError(error);
         target.checked = !target.checked; // Revert
@@ -499,7 +505,9 @@ const init = () => {
 
   // Event listeners
   document.getElementById('taskForm').addEventListener('submit', handleSubmit);
-  document.getElementById('taskList').addEventListener('click', handleTaskClick);
+  document
+    .getElementById('taskList')
+    .addEventListener('click', handleTaskClick);
   document.getElementById('errorClose').addEventListener('click', hideError);
   document.getElementById('clearDebug').addEventListener('click', () => {
     document.getElementById('debugLog').innerHTML = '';
