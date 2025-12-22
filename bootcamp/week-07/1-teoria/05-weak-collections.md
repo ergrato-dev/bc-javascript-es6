@@ -81,7 +81,7 @@ class Person {
     // Datos públicos
     this.name = name;
     this.age = age;
-    
+
     // Datos privados (no accesibles desde fuera)
     privateData.set(this, {
       ssn,
@@ -123,7 +123,7 @@ const processObject = obj => {
     console.log('Returning cached result');
     return cache.get(obj);
   }
-  
+
   // Proceso costoso
   console.log('Processing...');
   const result = {
@@ -131,7 +131,7 @@ const processObject = obj => {
     processed: true,
     timestamp: Date.now()
   };
-  
+
   cache.set(obj, result);
   return result;
 };
@@ -226,10 +226,10 @@ const processTree = node => {
     console.log('Already visited:', node.name);
     return;
   }
-  
+
   visited.add(node);
   console.log('Processing:', node.name);
-  
+
   // Procesar hijos
   if (node.children) {
     node.children.forEach(processTree);
@@ -330,7 +330,7 @@ const _private = new WeakMap();
 class BankAccount {
   constructor(owner, initialBalance = 0) {
     this.owner = owner;
-    
+
     // Datos privados
     _private.set(this, {
       balance: initialBalance,
@@ -341,23 +341,23 @@ class BankAccount {
 
   deposit(amount) {
     if (amount <= 0) throw new Error('Amount must be positive');
-    
+
     const data = _private.get(this);
     data.balance += amount;
     data.transactions.push({ type: 'deposit', amount, date: new Date() });
-    
+
     return this;
   }
 
   withdraw(amount, pin) {
     const data = _private.get(this);
-    
+
     if (pin !== data.pin) throw new Error('Invalid PIN');
     if (amount > data.balance) throw new Error('Insufficient funds');
-    
+
     data.balance -= amount;
     data.transactions.push({ type: 'withdraw', amount, date: new Date() });
-    
+
     return this;
   }
 

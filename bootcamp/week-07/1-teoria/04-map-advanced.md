@@ -17,15 +17,15 @@ Almacenar resultados de funciones costosas:
 ```javascript
 const memoize = fn => {
   const cache = new Map();
-  
+
   return (...args) => {
     const key = JSON.stringify(args);
-    
+
     if (cache.has(key)) {
       console.log('Cache hit!');
       return cache.get(key);
     }
-    
+
     console.log('Computing...');
     const result = fn(...args);
     cache.set(key, result);
@@ -66,14 +66,14 @@ class CacheWithTTL {
 
   get(key) {
     const item = this.#cache.get(key);
-    
+
     if (!item) return undefined;
-    
+
     if (Date.now() > item.expiresAt) {
       this.#cache.delete(key);
       return undefined;
     }
-    
+
     return item.value;
   }
 
@@ -126,7 +126,7 @@ class BiMap {
     if (this.#valueToKey.has(value)) {
       this.#keyToValue.delete(this.#valueToKey.get(value));
     }
-    
+
     this.#keyToValue.set(key, value);
     this.#valueToKey.set(value, key);
     return this;
@@ -179,7 +179,7 @@ const addSale = (year, month, amount) => {
   if (!salesData.has(year)) {
     salesData.set(year, new Map());
   }
-  
+
   const yearMap = salesData.get(year);
   const current = yearMap.get(month) ?? 0;
   yearMap.set(month, current + amount);
@@ -218,7 +218,7 @@ const createSession = (userId, metadata = {}) => {
     metadata,
     isActive: true
   };
-  
+
   userSessions.set(session.id, session);
   return session;
 };
@@ -248,17 +248,17 @@ Agrupar elementos por una propiedad:
 ```javascript
 const groupBy = (items, keyFn) => {
   const groups = new Map();
-  
+
   for (const item of items) {
     const key = keyFn(item);
-    
+
     if (!groups.has(key)) {
       groups.set(key, []);
     }
-    
+
     groups.get(key).push(item);
   }
-  
+
   return groups;
 };
 
@@ -291,11 +291,11 @@ console.log([...byPriceRange.keys()]); // ['Premium', 'Budget', 'Mid-range']
 ```javascript
 const countFrequency = iterable => {
   const freq = new Map();
-  
+
   for (const item of iterable) {
     freq.set(item, (freq.get(item) ?? 0) + 1);
   }
-  
+
   return freq;
 };
 
@@ -331,12 +331,12 @@ class LRUCache {
     if (!this.#cache.has(key)) {
       return undefined;
     }
-    
+
     // Mover al final (más reciente)
     const value = this.#cache.get(key);
     this.#cache.delete(key);
     this.#cache.set(key, value);
-    
+
     return value;
   }
 
@@ -350,7 +350,7 @@ class LRUCache {
       const oldestKey = this.#cache.keys().next().value;
       this.#cache.delete(oldestKey);
     }
-    
+
     this.#cache.set(key, value);
     return this;
   }
