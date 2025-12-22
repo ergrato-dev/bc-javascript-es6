@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Validación Reactivo | Week 10</title>
+    <link
+      rel="stylesheet"
+      href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🛡️ Sistema de Validación Reactivo</h1>
+        <p>Formulario con validación en tiempo real usando Proxies</p>
+      </header>
+
+      <main>
+        <form
+          id="registrationForm"
+          novalidate>
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Tu nombre (2-50 caracteres)"
+              autocomplete="name" />
+            <span
+              class="error-message"
+              id="name-error"></span>
+            <span class="success-icon">✓</span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="tu@email.com"
+              autocomplete="email" />
+            <span
+              class="error-message"
+              id="email-error"></span>
+            <span class="success-icon">✓</span>
+          </div>
+
+          <div class="form-group">
+            <label for="age">Edad</label>
+            <input
+              type="number"
+              id="age"
+              name="age"
+              placeholder="18-120"
+              min="18"
+              max="120" />
+            <span
+              class="error-message"
+              id="age-error"></span>
+            <span class="success-icon">✓</span>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Contraseña</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Mínimo 8 caracteres, 1 mayúscula, 1 número"
+              autocomplete="new-password" />
+            <span
+              class="error-message"
+              id="password-error"></span>
+            <span class="success-icon">✓</span>
+          </div>
+
+          <div class="form-actions">
+            <button
+              type="submit"
+              id="submitBtn"
+              disabled>
+              Registrarse
+            </button>
+            <button
+              type="reset"
+              id="resetBtn">
+              Limpiar
+            </button>
+          </div>
+        </form>
+
+        <section class="status-panel">
+          <h2>📊 Estado del Formulario</h2>
+          <div class="status-grid">
+            <div class="status-item">
+              <span class="status-label">Campos válidos:</span>
+              <span
+                class="status-value"
+                id="validCount"
+                >0</span
+              >
+              <span>/ 4</span>
+            </div>
+            <div class="status-item">
+              <span class="status-label">Estado:</span>
+              <span
+                class="status-value"
+                id="formStatus"
+                >Incompleto</span
+              >
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="result-panel"
+          id="resultPanel"
+          hidden>
+          <h2>✅ Datos Registrados</h2>
+          <div
+            class="result-content"
+            id="resultContent"></div>
+        </section>
+
+        <section class="log-panel">
+          <h2>📝 Log de Eventos</h2>
+          <div
+            class="log-content"
+            id="logContent">
+            <p class="log-empty">Los eventos aparecerán aquí...</p>
+          </div>
+          <button
+            id="clearLog"
+            class="btn-secondary">
+            Limpiar Log
+          </button>
+        </section>
+      </main>
+
+      <footer>
+        <p>Week 10 - Proxies y Reflect | Bootcamp JavaScript ES6+</p>
+      </footer>
+    </div>
+
+    <!-- Cambiar a solution/script.js para ver la solución -->
+    <script src="starter/script.js"></script>
+  </body>
+</html>
